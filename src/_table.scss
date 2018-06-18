@@ -98,7 +98,7 @@
     .v-table.v-table-responsive-lg > tfoot { display: table-footer-group; }
     .v-table.v-table-responsive-lg > tbody { display: table-row-group; }
     .v-table.v-table-responsive-lg > tbody > tr { display: table-row; }
-    .v-table.v-table-responsive-lg > tbody > td, .v-table-responsive-lg > tbody > th { display: table-cell; }
+    .v-table.v-table-responsive-lg > tbody > tr > td, .v-table-responsive-lg > tbody > tr > th { display: table-cell; }
 }
 
 @media (min-width: 1200px) {

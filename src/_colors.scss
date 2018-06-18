@@ -1,34 +1,77 @@
+/* outline colors */
+
+[class^="v-out-"], [class*=" v-out-"] {
+    background-color: transparent;
+}
+
+.v-out-primary {
+    border: 1px solid $global-primary-color;
+    color: $global-primary-color;
+}
+
+.v-out-secondary {
+    border: 1px solid $global-secondary-color;
+    color: $global-secondary-color;
+}
+
+.v-out-danger {
+    border: 1px solid $global-danger-color;
+    color: $global-danger-color;
+}
+
+.v-out-success {
+    border: 1px solid $global-success-color;
+    color: $global-success-color;
+}
+
+.v-out-warning {
+    border: 1px solid $global-warning-color;
+    color: $global-warning-color;
+}
+
+.v-out-dark {
+    border: 1px solid $global-dark-color;
+    color: $global-dark-color;
+}
+
+.v-out-light {
+    border: 1px solid $global-light-color;
+    color: $global-light-color;
+}
+
+/* fill colors */
+
 .v-bg-primary {
-    background-color: #007bff;
-    color: #fff;
+    background-color: $global-primary-color;
+    color: $global-primary-text-color;
 }
 
 .v-bg-secondary {
-    background-color: #6c757d;
-    color: #fff;
+    background-color: $global-secondary-color;
+    color: $global-secondary-text-color;
 }
 
 .v-bg-danger {
-    background-color: #dc3545;
-    color: #fff;
+    background-color: $global-danger-color;
+    color: $global-danger-text-color;
 }
 
 .v-bg-success {
-    background-color: #28a745;
-    color: #fff;
+    background-color: $global-success-color;
+    color: $global-success-text-color;
 }
 
 .v-bg-warning {
-    background-color: #ffc107;
-    color: #3e3b2b;
+    background-color: $global-warning-color;
+    color: $global-warning-text-color;
 }
 
 .v-bg-dark {
-    background-color: #3e3b2b;
-    color: #fff;
+    background-color: $global-dark-color;
+    color: $global-dark-text-color;
 }
 
 .v-bg-light {
-    background-color: #f8f9fa;
-    color: #3e3b2b;
+    background-color: $global-light-color;
+    color: $global-light-text-color;
 }

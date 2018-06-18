@@ -14,6 +14,21 @@
     user-select: none;
 }
 
+@mixin clearfix() {
+    clear: both;
+    display: block;
+    content: "";
+    height: 0;
+}
+
+.clearfix, .v-row:after, .v-navbar:after, .v-card:after, .v-navbar > .v-navbar-nav:after {
+    @include clearfix();
+}
+
+.clearfix, .v-row::after, .v-navbar::after, .v-card::after, .v-navbar > .v-navbar-nav::after {
+    @include clearfix();
+}
+
 .v-container-fluid, .v-container {
     padding-left: 15px;
     padding-right: 15px;
@@ -42,6 +57,11 @@
     }
 }
 
+.v-block {
+    display: block;
+    width: 100%;
+}
+
 .v-sr-only {
     position: absolute;
     width: 1px;
@@ -53,23 +73,8 @@
     border: 0;
 }
 
-@mixin clearfix() {
-    clear: both;
-    display: block;
-    content: "";
-    height: 0;
-}
-
-.clearfix, .v-row:after, .v-navbar:after, .v-card:after, .v-navbar > .v-navbar-nav:after {
-    @include clearfix();
-}
-
-.clearfix, .v-row::after, .v-navbar::after, .v-card::after, .v-navbar > .v-navbar-nav::after {
-    @include clearfix();
-}
-
 .v-card {
-    margin: .4em;
+    margin: $default-out-space;
     background-color: #fff;
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .09),
@@ -84,4 +89,12 @@
 
 .v-no-transition, .v-no-transition *, .v-no-transition-only {
     transition: none;
+}
+
+.v-border-round {
+    border-radius: 5000px;
+}
+
+.v-border-circle {
+    border-radius: 50%;
 }

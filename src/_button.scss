@@ -1,26 +1,27 @@
 .v-btn {
+    background-color: $global-light-color;
     display: inline-block;
     padding: 12px 17px;
     text-align: center;
-    font-size: 11px;
+    font-size: 10pt;
     letter-spacing: .1rem;
     text-decoration: none;
-    background-color: transparent;
     cursor: pointer;
     white-space: nowrap;
     vertical-align: middle;
     outline: none;
+    border: none;
+    transition: .3s all;
+}
+
+.v-btn:disabled {
+    cursor: default;
+    opacity: .4;
 }
 
 .v-btn, .v-btn-group {
     border-radius: 4px;
-    border: 1px solid #bbb;
     color: #bbb;
-}
-
-.v-btn-x:hover {
-    background-color: #fff;
-    color: #1e87f0;
 }
 
 .v-btn-group {
@@ -57,4 +58,81 @@
 
 .v-btn-group[class*="v-bg-"], .v-btn-group[class*="v-bg-"] > .v-btn {
     border: none;
+}
+
+.v-btn-sm {
+    padding: 10px 15px;
+    font-size: 8pt;
+}
+
+.v-btn-lg {
+    padding: 15px 19px;
+    font-size: 14pt;
+}
+
+/* Hover */
+
+.v-btn.v-bg-primary:hover {
+    background-color: $global-primary-color-hover;
+}
+
+.v-btn.v-bg-secondary:hover {
+    background-color: $global-secondary-color-hover;
+}
+
+.v-btn.v-bg-danger:hover {
+    background-color: $global-danger-color-hover;
+}
+
+.v-btn.v-bg-success:hover {
+    background-color: $global-success-color-hover;
+}
+
+.v-btn.v-bg-warning:hover {
+    background-color: $global-warning-color-hover;
+}
+
+.v-btn.v-bg-dark:hover {
+    background-color: $global-dark-color-hover;
+}
+
+.v-btn.v-bg-light:hover {
+    background-color: $global-light-color-hover;
+}
+
+/* Hover outline */
+
+.v-btn.v-out-primary:hover {
+    background-color: $global-primary-color;
+    color: $global-primary-text-color;
+}
+
+.v-btn.v-out-secondary:hover {
+    background-color: $global-secondary-color;
+    color: $global-secondary-text-color;
+}
+
+.v-btn.v-out-danger:hover {
+    background-color: $global-danger-color;
+    color: $global-danger-text-color;
+}
+
+.v-btn.v-out-success:hover {
+    background-color: $global-success-color;
+    color: $global-success-text-color;
+}
+
+.v-btn.v-out-warning:hover {
+    background-color: $global-warning-color;
+    color: $global-warning-text-color;
+}
+
+.v-btn.v-out-dark:hover {
+    background-color: $global-dark-color;
+    color: $global-dark-text-color;
+}
+
+.v-btn.v-out-light:hover {
+    background-color: $global-light-color;
+    color: $main-text-color;
 }

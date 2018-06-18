@@ -1,0 +1,88 @@
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+:after, :before, .v-no-select {
+    user-select: none;
+}
+
+::after, ::before, .v-no-select {
+    user-select: none;
+}
+
+.v-container-fluid, .v-container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.v-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .v-container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .v-container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .v-container {
+        width: 1170px;
+    }
+}
+
+.v-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+@mixin clearfix() {
+    clear: both;
+    display: block;
+    content: "";
+    height: 0;
+}
+
+.clearfix, .v-row:after, .v-navbar:after, .v-card:after, .v-navbar > .v-navbar-nav:after {
+    @include clearfix();
+}
+
+.clearfix, .v-row::after, .v-navbar::after, .v-card::after, .v-navbar > .v-navbar-nav::after {
+    @include clearfix();
+}
+
+.v-card {
+    margin: .4em;
+    background-color: #fff;
+    border-radius: 2px;
+    height: 200px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .09),
+                0 1px 2px rgba(0, 0, 0, .18);
+}
+
+.v-overflow-auto {
+    overflow-x: auto;
+    width: 100%;
+    display: block;
+}
+
+.v-no-transition, .v-no-transition *, .v-no-transition-only {
+    transition: none;
+}

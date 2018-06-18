@@ -1,0 +1,65 @@
+html, body, p, br, hr, div, form {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    border: none;
+}
+
+body {
+    background-color: #fff;
+    min-width: 240px;
+}
+
+body, a {
+    color: #4F4949;
+}
+
+h1, h2, h3, h4, h5, h6, dt {
+    line-height: 1.4em;
+    font-weight: 100;
+}
+
+sup, sub {
+    font-size: small;
+}
+
+sup {
+    vertical-align: super;
+}
+
+sub {
+    vertical-align: sub;
+}
+
+a, img {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    padding: .4em .8em 1em .8em;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: none;
+    outline: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+}
+
+iframe {
+    background-color: #fff;
+}

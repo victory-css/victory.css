@@ -1,0 +1,37 @@
+{
+    "name": "Victory.css",
+    "version": "0.0.1",
+    "description": "A lightweight and very simple front-end framework",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "gulp"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/brcontainer/Victory.css.git"
+    },
+    "keywords": [
+        "css",
+        "framework"
+    ],
+    "author": "Guilherme Nascimento",
+    "license": "MIT",
+    "email": "brcontainer@yahoo.com.br",
+    "bugs": {
+        "url": "https://github.com/brcontainer/Victory.css/issues"
+    },
+    "homepage": "https://github.com/brcontainer/Victory.css#readme",
+    "dependencies": {
+        "autoprefixer": "^8.6.2",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^5.0.0",
+        "gulp-clean-css": "^3.9.4",
+        "gulp-inject-string": "^1.1.1",
+        "gulp-postcss": "^7.0.1",
+        "gulp-rename": "^1.3.0",
+        "gulp-sass": "^4.0.1",
+        "gulp-sourcemaps": "^2.6.4",
+        "npm": "^6.1.0"
+    }
+}

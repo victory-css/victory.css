@@ -1,0 +1,59 @@
+.v-btn {
+    display: inline-block;
+    padding: 12px 17px;
+    color: #555;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.v-btn, .v-btn-group {
+    border-radius: 4px;
+    border: 1px solid #bbb;
+}
+
+.v-btn-x:hover {
+    background-color: #fff;
+    color: #1e87f0;
+}
+
+.v-btn-group {
+    display: inline-block;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0;
+}
+.v-btn-group > .v-btn {
+    position: relative;
+    z-index: 10;
+}
+
+.v-btn-group > .v-btn {
+    z-index: 11;
+    color: inherit;
+    border-radius: 0;
+    border-width: 0 1px 0 0;
+}
+
+.v-btn-group > .v-btn:focus {
+    box-shadow: 0 0 0 .4em rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.v-btn-group > .v-btn:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.v-btn-group > .v-btn:last-child {
+    border-radius: 0 4px 4px 0;
+    border-right: 0;
+}
+
+.v-btn-group[class*="v-bg-"], .v-btn-group[class*="v-bg-"] > .v-btn {
+    border: none;
+}

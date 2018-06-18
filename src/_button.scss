@@ -1,7 +1,6 @@
 .v-btn {
     display: inline-block;
     padding: 12px 17px;
-    color: #555;
     text-align: center;
     font-size: 11px;
     letter-spacing: .1rem;
@@ -10,11 +9,13 @@
     cursor: pointer;
     white-space: nowrap;
     vertical-align: middle;
+    outline: none;
 }
 
 .v-btn, .v-btn-group {
     border-radius: 4px;
     border: 1px solid #bbb;
+    color: #bbb;
 }
 
 .v-btn-x:hover {

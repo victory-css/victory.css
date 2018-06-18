@@ -1,18 +1,18 @@
 'use strict';
 
-const fs = require('fs');
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const rename = require("gulp-rename");
-const cleanCSS = require('gulp-clean-css');
-const sourcemaps = require('gulp-sourcemaps');
-const injectString = require('gulp-inject-string');
+var fs = require('fs');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var rename = require("gulp-rename");
+var cleanCSS = require('gulp-clean-css');
+var sourcemaps = require('gulp-sourcemaps');
+var injectString = require('gulp-inject-string');
 
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
 
-const buildDate = (new Date).getUTCFullYear();
-const packageData = JSON.parse(fs.readFileSync('./package.json'));
+var buildDate = (new Date).getUTCFullYear();
+var packageData = JSON.parse(fs.readFileSync('./package.json'));
 
 function commentData(glue, extras) {
     let data = [

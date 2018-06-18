@@ -11,8 +11,12 @@ var injectString = require('gulp-inject-string');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 
+var runSequence = require('run-sequence');
+
 var buildDate = (new Date).getUTCFullYear();
 var packageData = JSON.parse(fs.readFileSync('./package.json'));
+
+runSequence.options.ignoreUndefinedTasks = true;
 
 function commentData(glue, extras) {
     let data = [
@@ -57,4 +61,6 @@ gulp.task('min', () => {
                .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('default', [ 'merge', 'prefix', 'min' ]);
+gulp.task('default', () => {
+    runSequence('merge', 'prefix', 'min');
+});

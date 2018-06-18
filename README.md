@@ -4,7 +4,7 @@ Victory.css is a simply and lightweight front-end framework for developing fast.
 
 ## Download
 
-For production download from: https://raw.githubusercontent.com/brcontainer/Victory.css/dist/victory.min.css
+For production download from: https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.css
 
 To contribute or modify download using git (require `npm`):
 

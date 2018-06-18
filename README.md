@@ -1,3 +1,7 @@
+Victory.css is a simply and lightweight front-end framework for developing fast.
+
+> **Note:** under development
+
 ## Download
 
 For production download from: https://raw.githubusercontent.com/brcontainer/Victory.css/dist/victory.min.css
@@ -31,7 +35,7 @@ gulp min
 For put prefix properties in `victory.css` execute:
 
 ```
-gulp min
+gulp prefix
 ```
 
 ## Browser Support

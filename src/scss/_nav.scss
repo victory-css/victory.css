@@ -39,6 +39,8 @@
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;
+    height: 64px;
+    line-height: 64px;
 }
 
 .v-navbar .v-navbar-left {
@@ -167,6 +169,8 @@
         padding: 15px 10px;
         margin: 5px;
         text-align: left;
+        height: auto;
+        line-height: normal;
     }
 
     .v-navbar .v-nav-item.v-btn {

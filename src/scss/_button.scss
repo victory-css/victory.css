@@ -7,10 +7,12 @@
     letter-spacing: .1rem;
     text-decoration: none;
     cursor: pointer;
-    white-space: nowrap;
     vertical-align: middle;
+    white-space: nowrap;
     outline: none;
     border: none;
+    height: auto !important;
+    line-height: normal !important;
     transition: .3s color, .3s background-color;
 }
 

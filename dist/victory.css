@@ -592,10 +592,12 @@ iframe {
   letter-spacing: .1rem;
   text-decoration: none;
   cursor: pointer;
-  white-space: nowrap;
   vertical-align: middle;
+  white-space: nowrap;
   outline: none;
   border: none;
+  height: auto !important;
+  line-height: normal !important;
   -webkit-transition: .3s color, .3s background-color;
   -o-transition: .3s color, .3s background-color;
   transition: .3s color, .3s background-color; }
@@ -813,7 +815,9 @@ select.v-field {
   white-space: nowrap;
   overflow: hidden;
   -o-text-overflow: ellipsis;
-     text-overflow: ellipsis; }
+     text-overflow: ellipsis;
+  height: 64px;
+  line-height: 64px; }
 
 .v-navbar .v-navbar-left {
   float: left; }
@@ -960,7 +964,9 @@ select.v-field {
     display: block;
     padding: 15px 10px;
     margin: 5px;
-    text-align: left; }
+    text-align: left;
+    height: auto;
+    line-height: normal; }
   .v-navbar .v-nav-item.v-btn {
     text-align: center; }
   .v-navbar .v-drop ~ .v-navbar-items .v-nav-item {

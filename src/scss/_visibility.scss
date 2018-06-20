@@ -1,0 +1,31 @@
+@mixin visibility($width, $size) {
+    @media (min-width: unquote($width)) {
+        .v-block-#{$size} { display: block; }
+        .v-inline-#{$size} { display: inline; }
+        .v-inline-block-#{$size} { display: inline-block; }
+        .v-none-#{$size} { display: none; }
+        .v-hidden-#{$size} { visibility: hidden; }
+        .v-visible-#{$size} { visibility: visible; }
+    }
+}
+
+@media (min-width: 1px) {
+    [class^="v-block-"], [class*=" v-block-"],
+    [class^="v-inline-"], [class*=" v-inline-"],
+    [class^="v-inline-block-"], [class*=" v-inline-block-"] {
+        display: none;
+    }
+
+    [class^="v-hidden-"], [class*=" v-hidden-"] {
+         visibility: visible;
+    }
+
+    [class^="v-visible-"], [class*=" v-visible-"] {
+        visibility: hidden;
+    }
+}
+
+@include visibility('576px', 'sm');
+@include visibility('768px', 'md');
+@include visibility('992px', 'lg');
+@include visibility('1200px', 'xl');

@@ -7,150 +7,174 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="../dist/victory.min.css">
+    <script src="../dist/victory.js"></script>
     <style type="text/css">
-        body {
-            font-family: "Helvetica Neue", Arial, sans-serif;
-            background-color: #f7f7f7;
-        }
+    body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background-color: #f7f7f7;
+        padding-top: 64px;
+    }
 
-        .v-card {
-            min-height: 100px;
-        }
+    .v-card {
+        min-height: 100px;
+    }
 
-        .section {
-            padding: 25px 0;
-        }
+    .section {
+        border-bottom: 1px solid #ccc;
+        padding: 1px 0 25px 0;
+        margin-top: 15px;
+    }
 
-        #main-nav, #main-footer {
-            text-transform: uppercase;
-            font-size: 9pt;
-        }
+    .section:last-child {
+        border: none;
+    }
 
-        #main-footer {
-            border-top: 1px solid rgba(0, 0, 0, .1);
-            background-color: #fff;
-            padding-top: 75px;
-        }
+    #main-nav, #main-footer {
+        text-transform: uppercase;
+        font-size: 9pt;
+    }
 
-        #main-footer .v-container {
-            padding-bottom: 45px;
-        }
+    #main-footer {
+        border-top: 1px solid rgba(0, 0, 0, .1);
+        background-color: #fff;
+        padding-top: 75px;
+    }
 
-        #main-footer a {
-            text-decoration: none;
-        }
+    #main-footer .v-container {
+        padding-bottom: 45px;
+    }
 
-        #main-footer dt {
-            padding: 0 0 35px 0;
-            font-weight: bold;
-            font-size: 10pt;
-        }
+    #main-footer a {
+        text-decoration: none;
+    }
 
-        #main-footer dd {
-            margin: 0;
-            padding: 0 0 0 5px;
-            height: 35px;
-            font-size: 8pt;
-        }
-        #main-footer .high {
-            position: relative;
-            display: inline-block;
-        }
-        #main-footer .high .v-badge {
-            text-transform: none;
-            position: absolute;
-            left: 0;
-            top: -25px;
-            min-width: 65px;
-            font-size: 8pt;
-        }
+    #main-footer dt {
+        padding: 0 0 35px 0;
+        font-weight: bold;
+        font-size: 10pt;
+    }
 
-        #main-footer .brand {
-            text-align: right;
-        }
+    #main-footer dd {
+        margin: 0;
+        padding: 0 0 0 5px;
+        height: 35px;
+        font-size: 8pt;
+    }
+    #main-footer .high {
+        position: relative;
+        display: inline-block;
+    }
+    #main-footer .high .v-badge {
+        text-transform: none;
+        position: absolute;
+        left: 0;
+        top: -25px;
+        z-index: 1;
+        min-width: 65px;
+        font-size: 8pt;
+    }
 
-        #main-footer .copy {
-            border-top: 1px solid rgba(0, 0, 0, .1);
-            padding: 15px 0;
-            text-align: center;
-        }
+    #main-footer .brand {
+        text-align: right;
+    }
 
-        #main-footer .copy span {
-            font-weight: bold;
-        }
+    #main-footer .copy {
+        border-top: 1px solid rgba(0, 0, 0, .1);
+        padding: 15px 0;
+        text-align: center;
+    }
 
-        .prices {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    #main-footer .copy span {
+        font-weight: bold;
+    }
 
-        .prices .v-card {
-            height: 400px;
-            color: #3c3c3c;
-            font-size: 14pt;
-        }
+    .prices {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
 
-        .prices .v-card h4 {
-            padding: 15px 0;
-            margin: 0;
-        }
-        .prices .v-card .price {
-            padding: 20px 0;
-            font-size: 20pt;
-        }
-        .prices .v-card ul {
-            list-style-type: none;
-            min-height: 180px;
-        }
-        .prices .v-card ul, .prices .v-card li {
-            padding: 0;
-            margin: 0;
-        }
-        .prices .v-card li {
-            padding: 5px 0;
-        }
-        .last-news img, .popular-news img {
-            display: block;
-            width: 100%;
-        }
-        .last-news p, .popular-news p {
-            padding: 20px;
-            text-align: justify;
-        }
+    .prices .v-divider-icon {
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-        .last-news, .popular-news {
-            font-size: 9pt;
-        }
+    .prices h2 {
+        padding-top: 25px;
+    }
 
-        .section {
-            border-top: 1px solid #ccc;
-            padding-top: 15px;
-            margin-top: 15px;
-        }
+    .prices p {
+        font-size: 11pt;
+        padding: 20px 0 55px 0;
+        margin: 0 10%;
+    }
+
+    .prices .v-card {
+        height: 400px;
+        color: #3c3c3c;
+        font-size: 14pt;
+    }
+
+    .prices .v-card h3 {
+        padding: 15px 0;
+        margin: 0;
+    }
+    .prices .v-card .price {
+        padding: 20px 0;
+        font-size: 20pt;
+    }
+    .prices .v-card ul {
+        list-style-type: none;
+        min-height: 180px;
+    }
+    .prices .v-card ul, .prices .v-card li {
+        padding: 0;
+        margin: 0;
+    }
+    .prices .v-card li {
+        padding: 5px 0;
+    }
+    .last-news img, .popular-news img {
+        display: block;
+        width: 100%;
+    }
+    .last-news p, .popular-news p {
+        padding: 20px;
+        text-align: justify;
+    }
+
+    .last-news, .popular-news {
+        font-size: 9pt;
+    }
     </style>
 </head>
 <body>
     <!-- navigation -->
-    <div id="main-nav" class="v-navbar">
-        <div class="v-navbar-left">
-            <div class="v-navbar-brand">logomark</div>
-        </div>
-        <div class="v-navbar-right">
-            <button class="v-navbar-toggle v-drop">
-                <span class="v-sr-only">Toggle navigation</span>
-                <i class="v-icon-bar"></i>
-                <i class="v-icon-bar"></i>
-                <i class="v-icon-bar"></i>
-            </button>
+    <div id="main-nav" class="v-navbar v-navbar-fix v-bg-primary v-no-padding">
+        <div class="v-container">
+            <div class="v-navbar-left">
+                <div class="v-navbar-brand">logomark</div>
+            </div>
+            <div class="v-navbar-right">
+                <button class="v-navbar-toggle">
+                    <span class="v-sr-only">Toggle navigation</span>
+                    <i class="v-icon-bar"></i>
+                    <i class="v-icon-bar"></i>
+                    <i class="v-icon-bar"></i>
+                </button>
 
-            <ul class="v-navbar-nav">
-                <li><a href="#" class="v-nav-item">Features</a></li>
-                <li><a href="#" class="v-nav-item">Enterprise</a></li>
-                <li><a href="#" class="v-nav-item">Contact</a></li>
-            </ul>
+                <div class="v-navbar-items v-navbar-rtl">
+                    <div class="v-navbar-items-inner">
+                        <a href="#" class="v-nav-item">Features</a>
+                        <a href="#" class="v-nav-item">Enterprise</a>
+                        <a href="#" class="v-nav-item v-btn v-out-light v-border-round">Download</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- navigation -->
 
     <div class="v-container main-news">
         <!-- items -->
@@ -158,19 +182,19 @@
             <h2>Last news</h2>
             <div class="v-col-md-4">
                 <div class="v-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='#55595c'></rect><text x='116.7265625' y='120.3' style='fill:#eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
+                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='%2355595c'></rect><text x='116.7265625' y='120.3' style='fill:%23eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
                     <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
                 </div>
             </div>
             <div class="v-col-md-4">
                 <div class="v-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='#55595c'></rect><text x='116.7265625' y='120.3' style='fill:#eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
+                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='%2355595c'></rect><text x='116.7265625' y='120.3' style='fill:%23eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
                     <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
                 </div>
             </div>
             <div class="v-col-md-4">
                 <div class="v-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='#55595c'></rect><text x='116.7265625' y='120.3' style='fill:#eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
+                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='%2355595c'></rect><text x='116.7265625' y='120.3' style='fill:%23eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
                     <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
                 </div>
             </div>
@@ -178,27 +202,28 @@
 
         <div class="v-row popular-news section">
             <h2>Popular news</h2>
+
             <div class="v-col-md-3">
                 <div class="v-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='#55595c'></rect><text x='116.7265625' y='120.3' style='fill:#eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
+                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='%2355595c'></rect><text x='116.7265625' y='120.3' style='fill:%23eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
                     <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
                 </div>
             </div>
             <div class="v-col-md-3">
                 <div class="v-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='#55595c'></rect><text x='116.7265625' y='120.3' style='fill:#eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
+                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='%2355595c'></rect><text x='116.7265625' y='120.3' style='fill:%23eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
                     <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
                 </div>
             </div>
             <div class="v-col-md-3">
                 <div class="v-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='#55595c'></rect><text x='116.7265625' y='120.3' style='fill:#eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
+                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='%2355595c'></rect><text x='116.7265625' y='120.3' style='fill:%23eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
                     <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
                 </div>
             </div>
             <div class="v-col-md-3">
                 <div class="v-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='#55595c'></rect><text x='116.7265625' y='120.3' style='fill:#eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
+                    <img src="data:image/svg+xml;charset=UTF-8,<svg width='348' height='225' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 348 225' preserveAspectRatio='none'><rect width='348' height='225' fill='%2355595c'></rect><text x='116.7265625' y='120.3' style='fill:%23eceeef;font-weight:bold;font-family:Arial, Helvetica, Open Sans,sans-serif,monospace;font-size:17pt'>Example</text></svg>">
                     <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
                 </div>
             </div>
@@ -206,49 +231,59 @@
     </div>
 
     <div class="v-bg-secondary section">
-        <div class="v-row prices">
-            <div class="v-col-md-4">
-                <div class="v-card">
-                    <h4 class="v-bg-light">Free</h4>
-                    <div class="price">$0 / mo</div>
-                    <ul>
-                        <li>10 users included</li>
-                        <li>2 GB of storage</li>
-                        <li>Email support</li>
-                        <li>Help center access</li>
-                    </ul>
+        <div class="prices">
+            <h2>Pricing</h2>
 
-                    <button class="v-btn">Sign up for free</button>
+            <div class="v-divider-icon v-divider-dashed">💰</div>
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae sapien finibus, lobortis urna quis, imperdiet ligula. Mauris rhoncus pulvinar semper.
+            </p>
+
+            <div class="v-row">
+                <div class="v-col-md-4">
+                    <div class="v-card">
+                        <h3 class="v-bg-light">Free</h3>
+                        <div class="price">$0 / mo</div>
+                        <ul>
+                            <li>10 users included</li>
+                            <li>2 GB of storage</li>
+                            <li>Email support</li>
+                            <li>Help center access</li>
+                        </ul>
+
+                        <button class="v-btn v-out-primary">Sign up for free</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="v-col-md-4">
-                <div class="v-card">
-                    <h4 class="v-bg-light">Pro</h4>
-                    <div class="price">$15 / mo</div>
-                    <ul>
-                        <li>20 users included</li>
-                        <li>10 GB of storage</li>
-                        <li>Priority email support</li>
-                        <li>Help center access</li>
-                    </ul>
+                <div class="v-col-md-4">
+                    <div class="v-card">
+                        <h3 class="v-bg-light">Pro</h3>
+                        <div class="price">$15 / mo</div>
+                        <ul>
+                            <li>20 users included</li>
+                            <li>10 GB of storage</li>
+                            <li>Priority email support</li>
+                            <li>Help center access</li>
+                        </ul>
 
-                    <button class="v-btn">Get started</button>
+                        <button class="v-btn v-out-primary">Get started</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="v-col-md-4">
-                <div class="v-card">
-                    <h4 class="v-bg-light">Enterprise</h4>
-                    <div class="price">$29 / mo</div>
-                    <ul>
-                        <li>30 users included</li>
-                        <li>15 GB of storage</li>
-                        <li>Phone and email support</li>
-                        <li>Help center access</li>
-                    </ul>
+                <div class="v-col-md-4">
+                    <div class="v-card">
+                        <h3 class="v-bg-light">Enterprise</h3>
+                        <div class="price">$29 / mo</div>
+                        <ul>
+                            <li>30 users included</li>
+                            <li>15 GB of storage</li>
+                            <li>Phone and email support</li>
+                            <li>Help center access</li>
+                        </ul>
 
-                    <button class="v-btn">Contact us</button>
+                        <button class="v-btn v-out-primary">Contact us</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -257,16 +292,16 @@
     <!-- footer -->
     <div id="main-footer">
         <div class="v-row v-container">
-            <div class="v-col-md-8 v-col-sm-5 visible-sm-block visible-md-block visible-lg-block">
+            <div class="v-col-sm-7 v-col-md-8">
                 <div class="v-row">
-                    <dl class="v-col-md-3 v-col-sm-6">
+                    <dl class="v-col-md-4">
                         <dt>You Need Help</dt>
                         <dd><a href="#">Documentation</a></dd>
                         <dd><a href="#">Support / Contact Us</a></dd>
                         <dd><a href="#">Security</a></dd>
                     </dl>
 
-                    <dl class="v-col-md-3 v-col-sm-6">
+                    <dl class="v-col-md-4">
                         <dt>About</dt>
                         <dd><a href="#">About, Inc</a></dd>
                         <dd>
@@ -278,7 +313,7 @@
                         <dd><a href="#">Blog</a></dd>
                     </dl>
 
-                    <dl class="v-col-md-3 v-col-sm-6">
+                    <dl class="v-col-md-4">
                         <dt>Terms &amp; Policies</dt>
                         <dd><a href="#">Terms of Use</a></dd>
                         <dd><a href="#">Other policies</a></dd>
@@ -286,7 +321,7 @@
                 </div>
             </div>
 
-            <div class="v-col-md-4 v-col-sm-5 v-col-xs-12 brand">
+            <div class="v-col-sm-5 v-col-md-4 brand">
                 <p><span class="logo">Foo bar baz</span></p>
                 <p class="handmade">Foo bar baz foobar boo</p>
             </div>

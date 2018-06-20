@@ -1,0 +1,85 @@
+/*
+    <!-- slide -->
+    <div class="v-slide">
+        <div class="v-slide-inner">
+            <div class="v-slide-item v-active">Foo</div>
+            <div class="v-slide-item">bar</div>
+            <div class="v-slide-item">baz</div>
+
+            <a href="javascript:void(0);" class="v-slide-back">X</a>
+            <a href="javascript:void(0);" class="v-slide-next">Z</a>
+        </div>
+    </div>
+    <!-- slide -->
+*/
+
+.v-slide {
+    position: relative;
+
+    > .v-slide-inner {
+        background-color: $global-secondary-color;
+        position: relative;
+        width: 100%;
+        min-height: 120px;
+        overflow: hidden;
+    }
+
+    > .v-slide-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    > .v-slide-inner > .v-slide-item {
+        position: relative;
+        display: none;
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        transition: transform .3s ease;
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+
+    > .v-slide-inner > .v-slide-item.v-active {
+        display: block;
+    }
+
+    .v-slide-back, .v-slide-next {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15%;
+        height: 100%;
+        min-width: 55px;
+        max-width: 80px;
+        opacity: .2;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        text-decoration: none;
+        transition: .3s opacity;
+    }
+
+    .v-slide-next {
+        right: 0;
+        left: auto;
+    }
+
+    .v-slide-back:hover, .v-slide-next:hover {
+        opacity: .8;
+        background: rgba(0, 0, 0, .05);
+        background: linear-gradient(to right, rgba(0, 0, 0, .3) 0, rgba(0, 0, 0, .001) 100%);
+    }
+    .v-slide-next:hover {
+        background: linear-gradient(to left, rgba(0, 0, 0, .3) 0, rgba(0, 0, 0, .001) 100%);
+    }
+
+    .v-slide-back:before, .v-slide-next:before {
+        @include align-middle();
+    }
+
+    .v-slide-back::before, .v-slide-next::before {
+        @include align-middle();
+    }
+}

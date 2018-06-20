@@ -31,7 +31,7 @@
     border-top: 1px solid #e5e5e5;
 }
 
-.v-table-striped tbody > tr:nth-of-type(odd) {
+.v-table-striped tbody > tr:nth-child(odd) {
     background-color: #f8f8f8;
     border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;

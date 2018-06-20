@@ -9,7 +9,13 @@ html, body {
 
 body {
     background-color: #fff;
-    min-width: 240px;
+    min-width: 1000px;
+}
+
+@media (min-width: 1px) {
+    body {
+        min-width: $min-view-port-width;
+    }
 }
 
 body, a {
@@ -62,4 +68,12 @@ textarea {
 
 iframe {
     background-color: #fff;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
 }

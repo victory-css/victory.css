@@ -3,7 +3,9 @@
 var fs = require('fs');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var concat = require('gulp-concat');
 var rename = require("gulp-rename");
+var minify = require('gulp-minify');
 var cleanCSS = require('gulp-clean-css');
 var sourcemaps = require('gulp-sourcemaps');
 var injectString = require('gulp-inject-string');
@@ -38,8 +40,8 @@ function releaseMinComment() {
     return '\/* ' + commentData(' | ') + ' *\/\n';
 }
 
-gulp.task('merge', () => {
-    return gulp.src('./src/victory.scss')
+gulp.task('mergecss', () => {
+    return gulp.src('./src/scss/victory.scss')
                 .pipe(sass.sync().on('error', sass.logError))
                 .pipe(gulp.dest('./dist'));
 });
@@ -47,20 +49,41 @@ gulp.task('merge', () => {
 gulp.task('prefix', () => {
     return gulp.src('./dist/victory.css')
                 .pipe(postcss([
-                    autoprefixer({ browsers: ['last 2 versions'] })
+                    autoprefixer({ browsers: ['last 15 versions'] })
                 ]))
                 .pipe(injectString.prepend(releaseComment()))
                 .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('min', () => {
+gulp.task('mincss', () => {
     return gulp.src('./dist/victory.css')
-               .pipe(cleanCSS({compatibility: 'ie8'}))
-               .pipe(rename({suffix: '.min'}))
-               .pipe(injectString.prepend(releaseMinComment()))
-               .pipe(gulp.dest('./dist'));
+                .pipe(cleanCSS({ compatibility: 'ie8' }))
+                .pipe(rename({ suffix: '.min' }))
+                .pipe(injectString.prepend(releaseMinComment()))
+                .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('mergejs', () => {
+    let src = [
+        './src/js/victory.js',
+        './src/js/_navbar.js',
+        './src/js/_polyfill.js'
+    ];
+
+    return gulp.src(src)
+                .pipe(concat('victory.js'))
+                .pipe(injectString.prepend(releaseComment()))
+                .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('minjs', () => {
+    return gulp.src('./dist/victory.js')
+                .pipe(minify({
+                    ext: { min: '.min.js' }
+                }))
+                .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('default', () => {
-    runSequence('merge', 'prefix', 'min');
+    runSequence('mergecss', 'prefix', 'mincss', 'mergejs', 'minjs');
 });

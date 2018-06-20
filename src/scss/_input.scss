@@ -1,0 +1,87 @@
+.v-field {
+    display: inline-block;
+    padding: 8px;
+    margin: 3px 3px 3px 4px;
+    min-width: 50px;
+    min-height: 20px;
+    max-width: 100%;
+    width: 150px;
+    outline: none;
+    border: 1px solid #9a9ca2;
+    background-color: #fff;
+    border-radius: 2px;
+    color: #0c0c0c;
+    font-size: 11pt;
+    vertical-align: middle;
+    transition: top .3s ease-out;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .2),
+                0 1px 1px rgba(0, 0, 0, .085) inset;
+    transition: all .2s ease-out;
+}
+
+textarea.v-field {
+    min-width: 180px;
+    min-height: 50px;
+}
+
+select[multiple].v-field {
+    height: auto;
+}
+
+.v-field-sm {
+    padding: 6px;
+    font-size: 8pt;
+}
+
+.v-field-lg {
+    padding: 11px;
+    font-size: 13pt;
+}
+
+select.v-field {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    background: #fff url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40" viewPort="0 0 120 40" version="1.1"><polygon fill="rgb(60,61,26)" points="0,0 70,0 35,40"/></svg>') right center no-repeat;
+    background-size: 14px 4px;
+    appearance: none;
+}
+
+.v-field:focus, .v-btn:focus {
+    box-shadow: 0 0 0 .25em rgba(71, 73, 79, .2);
+}
+
+.v-field-group {
+    padding: 1px;
+    font-size: .001px !important;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+
+    > * {
+        border-left-width: 0 !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        vertical-align: top !important;
+        height: 35px !important;
+        position: relative !important;
+        z-index: 1;
+    }
+
+    > :first-child {
+        border-left-width: 1px !important;
+        border-radius: 2px 0 0 2px !important;
+    }
+    
+    > :last-child {
+        border-radius: 0 2px 2px 0 !important;
+    }
+
+    > .v-active, > :active, > :focus {
+        z-index: 2;
+    }
+
+    > .v-btn {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}

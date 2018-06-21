@@ -9,20 +9,32 @@
     }
 }
 
-@media (min-width: 1px) {
-    [class^="v-block-"], [class*=" v-block-"],
-    [class^="v-inline-"], [class*=" v-inline-"],
+@mixin visibility-initial($vblock, $vinline, $vinlineblock, $vhidden, $vvisible) {
+    [class^="v-block-"], [class*=" v-block-"] {
+        display: unquote($vblock);
+    }
+
+    [class^="v-inline-"], [class*=" v-inline-"] {
+        display: unquote($vinline);
+    }
+
     [class^="v-inline-block-"], [class*=" v-inline-block-"] {
-        display: none;
+        display: unquote($vinlineblock);
     }
 
     [class^="v-hidden-"], [class*=" v-hidden-"] {
-         visibility: visible;
+         visibility: unquote($vhidden);
     }
 
     [class^="v-visible-"], [class*=" v-visible-"] {
-        visibility: hidden;
+        visibility: unquote($vvisible);
     }
+}
+
+@include visibility-initial('block', 'inline', 'inline-block', 'hidden', 'visible');
+
+@media (min-width: 1px) {
+    @include visibility-initial('none', 'none', 'none', 'visible', 'hidden');
 }
 
 @include visibility('576px', 'sm');

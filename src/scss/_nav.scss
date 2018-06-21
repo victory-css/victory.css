@@ -2,15 +2,6 @@
     box-shadow: 2px 1px 2px rgba(0, 0, 0, .2);
 }
 
-@mixin underline-nav-item() {
-    display: block;
-    content: '';
-    width: 0;
-    height: 1px;
-    background-color: #fff;
-    transition: all .3s;
-}
-
 .v-navbar {
     position: relative;
     width: 100%;
@@ -20,16 +11,9 @@
     @include nav-shadow();
 }
 
-.v-navbar.v-navbar-fix {
-    min-width: $min-view-port-width;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 5000;
-}
-
 .v-navbar .v-nav-item {
-    margin: 0 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: inline-block;
     list-style-type: none;
     vertical-align: middle;
@@ -41,6 +25,7 @@
     text-overflow: ellipsis;
     height: 64px;
     line-height: 64px;
+    transition: .2s background-color ease-out;
 }
 
 .v-navbar .v-navbar-left {
@@ -77,24 +62,6 @@
     @include align-middle();
 }
 
-@media(min-width: 801px) {
-    .v-navbar .v-nav-item:after {
-        @include underline-nav-item();
-    }
-
-    .v-navbar .v-nav-item::after {
-        @include underline-nav-item();
-    }
-
-    .v-navbar .v-nav-item:hover:after {
-        width: 100%;
-    }
-
-    .v-navbar .v-nav-item:hover::after {
-        width: 100%;
-    }
-}
-
 .v-navbar .v-navbar-toggle {
     vertical-align: middle;
     position: relative;
@@ -124,6 +91,20 @@
 .v-bg-dark .v-icon-bar { background-color: $global-dark-text-color; }
 .v-bg-light .v-icon-bar { background-color: $global-light-text-color; }
 
+@mixin nav-item-active($type, $color) {
+    .v-bg-#{$type} .v-nav-item.v-active, .v-bg-#{$type} .v-nav-item:hover {
+        background-color: $color;
+    }
+}
+
+@include nav-item-active('primary', $global-primary-color-high);
+@include nav-item-active('secondary', $global-secondary-color-high);
+@include nav-item-active('danger', $global-danger-color-high);
+@include nav-item-active('success', $global-success-color-high);
+@include nav-item-active('warning', $global-warning-color-high);
+@include nav-item-active('dark', $global-dark-color-high);
+@include nav-item-active('light', $global-light-color-high);
+
 .v-icon-bar + .v-icon-bar {
     margin-top: 4px;
 }
@@ -142,6 +123,15 @@
     transform-origin: 10% 90%;
 }
 
+.v-nav-toggle-extra {
+    padding: 15px 10px;
+    display: none !important;
+}
+
+.v-nav-no-toggle-extra {
+    display: inline-block !important;
+}
+
 @media(max-width: 800px) {
     .v-navbar .v-navbar-items-inner {
         display: block;
@@ -151,6 +141,7 @@
         display: none;
         position: absolute;
         right: 0;
+        z-index: 100;
         width: 100%;
         @include nav-shadow();
     }
@@ -213,4 +204,29 @@
         left: auto;
         right: 0;
     }
+
+    .v-navbar .v-navbar-items.v-navbar-ltr .v-nav-item:hover,
+    .v-navbar .v-navbar-items.v-navbar-rtl .v-nav-item:hover {
+        background-color: transparent !important;
+    }
+
+    .v-nav-toggle-extra {
+        display: block !important;
+    }
+
+    .v-nav-no-toggle-extra {
+        display: none !important;
+    }
+}
+
+.v-navbar.v-navbar-fix {
+    min-width: $min-view-port-width;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 5000;
+}
+
+.v-navbar.v-navbar-fix .v-navbar-items {
+    z-index: 5000;
 }

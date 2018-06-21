@@ -147,6 +147,9 @@
     .last-news, .popular-news {
         font-size: 9pt;
     }
+    .down-btn:hover {
+        background-color: transparent !important;
+    }
     </style>
 </head>
 <body>
@@ -168,7 +171,14 @@
                     <div class="v-navbar-items-inner">
                         <a href="#" class="v-nav-item">Features</a>
                         <a href="#" class="v-nav-item">Enterprise</a>
-                        <a href="#" class="v-nav-item v-btn v-out-light v-border-round">Download</a>
+                        <span class="v-nav-item down-btn">
+                            <a href="#" class="v-btn v-out-light v-border-round v-nav-toggle-extra v-block">Download</a>
+                            <a href="#" class="v-btn v-out-light v-border-round v-nav-no-toggle-extra">Download</a>
+                        </span>
+
+                        <div class="v-nav-toggle-extra">
+                            foo bar baz
+                        </div>
                     </div>
                 </div>
             </div>

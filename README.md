@@ -4,7 +4,10 @@ Victory.css is a simply and lightweight front-end framework for developing fast.
 
 ## Download
 
-For production download from: https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.css
+For production download from:
+
+- https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.css
+- https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js
 
 To contribute or modify download using git (require `npm`):
 
@@ -58,7 +61,7 @@ For use in your project copy `victory.min.css` and `victory.min.js` and put like
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
 <link rel="stylesheet" type="text/css" href="victory.min.css">
-<script src="victory.js"></script>
+<script src="victory.min.js"></script>
 ```
 
 ## Browser Support

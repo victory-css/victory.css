@@ -9,7 +9,7 @@
     }
 }
 
-@mixin visibility-initial($vblock, $vinline, $vinlineblock, $vhidden, $vvisible) {
+@mixin visibility-initial($vblock, $vinline, $vinlineblock, $vnone, $vhidden, $vvisible) {
     [class^="v-block-"], [class*=" v-block-"] {
         display: unquote($vblock);
     }
@@ -22,6 +22,12 @@
         display: unquote($vinlineblock);
     }
 
+    @if $vnone != '' {
+        [class^="v-none-"], [class*=" v-none-"] {
+            display: unquote($vnone);
+        }
+    }
+
     [class^="v-hidden-"], [class*=" v-hidden-"] {
          visibility: unquote($vhidden);
     }
@@ -31,10 +37,14 @@
     }
 }
 
-@include visibility-initial('block', 'inline', 'inline-block', 'hidden', 'visible');
+//Fallback for browsers without media-query support
+@media \0screen {
+    @include visibility-initial('block', 'inline', 'inline-block', 'none', 'hidden', 'visible');
+}
 
+//"Overwrite" fallback
 @media (min-width: 1px) {
-    @include visibility-initial('none', 'none', 'none', 'visible', 'hidden');
+    @include visibility-initial('none', 'none', 'none', '', 'visible', 'hidden');
 }
 
 @include visibility('576px', 'sm');

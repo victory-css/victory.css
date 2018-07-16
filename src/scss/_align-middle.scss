@@ -1,0 +1,31 @@
+@mixin align-middle() {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.v-slide-back:before, .v-slide-next:before {
+    @include align-middle();
+}
+
+.v-slide-back::before, .v-slide-next::before {
+    @include align-middle();
+}
+
+.v-navbar .v-navbar-right:before,
+.v-slide > .v-slide-inner:before,
+.v-navbar .v-navbar-left:before,
+.v-slide .v-slide-btn-back:before,
+.v-slide .v-slide-btn-next:before {
+    @include align-middle();
+}
+
+.v-navbar .v-navbar-right::before,
+.v-slide > .v-slide-inner::before,
+.v-navbar .v-navbar-left::before,
+.v-slide .v-slide-back::before,
+.v-slide .v-slide-next::before {
+    @include align-middle();
+}

@@ -1,7 +1,7 @@
 @import 'variables.scss';
-@import 'mixins.scss';
 @import 'normalize.scss';
 @import 'divider.scss';
+@import 'arrow.scss';
 @import 'resize.scss';
 @import 'badge.scss';
 @import 'grid.scss';
@@ -12,7 +12,9 @@
 @import 'nav.scss';
 @import 'commons.scss';
 @import 'container.scss';
-//@import 'slide.scss'; -- under development
+@import 'slide.scss'; //-- in development
 @import 'underline.scss';
 @import 'border.scss';
 @import 'colors.scss';
+@import 'align-middle.scss';
+@import 'fix-line-height.scss';

@@ -10,6 +10,7 @@ html, body {
 body {
     background-color: #fff;
     min-width: 1000px;
+    font-size: $default-font-size;
 }
 
 @media (min-width: 1px) {
@@ -19,7 +20,7 @@ body {
 }
 
 body, a {
-    color: $main-text-color;
+    color: $default-text-color;
 }
 
 h1, h2, h3, h4, h5, h6, dt {

@@ -49,7 +49,7 @@ gulp.task('mergecss', () => {
 gulp.task('prefix', () => {
     return gulp.src('./dist/victory.css')
                 .pipe(postcss([
-                    autoprefixer({ browsers: ['last 15 versions'] })
+                    autoprefixer({ browsers: [ 'last 15 versions' ] })
                 ]))
                 .pipe(injectString.prepend(releaseComment()))
                 .pipe(gulp.dest('./dist'));
@@ -67,6 +67,7 @@ gulp.task('mergejs', () => {
     let src = [
         './src/js/victory.js',
         './src/js/_navbar.js',
+        //'./src/js/_slide.js',
         './src/js/_polyfill.js'
     ];
 

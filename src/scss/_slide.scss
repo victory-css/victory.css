@@ -1,51 +1,61 @@
 /*
-    <!-- slide -->
-    <div class="v-slide">
-        <div class="v-slide-inner">
-            <div class="v-slide-item v-active">Foo</div>
-            <div class="v-slide-item">bar</div>
-            <div class="v-slide-item">baz</div>
-
-            <a href="javascript:void(0);" class="v-slide-back">X</a>
-            <a href="javascript:void(0);" class="v-slide-next">Z</a>
+<!-- SLIDE -->
+<div class="v-slide v-slide-landscape-x">
+    <div class="v-slide-inner">
+        <!-- div class="v-slide-item">
+            <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%23800000' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example</text></svg>">
+        </div -->
+        <div class="v-slide-item v-active">
+            <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%230000ff' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example</text></svg>">
+        </div>
+        <div class="v-slide-item v-slide-show">
+            <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%23ff0000' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example</text></svg>">
         </div>
     </div>
-    <!-- slide -->
+
+    <!-- « » -->
+    <a href="javascript:void(0);" class="v-slide-btn-back">‹</a>
+    <a href="javascript:void(0);" class="v-slide-btn-next">›</a>
+</div>
+<!-- SLIDE -->
 */
 
+$slide-btn-size: 32pt;
+$slide-min-height: 100px;
+
 .v-slide {
+    background-color: $global-secondary-color;
     position: relative;
+    min-width: 240px;
+    overflow: auto;
+    white-space: nowrap;
+    font-size: 0;
+    text-align: center;
 
-    > .v-slide-inner {
-        background-color: $global-secondary-color;
-        position: relative;
-        width: 100%;
-        min-height: 120px;
-        overflow: hidden;
+    &:before {
+        min-height: $slide-min-height;
     }
 
-    > .v-slide-inner {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
+    &:before {
+        min-height: $slide-min-height;
     }
 
-    > .v-slide-inner > .v-slide-item {
+    > .v-slide-item {
         position: relative;
         display: none;
-        margin: 0 auto;
         width: 100%;
-        text-align: center;
-        transition: transform .3s ease;
+        margin: 0 auto;
         backface-visibility: hidden;
         perspective: 1000px;
+        vertical-align: middle;
+        font-size: $default-font-size;
     }
 
-    > .v-slide-inner > .v-slide-item.v-active {
-        display: block;
+    > .v-slide-item.v-active {
+        display: inline-block;
     }
 
-    .v-slide-back, .v-slide-next {
+    > .v-slide-btn-back, > .v-slide-btn-next {
         position: absolute;
         top: 0;
         left: 0;
@@ -55,31 +65,36 @@
         max-width: 80px;
         opacity: .2;
         color: #fff;
+        font-size: $slide-btn-size;
         text-align: center;
         white-space: nowrap;
         text-decoration: none;
         transition: .3s opacity;
     }
 
-    .v-slide-next {
+    > .v-slide-btn-next {
         right: 0;
         left: auto;
     }
 
-    .v-slide-back:hover, .v-slide-next:hover {
+    > .v-slide-btn-back:hover, > .v-slide-btn-next:hover {
         opacity: .8;
         background: rgba(0, 0, 0, .05);
         background: linear-gradient(to right, rgba(0, 0, 0, .3) 0, rgba(0, 0, 0, .001) 100%);
     }
-    .v-slide-next:hover {
+
+    > .v-slide-btn-next:hover {
         background: linear-gradient(to left, rgba(0, 0, 0, .3) 0, rgba(0, 0, 0, .001) 100%);
     }
+}
 
-    .v-slide-back:before, .v-slide-next:before {
-        @include align-middle();
-    }
-
-    .v-slide-back::before, .v-slide-next::before {
-        @include align-middle();
+@media only screen and (orientation: landscape) {
+    .v-slide.v-slide-landscape {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 6000;
+        width: 100%;
+        height: 100%;
     }
 }

@@ -4,7 +4,7 @@
     width: 0;
     margin-top: 2px;
     height: 1px;
-    background-color: $main-text-color;
+    background-color: $default-text-color;
     transition: .15s width ease-out;
 }
 
@@ -16,7 +16,6 @@
 .v-underline {
     position: relative !important;
     display: inline-block !important;
-    line-height: normal !important;
 }
 
 .v-underline:after {

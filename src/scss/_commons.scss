@@ -46,13 +46,13 @@
 }
 
 .v-overflow-auto {
-    overflow-x: auto;
+    overflow: auto !important;
     width: 100%;
     display: block;
 }
 
 .v-no-transition, .v-no-transition *, .v-no-transition-only {
-    transition: none;
+    transition: none !important;
 }
 
 .v-no-space {

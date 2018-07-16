@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Victory grid</title>
+    <title>Victory.css default navbar</title>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,10 +13,16 @@
         font-family: "Helvetica Neue", Arial, sans-serif;
         background-color: #f7f7f7;
     }
+
+    .v-navbar-right .v-navbar-brand {
+        text-align: right;
+    }
     </style>
 </head>
 <body>
-    <div class="v-navbar">
+    <h1>Default navbar</h1>
+
+    <div class="v-navbar v-navbar-md">
         <div class="v-navbar-left">
             <div class="v-navbar-brand">logomark</div>
         </div>
@@ -32,12 +38,36 @@
                 <div class="v-navbar-items-inner">
                     <a href="#" class="v-nav-item">Features</a>
                     <a href="#" class="v-nav-item">Enterprise</a>
-                    <a href="#" class="v-nav-item v-btn v-out-primary v-border-round">Download</a>
+                    <a href="#" class="v-nav-item">Contact</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <h1>Default navbar</h1>
+    <hr>
+
+    <h1>Inverted default navbar</h1>
+
+    <div class="v-navbar">
+        <div class="v-navbar-right">
+            <div class="v-navbar-brand">logomark</div>
+        </div>
+        <div class="v-navbar-left">
+            <button class="v-navbar-toggle">
+                <span class="v-sr-only">Toggle navigation</span>
+                <i class="v-icon-bar"></i>
+                <i class="v-icon-bar"></i>
+                <i class="v-icon-bar"></i>
+            </button>
+
+            <div class="v-navbar-items">
+                <div class="v-navbar-items-inner">
+                    <a href="#" class="v-nav-item">Features</a>
+                    <a href="#" class="v-nav-item">Enterprise</a>
+                    <a href="#" class="v-nav-item">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

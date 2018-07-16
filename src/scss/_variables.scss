@@ -1,12 +1,14 @@
-$main-text-color: #4F4949;
-
+$default-text-color: #4F4949;
+$default-font-size: 10pt;
 $default-out-space: 6px;
+$default-border-radius: 4px;
+
 $min-view-port-width: 240px;
 
 $global-primary-color:   #007bff;
 $global-secondary-color: #6c757d;
 $global-danger-color:    #dc3545;
-$global-success-color:   #28a745;
+$global-success-color:   #2fc752;
 $global-warning-color:   #ffc107;
 $global-dark-color:      #3e3c3c;
 $global-light-color:     #f8f9fa;
@@ -23,9 +25,9 @@ $global-primary-text-color:   #fff;
 $global-secondary-text-color: #fff;
 $global-danger-text-color:    #fff;
 $global-success-text-color:   #fff;
-$global-warning-text-color:   $main-text-color;
+$global-warning-text-color:   $default-text-color;
 $global-dark-text-color:      #fff;
-$global-light-text-color:     $main-text-color;
+$global-light-text-color:     $default-text-color;
 
 $global-primary-color-hover:   #025ab9;
 $global-secondary-color-hover: #444b52;

@@ -1,0 +1,52 @@
+@mixin arrow($colon) {
+    .v-arrow-ud#{$colon}before, .v-arrow-ud#{$colon}after {
+        display: block;
+        content: '';
+        border: .3em solid transparent;
+        border-top: .3em solid;
+        border-bottom: 0;
+    }
+
+    .v-arrow-ud#{$colon}before {
+        margin-bottom: .1em;
+        border-bottom: .3em solid;
+        border-top: 0;
+    }
+}
+
+[class^="v-arrow-"], [class*=" v-arrow-"] {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: .3em solid transparent;
+}
+
+.v-arrow-left {
+    border-right: .3em solid;
+    border-left: 0;
+}
+
+.v-arrow-right {
+    border-left: .3em solid;
+    border-right: 0;
+}
+
+.v-arrow-up, .v-arrow-down {
+    vertical-align: .15em;
+    border-top: .3em solid;
+    border-bottom: 0;
+}
+
+.v-arrow-up {
+    border-bottom: .3em solid;
+    border-top: 0;
+}
+
+.v-arrow-ud {
+    border: 0;
+    width: auto;
+    height: auto;
+}
+
+@include arrow(':');
+@include arrow('::');

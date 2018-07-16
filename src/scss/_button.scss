@@ -3,7 +3,7 @@
     display: inline-block;
     padding: 8px 17px;
     text-align: center;
-    font-size: 10pt;
+    font-size: $default-font-size;
     letter-spacing: .1rem;
     text-decoration: none;
     cursor: pointer;
@@ -12,8 +12,14 @@
     outline: none;
     border: none;
     height: auto !important;
-    line-height: normal !important;
     transition: .3s color, .3s background-color;
+    position: relative;
+    z-index: 10;
+}
+
+.v-btn:hover, .v-btn:focus, .v-btn.v-active {
+    position: relative;
+    z-index: 11;
 }
 
 .v-btn:disabled {
@@ -22,31 +28,27 @@
 }
 
 .v-btn, .v-btn-group {
-    border-radius: 4px;
+    border-radius: $default-border-radius;
     color: #bbb;
 }
 
 .v-btn-group {
     display: inline-block;
-    border-radius: 4px;
+    border-radius: $default-border-radius;
     text-align: center;
     font-size: 0;
 }
-.v-btn-group > .v-btn {
-    position: relative;
-    z-index: 10;
-}
 
 .v-btn-group > .v-btn {
-    z-index: 11;
     color: inherit;
     border-radius: 0;
     border-width: 0 1px 0 0;
+    background-color: transparent;
 }
 
 .v-btn-group > .v-btn:focus {
-    box-shadow: 0 0 0 .4em rgba(0, 0, 0, .2);
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .15);
+    box-shadow: 0 0 0 .3em rgba(0, 0, 0, .2);
 }
 
 .v-btn-group > .v-btn:first-child {
@@ -58,7 +60,7 @@
     border-right: 0;
 }
 
-.v-btn-group[class*="v-bg-"], .v-btn-group[class*="v-bg-"] > .v-btn {
+.v-btn-group[class*="v-bg-"] > .v-btn, .v-btn-group[class*="v-bg-"] > .v-btn {
     border: none;
 }
 
@@ -72,69 +74,44 @@
     font-size: 14pt;
 }
 
+@mixin btn-bg-active($type, $color) {
+    .v-btn.v-bg-#{$type}:hover,
+    .v-btn.v-bg-#{$type}:focus,
+    .v-btn.v-bg-#{$type}.v-active,
+    .v-btn-group.v-bg-#{$type} > .v-btn:hover,
+    .v-btn-group.v-bg-#{$type} > .v-btn:focus,
+    .v-btn-group.v-bg-#{$type} > .v-btn.v-active {
+        background-color: $color;
+    }
+}
+
+@mixin btn-out-active($type, $color, $text) {
+    .v-btn.v-out-#{$type}:hover,
+    .v-btn.v-out-#{$type}:focus,
+    .v-btn.v-out-#{$type}.v-active,
+    .v-btn-group.v-out-#{$type} > .v-btn:hover,
+    .v-btn-group.v-out-#{$type} > .v-btn:focus,
+    .v-btn-group.v-out-#{$type} > .v-btn.v-active {
+        background-color: $color;
+        color: $text;
+    }
+}
+
 /* Hover */
+@include btn-bg-active('primary', $global-primary-color-hover);
+@include btn-bg-active('secondary', $global-secondary-color-hover);
+@include btn-bg-active('danger', $global-danger-color-hover);
+@include btn-bg-active('success', $global-success-color-hover);
+@include btn-bg-active('warning', $global-warning-color-hover);
+@include btn-bg-active('dark', $global-dark-color-hover);
+@include btn-bg-active('light', $global-light-color-hover);
 
-.v-btn.v-bg-primary:hover {
-    background-color: $global-primary-color-hover;
-}
-
-.v-btn.v-bg-secondary:hover {
-    background-color: $global-secondary-color-hover;
-}
-
-.v-btn.v-bg-danger:hover {
-    background-color: $global-danger-color-hover;
-}
-
-.v-btn.v-bg-success:hover {
-    background-color: $global-success-color-hover;
-}
-
-.v-btn.v-bg-warning:hover {
-    background-color: $global-warning-color-hover;
-}
-
-.v-btn.v-bg-dark:hover {
-    background-color: $global-dark-color-hover;
-}
-
-.v-btn.v-bg-light:hover {
-    background-color: $global-light-color-hover;
-}
 
 /* Hover outline */
-
-.v-btn.v-out-primary:hover {
-    background-color: $global-primary-color;
-    color: $global-primary-text-color;
-}
-
-.v-btn.v-out-secondary:hover {
-    background-color: $global-secondary-color;
-    color: $global-secondary-text-color;
-}
-
-.v-btn.v-out-danger:hover {
-    background-color: $global-danger-color;
-    color: $global-danger-text-color;
-}
-
-.v-btn.v-out-success:hover {
-    background-color: $global-success-color;
-    color: $global-success-text-color;
-}
-
-.v-btn.v-out-warning:hover {
-    background-color: $global-warning-color;
-    color: $global-warning-text-color;
-}
-
-.v-btn.v-out-dark:hover {
-    background-color: $global-dark-color;
-    color: $global-dark-text-color;
-}
-
-.v-btn.v-out-light:hover {
-    background-color: $global-light-color;
-    color: $main-text-color;
-}
+@include btn-out-active('primary', $global-primary-color, $global-primary-text-color);
+@include btn-out-active('secondary', $global-secondary-color, $global-secondary-text-color);
+@include btn-out-active('danger', $global-danger-color, $global-danger-text-color);
+@include btn-out-active('success', $global-success-color, $global-success-text-color);
+@include btn-out-active('warning', $global-warning-color, $global-warning-text-color);
+@include btn-out-active('dark', $global-dark-color, $global-dark-text-color);
+@include btn-out-active('light', $global-light-color, $global-light-text-color);

@@ -1,12 +1,11 @@
 /*
- * victory.css 0.0.3
+ * victory.css 0.0.4
  * Copyright (c) 2018 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
  * https://github.com/brcontainer/Victory.css
  */
 
-@charset "UTF-8";
 html, body, p, br, hr, div, form {
   padding: 0;
   margin: 0; }
@@ -71,6 +70,22 @@ iframe {
 *, ::after, ::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
+
+/* html5 tags for IE8 */
+article, aside, details, figcaption, figure, footer,
+header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden], template {
+  display: none; }
 
 .v-divider, .v-divider-icon, hr {
   display: block;
@@ -1375,92 +1390,6 @@ select.v-field {
 @media (min-width: 1200px) {
   .v-container {
     width: 1170px; } }
-
-/*
-<div class="v-slide v-slide-landscape-x">
-    <div class="v-slide-inner">
-        <div class="v-slide-item v-active">
-            <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%23800000' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example</text></svg>">
-        </div>
-        <div class="v-slide-item">
-            <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%230000ff' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example</text></svg>">
-        </div>
-        <div class="v-slide-item">
-            <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%23ff0000' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example</text></svg>">
-        </div>
-    </div>
-
-    « »
-    <a href="javascript:void(0);" class="v-slide-btn-back">‹</a>
-    <a href="javascript:void(0);" class="v-slide-btn-next">›</a>
-</div>
-*/
-.v-slide {
-  background-color: #6c757d;
-  position: relative;
-  min-width: 240px;
-  overflow: auto;
-  white-space: nowrap;
-  font-size: 0;
-  text-align: center; }
-  .v-slide:before {
-    min-height: 100px; }
-  .v-slide:before {
-    min-height: 100px; }
-  .v-slide > .v-slide-item {
-    position: relative;
-    display: none;
-    width: 100%;
-    margin: 0 auto;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-    -webkit-perspective: 1000px;
-            perspective: 1000px;
-    vertical-align: middle;
-    font-size: 10pt; }
-  .v-slide > .v-slide-item.v-active {
-    display: inline-block; }
-  .v-slide > .v-slide-btn-back, .v-slide > .v-slide-btn-next {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 15%;
-    height: 100%;
-    min-width: 55px;
-    max-width: 80px;
-    opacity: .2;
-    color: #fff;
-    font-size: 32pt;
-    text-align: center;
-    white-space: nowrap;
-    text-decoration: none;
-    -webkit-transition: .3s opacity;
-    -o-transition: .3s opacity;
-    transition: .3s opacity; }
-  .v-slide > .v-slide-btn-next {
-    right: 0;
-    left: auto; }
-  .v-slide > .v-slide-btn-back:hover, .v-slide > .v-slide-btn-next:hover {
-    opacity: .8;
-    background: rgba(0, 0, 0, 0.05);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.001)));
-    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.001) 100%);
-    background: -o-linear-gradient(left, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.001) 100%);
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.001) 100%); }
-  .v-slide > .v-slide-btn-next:hover {
-    background: -webkit-gradient(linear, right top, left top, color-stop(0, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.001)));
-    background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.001) 100%);
-    background: -o-linear-gradient(right, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.001) 100%);
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.001) 100%); }
-
-@media only screen and (orientation: landscape) {
-  .v-slide.v-slide-landscape {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 6000;
-    width: 100%;
-    height: 100%; } }
 
 .v-underline {
   position: relative !important;

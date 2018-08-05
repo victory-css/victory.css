@@ -66,9 +66,8 @@ gulp.task('mincss', () => {
 gulp.task('mergejs', () => {
     let src = [
         './src/js/victory.js',
-        './src/js/_navbar.js',
-        //'./src/js/_slide.js',
-        './src/js/_polyfill.js'
+        './src/js/_polyfill.js',
+        './src/js/_navbar.js' // , './src/js/_slide.js'
     ];
 
     return gulp.src(src)

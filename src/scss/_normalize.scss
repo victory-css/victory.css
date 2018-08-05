@@ -78,3 +78,23 @@ iframe {
 *, ::after, ::before {
     box-sizing: border-box;
 }
+
+/* html5 tags for IE8 */
+article, aside, details, figcaption, figure, footer,
+header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden], template {
+    display: none;
+}

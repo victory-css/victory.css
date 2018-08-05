@@ -37,6 +37,20 @@
  
                 if (cre !== false) el.className = el.className.replace(cre, ' ').replace(/\s+/g, ' ').replace(/^\s|\s$/g, '');
             }
+        },
+        'addEvent': function (target, type, callback) {
+            if (target.addEventListener) {
+                target.addEventListener(type, callback);
+            } else if (target.attachEvent) {
+                target.attachEvent('on' + type, callback);
+            }
+        },
+        'removeEvent': function (target, type, callback) {
+            if (target.removeEventListener) {
+                target.addEventListener(type, callback);
+            } else if (target.detachEvent) {
+                target.detachEvent('on' + type, callback);
+            }
         }
     };
 })(window, document);

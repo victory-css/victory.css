@@ -1,12 +1,12 @@
 (function (w, d) {
     var tags = [
         'nav', 'main', 'section', 'article', 'aside', 'header', 'footer',
-        'video', 'audio', 'figure', 'figcaption',
+        'video', 'audio', 'figure', 'figcaption', 'summary', 'details', 'hgroup',
         'mark', 'bdi', 'source', 'canvas', 'svg', 'math', 'keygen', 'output', 'progress', 'meter'
     ];
 
-    for (var tag in tags) {
-        d.createElement(tag);
+    for (var i = tags.length - 1; i >= 0; i--) {
+        d.createElement(tags[i]);
     }
 
     if (w.Element && w.Element.prototype) {
@@ -32,7 +32,7 @@
             elproto.closest = function (s) {
                 var el = this;
 
-                if (!document.documentElement.contains(el)) return null;
+                if (!d.documentElement.contains(el)) return null;
 
                 do {
                     if (el.matches(s)) return el;

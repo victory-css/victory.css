@@ -37,6 +37,8 @@
 @include cols('lg');
 @include cols('md');
 @include cols('sm');
+
+/* standar cols (no-media querys) */
 @include cols('');
 
 @media (min-width: 1px) {

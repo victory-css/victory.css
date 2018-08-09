@@ -429,6 +429,7 @@ audio:not([controls]) {
 .v-row > .v-col-sm-1 {
   width: 8.33333333%; }
 
+/* standar cols (no-media querys) */
 .v-row > .v-col-12 {
   width: 100%; }
 

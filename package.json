@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com/brcontainer/Victory.css.git"
+        "url": "git+ssh://git@github.com/brcontainer/victory.css.git"
     },
     "keywords": [
         "css",
@@ -19,9 +19,9 @@
     "license": "MIT",
     "email": "brcontainer@yahoo.com.br",
     "bugs": {
-        "url": "https://github.com/brcontainer/Victory.css/issues"
+        "url": "https://github.com/brcontainer/victory.css/issues"
     },
-    "homepage": "https://github.com/brcontainer/Victory.css#readme",
+    "homepage": "https://github.com/brcontainer/victory.css#readme",
     "dependencies": {
         "autoprefixer": "^8.6.2",
         "gulp": "^3.9.1",

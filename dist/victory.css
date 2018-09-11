@@ -1,9 +1,9 @@
 /*
- * victory.css 0.0.4
+ * victory.css 0.0.5
  * Copyright (c) 2018 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
- * https://github.com/brcontainer/Victory.css
+ * https://github.com/brcontainer/victory.css
  */
 
 html, body, p, br, hr, div, form {
@@ -965,85 +965,85 @@ select.v-field {
 
 @media \0screen {
   [class^="v-block-"], [class*=" v-block-"] {
-    display: block; }
+    display: block !important; }
   [class^="v-inline-"], [class*=" v-inline-"] {
-    display: inline; }
+    display: inline !important; }
   [class^="v-inline-block-"], [class*=" v-inline-block-"] {
-    display: inline-block; }
+    display: inline-block !important; }
   [class^="v-none-"], [class*=" v-none-"] {
-    display: none; }
+    display: none !important; }
   [class^="v-hidden-"], [class*=" v-hidden-"] {
-    visibility: hidden; }
+    visibility: hidden !important; }
   [class^="v-visible-"], [class*=" v-visible-"] {
-    visibility: visible; } }
+    visibility: visible !important; } }
 
 @media (min-width: 1px) {
   [class^="v-block-"], [class*=" v-block-"] {
-    display: none; }
+    display: none !important; }
   [class^="v-inline-"], [class*=" v-inline-"] {
-    display: none; }
+    display: none !important; }
   [class^="v-inline-block-"], [class*=" v-inline-block-"] {
-    display: none; }
+    display: none !important; }
   [class^="v-hidden-"], [class*=" v-hidden-"] {
-    visibility: visible; }
+    visibility: visible !important; }
   [class^="v-visible-"], [class*=" v-visible-"] {
-    visibility: hidden; } }
+    visibility: hidden !important; } }
 
 @media (min-width: 576px) {
   .v-block-sm {
-    display: block; }
+    display: block !important; }
   .v-inline-sm {
-    display: inline; }
+    display: inline !important; }
   .v-inline-block-sm {
-    display: inline-block; }
+    display: inline-block !important; }
   .v-none-sm {
-    display: none; }
+    display: none !important; }
   .v-hidden-sm {
-    visibility: hidden; }
+    visibility: hidden !important; }
   .v-visible-sm {
-    visibility: visible; } }
+    visibility: visible !important; } }
 
 @media (min-width: 768px) {
   .v-block-md {
-    display: block; }
+    display: block !important; }
   .v-inline-md {
-    display: inline; }
+    display: inline !important; }
   .v-inline-block-md {
-    display: inline-block; }
+    display: inline-block !important; }
   .v-none-md {
-    display: none; }
+    display: none !important; }
   .v-hidden-md {
-    visibility: hidden; }
+    visibility: hidden !important; }
   .v-visible-md {
-    visibility: visible; } }
+    visibility: visible !important; } }
 
 @media (min-width: 992px) {
   .v-block-lg {
-    display: block; }
+    display: block !important; }
   .v-inline-lg {
-    display: inline; }
+    display: inline !important; }
   .v-inline-block-lg {
-    display: inline-block; }
+    display: inline-block !important; }
   .v-none-lg {
-    display: none; }
+    display: none !important; }
   .v-hidden-lg {
-    visibility: hidden; }
+    visibility: hidden !important; }
   .v-visible-lg {
-    visibility: visible; } }
+    visibility: visible !important; } }
 
 @media (min-width: 1200px) {
   .v-block-xl {
-    display: block; }
+    display: block !important; }
   .v-inline-xl {
-    display: inline; }
+    display: inline !important; }
   .v-inline-block-xl {
-    display: inline-block; }
+    display: inline-block !important; }
   .v-none-xl {
-    display: none; }
+    display: none !important; }
   .v-hidden-xl {
-    visibility: hidden; }
+    visibility: hidden !important; }
   .v-visible-xl {
-    visibility: visible; } }
+    visibility: visible !important; } }
 
 .v-navbar {
   position: relative;
@@ -1067,7 +1067,9 @@ select.v-field {
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
   height: 64px;
-  line-height: 64px;
+  line-height: 64px; }
+
+.v-navbar a.v-nav-item, .v-navbar button.v-nav-item {
   -webkit-transition: .2s background-color ease-out;
   -o-transition: .2s background-color ease-out;
   transition: .2s background-color ease-out; }
@@ -1107,7 +1109,7 @@ select.v-field {
   padding: 10px 8px; }
 
 .v-icon-bar {
-  background-color: #4F4949;
+  background-color: currentColor;
   display: block;
   width: 22px;
   height: 2px;
@@ -1141,25 +1143,32 @@ select.v-field {
 .v-bg-light .v-icon-bar {
   background-color: #4F4949; }
 
-.v-bg-primary .v-nav-item.v-active, .v-bg-primary .v-nav-item:hover {
+.v-bg-primary a.v-nav-item.v-active, .v-bg-primary a.v-nav-item:hover,
+.v-bg-primary button.v-nav-item.v-active, .v-bg-primary button.v-nav-item:hover {
   background-color: #0571e4; }
 
-.v-bg-secondary .v-nav-item.v-active, .v-bg-secondary .v-nav-item:hover {
+.v-bg-secondary a.v-nav-item.v-active, .v-bg-secondary a.v-nav-item:hover,
+.v-bg-secondary button.v-nav-item.v-active, .v-bg-secondary button.v-nav-item:hover {
   background-color: #555b61; }
 
-.v-bg-danger .v-nav-item.v-active, .v-bg-danger .v-nav-item:hover {
+.v-bg-danger a.v-nav-item.v-active, .v-bg-danger a.v-nav-item:hover,
+.v-bg-danger button.v-nav-item.v-active, .v-bg-danger button.v-nav-item:hover {
   background-color: #c3303e; }
 
-.v-bg-success .v-nav-item.v-active, .v-bg-success .v-nav-item:hover {
+.v-bg-success a.v-nav-item.v-active, .v-bg-success a.v-nav-item:hover,
+.v-bg-success button.v-nav-item.v-active, .v-bg-success button.v-nav-item:hover {
   background-color: #25943e; }
 
-.v-bg-warning .v-nav-item.v-active, .v-bg-warning .v-nav-item:hover {
+.v-bg-warning a.v-nav-item.v-active, .v-bg-warning a.v-nav-item:hover,
+.v-bg-warning button.v-nav-item.v-active, .v-bg-warning button.v-nav-item:hover {
   background-color: #efb508; }
 
-.v-bg-dark .v-nav-item.v-active, .v-bg-dark .v-nav-item:hover {
+.v-bg-dark a.v-nav-item.v-active, .v-bg-dark a.v-nav-item:hover,
+.v-bg-dark button.v-nav-item.v-active, .v-bg-dark button.v-nav-item:hover {
   background-color: #292828; }
 
-.v-bg-light .v-nav-item.v-active, .v-bg-light .v-nav-item:hover {
+.v-bg-light a.v-nav-item.v-active, .v-bg-light a.v-nav-item:hover,
+.v-bg-light button.v-nav-item.v-active, .v-bg-light button.v-nav-item:hover {
   background-color: #dddfe0; }
 
 .v-icon-bar + .v-icon-bar {
@@ -1255,8 +1264,8 @@ select.v-field {
 .v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl .v-nav-item {
   background-color: transparent !important; }
 
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr .v-nav-item:hover,
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl .v-nav-item:hover {
+.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr a.v-nav-item:hover,
+.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl button.v-nav-item:hover {
   background-color: #e8e5f5 !important; }
 
 .v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr,

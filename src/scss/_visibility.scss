@@ -1,39 +1,39 @@
 @mixin visibility($width, $size) {
     @media (min-width: unquote($width)) {
-        .v-block-#{$size} { display: block; }
-        .v-inline-#{$size} { display: inline; }
-        .v-inline-block-#{$size} { display: inline-block; }
-        .v-none-#{$size} { display: none; }
-        .v-hidden-#{$size} { visibility: hidden; }
-        .v-visible-#{$size} { visibility: visible; }
+        .v-block-#{$size} { display: block !important; }
+        .v-inline-#{$size} { display: inline !important; }
+        .v-inline-block-#{$size} { display: inline-block !important; }
+        .v-none-#{$size} { display: none !important; }
+        .v-hidden-#{$size} { visibility: hidden !important; }
+        .v-visible-#{$size} { visibility: visible !important; }
     }
 }
 
 @mixin visibility-initial($vblock, $vinline, $vinlineblock, $vnone, $vhidden, $vvisible) {
     [class^="v-block-"], [class*=" v-block-"] {
-        display: unquote($vblock);
+        display: unquote($vblock) !important;
     }
 
     [class^="v-inline-"], [class*=" v-inline-"] {
-        display: unquote($vinline);
+        display: unquote($vinline) !important;
     }
 
     [class^="v-inline-block-"], [class*=" v-inline-block-"] {
-        display: unquote($vinlineblock);
+        display: unquote($vinlineblock) !important;
     }
 
     @if $vnone != '' {
         [class^="v-none-"], [class*=" v-none-"] {
-            display: unquote($vnone);
+            display: unquote($vnone) !important;
         }
     }
 
     [class^="v-hidden-"], [class*=" v-hidden-"] {
-         visibility: unquote($vhidden);
+         visibility: unquote($vhidden) !important;
     }
 
     [class^="v-visible-"], [class*=" v-visible-"] {
-        visibility: unquote($vvisible);
+        visibility: unquote($vvisible) !important;
     }
 }
 

@@ -26,6 +26,8 @@ $nav-bar-height: 64px;
     text-overflow: ellipsis;
     height: $nav-bar-height;
     line-height: $nav-bar-height;
+}
+.v-navbar a.v-nav-item, .v-navbar button.v-nav-item {
     transition: .2s background-color ease-out;
 }
 
@@ -71,7 +73,7 @@ $nav-bar-height: 64px;
 }
 
 .v-icon-bar {
-    background-color: $default-text-color;
+    background-color: currentColor;
     display: block;
     width: 22px;
     height: 2px;
@@ -89,7 +91,8 @@ $nav-bar-height: 64px;
 .v-bg-light .v-icon-bar { background-color: $global-light-text-color; }
 
 @mixin nav-item-active($type, $color) {
-    .v-bg-#{$type} .v-nav-item.v-active, .v-bg-#{$type} .v-nav-item:hover {
+    .v-bg-#{$type} a.v-nav-item.v-active, .v-bg-#{$type} a.v-nav-item:hover,
+    .v-bg-#{$type} button.v-nav-item.v-active, .v-bg-#{$type} button.v-nav-item:hover {
         background-color: $color;
     }
 }
@@ -163,8 +166,8 @@ $nav-bar-height: 64px;
     background-color: transparent !important;
 }
 
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr .v-nav-item:hover,
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl .v-nav-item:hover {
+.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr a.v-nav-item:hover,
+.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl button.v-nav-item:hover {
     background-color: #e8e5f5 !important;
 }
 

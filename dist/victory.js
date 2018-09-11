@@ -1,9 +1,9 @@
 /*
- * victory.css 0.0.4
+ * victory.css 0.0.5
  * Copyright (c) 2018 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
- * https://github.com/brcontainer/Victory.css
+ * https://github.com/brcontainer/victory.css
  */
 
 (function (w, d) {

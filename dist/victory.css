@@ -1,5 +1,5 @@
 /*
- * victory.css 0.0.5
+ * victory.css 0.0.6
  * Copyright (c) 2018 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
@@ -1543,6 +1543,58 @@ select.v-field {
 .v-bg-light {
   background-color: #f8f9fa;
   color: #4F4949; }
+
+.v-text-left {
+  text-align: left !important; }
+
+.v-text-right {
+  text-align: right !important; }
+
+.v-text-center {
+  text-align: center !important; }
+
+.v-text-justify {
+  text-align: justify !important; }
+
+@media (min-width: 576px) {
+  .v-text-left-sm {
+    text-align: left !important; }
+  .v-text-right-sm {
+    text-align: right !important; }
+  .v-text-center-sm {
+    text-align: center !important; }
+  .v-text-justify-sm {
+    text-align: justify !important; } }
+
+@media (min-width: 768px) {
+  .v-text-left-md {
+    text-align: left !important; }
+  .v-text-right-md {
+    text-align: right !important; }
+  .v-text-center-md {
+    text-align: center !important; }
+  .v-text-justify-md {
+    text-align: justify !important; } }
+
+@media (min-width: 992px) {
+  .v-text-left-lg {
+    text-align: left !important; }
+  .v-text-right-lg {
+    text-align: right !important; }
+  .v-text-center-lg {
+    text-align: center !important; }
+  .v-text-justify-lg {
+    text-align: justify !important; } }
+
+@media (min-width: 1200px) {
+  .v-text-left-xl {
+    text-align: left !important; }
+  .v-text-right-xl {
+    text-align: right !important; }
+  .v-text-center-xl {
+    text-align: center !important; }
+  .v-text-justify-xl {
+    text-align: justify !important; } }
 
 .v-slide-back:before, .v-slide-next:before {
   content: '';

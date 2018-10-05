@@ -1,0 +1,18 @@
+@mixin textalign($width, $size) {
+    @media (min-width: unquote($width)) {
+        .v-text-left-#{$size} { text-align: left !important; }
+        .v-text-right-#{$size} { text-align: right !important; }
+        .v-text-center-#{$size} { text-align: center !important; }
+        .v-text-justify-#{$size} { text-align: justify !important; }
+    }
+}
+
+.v-text-left { text-align: left !important; }
+.v-text-right { text-align: right !important; }
+.v-text-center { text-align: center !important; }
+.v-text-justify { text-align: justify !important; }
+
+@include textalign('576px', 'sm');
+@include textalign('768px', 'md');
+@include textalign('992px', 'lg');
+@include textalign('1200px', 'xl');

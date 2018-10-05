@@ -9,26 +9,15 @@
     width: 1000px;
 }
 
-@media (min-width: 1px) {
-    .v-container {
-        width: auto;
+@mixin containersize($minmedia, $width) {
+    @media (min-width: unquote($minmedia)) {
+        .v-container {
+            width: unquote($width);
+        }
     }
 }
 
-@media (min-width: 768px) {
-    .v-container {
-        width: 750px;
-    }
-}
-
-@media (min-width: 992px) {
-    .v-container {
-        width: 970px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .v-container {
-        width: 1170px;
-    }
-}
+@include containersize('1px', 'auto');
+@include containersize('768px', '750px');
+@include containersize('992px', '970px');
+@include containersize('1200px', '1170px');

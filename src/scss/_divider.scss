@@ -1,8 +1,8 @@
-.v-divider, .v-divider-icon, hr {
+.v-divider, .v-divider-icon, .v-divider-gradient, hr {
     display: block;
     margin: 15px $default-out-space;
     border: 0;
-    border-top: 1px solid #c0c0c0;
+    border-top: 1px solid;
 }
 
 .v-divider-icon {
@@ -25,7 +25,7 @@
     width: 50%;
     content: '';
     border: 0;
-    border-top: 1px solid #c0c0c0;
+    border-top: 1px solid;
     vertical-align: middle;
 }
 
@@ -50,21 +50,28 @@
     @include divider-icon-after();
 }
 
-@mixin divider-style($type, $size) {
-    .v-divider.v-divider-#{$type}, .v-divider-icon.v-divider-#{$type}:before, .v-divider-icon.v-divider-#{$type}:after {
-        border-top-style: unquote($type);
-        border-top-width: #{$size}px;
-        top: -#{$size / 2}px;
-    }
-
-    .v-divider.v-divider-#{$type}, .v-divider-icon.v-divider-#{$type}::before, .v-divider-icon.v-divider-#{$type}::after {
+@mixin divider-style($type, $size, $colon) {
+    .v-divider.v-divider-#{$type},
+    .v-divider-icon.v-divider-#{$type}#{$colon}after,
+    .v-divider-icon.v-divider-#{$type}#{$colon}before {
         border-top-style: unquote($type);
         border-top-width: #{$size}px;
         top: -#{$size / 2}px;
     }
 }
 
-@include divider-style('dashed', 1);
-@include divider-style('dotted', 1);
-@include divider-style('double', 3);
-@include divider-style('groove', 2);
+@include divider-style('dashed', 1, ':');
+@include divider-style('dotted', 1, ':');
+@include divider-style('double', 3, ':');
+@include divider-style('groove', 2, ':');
+@include divider-style('dashed', 1, '::');
+@include divider-style('dotted', 1, '::');
+@include divider-style('double', 3, '::');
+@include divider-style('groove', 2, '::');
+
+.v-divider-gradient {
+    border: none;
+    height: 1px;
+    opacity: .65;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, currentColor 50%, rgba(255,255,255,0) 100%);
+}

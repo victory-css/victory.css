@@ -1,17 +1,38 @@
-.v-row, .v-row > [class^="v-col-"], .v-row > [class*="v-col-"] {
-    transition: width .3s cubic-bezier(.25, .8, .25, .1);
-}
-
 .v-row {
-    padding: .1px 5px .1px .1px;
     padding: .1px;
 }
 
-.v-row > [class^="v-col-"], .v-row > [class*="v-col-"] {
+.v-row > [class^="v-col-"], .v-row > [class*=" v-col-"] {
     float: left;
     margin: -.1px;
     padding: .1px;
 }
+
+@mixin grid-error($content) {
+    content: $content;
+    background: $global-danger-color;
+    color: #fff;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14pt;
+    visibility: visible !important;
+    display: block !important;
+}
+
+@mixin protect-grid-structure($colon) {
+    .v-row > :not([class^="v-col-"]):not([class*=" v-col-"])#{$colon}before {
+        @include grid-error('WARNING: Something is wrong with its structure, this html-element is not a .v-col-, only .v-col- can be direct children of .v-row elements');
+    }
+
+    :not(.v-row) > [class^="v-col-"]#{$colon}before,
+    :not(.v-row) > [class*=" v-col-"]#{$colon}before {
+        @include grid-error('WARNING: v-col html-elements can only be used in v-row');
+    }
+}
+
+@include protect-grid-structure(':');
+@include protect-grid-structure('::');
 
 @mixin cols($type) {
     @if $type != '' {
@@ -38,27 +59,27 @@
 @include cols('md');
 @include cols('sm');
 
-/* standar cols (no-media querys) */
-@include cols('');
-
 @media (min-width: 1px) {
-    .v-row > [class^="v-col-"], .v-row > [class*="v-col-"] {
+    .v-row > [class^="v-col-"], .v-row > [class*=" v-col-"] {
         width: 100%;
     }
 }
 
-@media (min-width: 576px) {
+@media (min-width: $global-view-port-sm) {
     @include cols('sm');
 }
 
-@media (min-width: 768px) {
+@media (min-width: $global-view-port-md) {
     @include cols('md');
 }
 
-@media (min-width: 992px) {
+@media (min-width: $global-view-port-lg) {
     @include cols('lg');
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $global-view-port-xl) {
     @include cols('xl');
 }
+
+/* standard cols (no-media querys) */
+@include cols('');

@@ -9,15 +9,15 @@
     width: 1000px;
 }
 
-@mixin containersize($minmedia, $width) {
-    @media (min-width: unquote($minmedia)) {
+@mixin container-size($minmedia, $width) {
+    @media (min-width: $minmedia) {
         .v-container {
             width: unquote($width);
         }
     }
 }
 
-@include containersize('1px', 'auto');
-@include containersize('768px', '750px');
-@include containersize('992px', '970px');
-@include containersize('1200px', '1170px');
+@include container-size(1px, 'auto');
+@include container-size($global-view-port-md, '750px');
+@include container-size($global-view-port-lg, '970px');
+@include container-size($global-view-port-xl, '1170px');

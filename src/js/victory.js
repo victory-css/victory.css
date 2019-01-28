@@ -1,41 +1,44 @@
 (function (w, d) {
     if (w.Victory) return;
 
-    function checkClass(el, className)
+    function checkClass(el, cls)
     {
         if (!el) return false;
 
-        var cls = className.replace(/([[\]\\.{}\-])/gi, '\\$1');
+        cls = cls.replace(/([[\]\\.{}\-])/gi, '\\$1');
 
         return new RegExp('\\b' + cls + '\\b', 'g');
     }
 
     w.Victory = {
         'classList': {
-            'toggle': function (el, className) {
-                if (!el) return;
+            'has': function (el, cls) {
+                var cre = checkClass(el, cls);
 
-                var cre = checkClass(el, className);
+                return cre && cre.test(el.className);
+            },
+            'toggle': function (el, cls) {
+                var cre = checkClass(el, cls);
 
                 if (!cre) return;
 
                 if (cre.test(el.className)) {
                     el.className = el.className.replace(cre, ' ').replace(/\s+/g, ' ').replace(/^\s|\s$/g, '');
                 } else {
-                    el.className += ' ' + className;
+                    el.className += ' ' + cls;
                 }
             },
-            'add': function (el, className) {
-                var cre = checkClass(el, className);
+            'add': function (el, cls) {
+                var cre = checkClass(el, cls);
 
                 if (cre && cre.test(el.className) === false) {
-                    el.className += ' ' + className;
+                    el.className += ' ' + cls;
                 }
             },
-            'remove': function (el, className) {
-                var cre = checkClass(el, className);
+            'remove': function (el, cls) {
+                var cre = checkClass(el, cls);
  
-                if (cre !== false) el.className = el.className.replace(cre, ' ').replace(/\s+/g, ' ').replace(/^\s|\s$/g, '');
+                if (cre) el.className = el.className.replace(cre, ' ').replace(/\s+/g, ' ').replace(/^\s|\s$/g, '');
             }
         },
         'addEvent': function (target, type, callback) {

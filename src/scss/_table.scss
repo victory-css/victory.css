@@ -5,13 +5,13 @@
 
 .v-table > caption, .v-table > * > th, .v-table > thead, .v-table > tfoot {
     font-weight: normal;
-    text-align: left;
+    text-align: center;
     font-size: 10pt;
     color: #999;
     text-transform: uppercase;
 }
 
-.v-table > * > tr > th, .v-table > * > tr > td {
+.v-table > caption, .v-table > * > tr > th, .v-table > * > tr > td {
     padding: 16px 12px;
 }
 
@@ -41,7 +41,7 @@
     background-color: #97c2ec;
 }
 
-.v-table[class^="v-table-responsive-"], .v-table[class*="v-table-responsive-"] {
+.v-table[class^="v-table-responsive-"], .v-table[class*=" v-table-responsive-"] {
     width: 100%;
 }
 
@@ -51,6 +51,7 @@
 
 /* apply effect for browsers with media-query support */
 @media (min-width: 1px) {
+    .v-table > caption,
     .v-table[class^="v-table-responsive-"],
     .v-table[class*="v-table-responsive-"],
     .v-table[class^="v-table-responsive-"] > tbody,
@@ -75,6 +76,7 @@
     @media (min-width: $min) {
         .v-table {
             &.v-table-responsive-#{$type} { display: table; }
+            &.v-table-responsive-#{$type} > caption { display: table-caption; }
             &.v-table-responsive-#{$type} > thead { display: table-header-group; }
             &.v-table-responsive-#{$type} > tfoot { display: table-footer-group; }
             &.v-table-responsive-#{$type} > tbody { display: table-row-group; }
@@ -84,7 +86,7 @@
     }
 }
 
-@include table-responsive('575px', 'sm');
-@include table-responsive('768px', 'md');
-@include table-responsive('992px', 'lg');
-@include table-responsive('1200px', 'xl');
+@include table-responsive($global-view-port-sm, 'sm');
+@include table-responsive($global-view-port-md, 'md');
+@include table-responsive($global-view-port-lg, 'lg');
+@include table-responsive($global-view-port-xl, 'xl');

@@ -1,25 +1,11 @@
-:after, :before, .v-no-select {
-    user-select: none;
+@mixin user-select($colon) {
+    #{$colon}after, #{$colon}before, .v-no-select {
+        user-select: none;
+    }
 }
 
-::after, ::before, .v-no-select {
-    user-select: none;
-}
-
-@mixin clearfix() {
-    clear: both;
-    display: block;
-    content: '';
-    height: 0;
-}
-
-.clearfix, .v-row:after, .v-navbar:after, .v-card:after, .v-navbar > .v-navbar-nav:after {
-    @include clearfix();
-}
-
-.clearfix, .v-row::after, .v-navbar::after, .v-card::after, .v-navbar > .v-navbar-nav::after {
-    @include clearfix();
-}
+@inclode user-select(':');
+@inclode user-select('::');
 
 .v-block {
     display: block;
@@ -37,12 +23,17 @@
     border: 0;
 }
 
-.v-card {
+.v-card, .v-notify {
     margin: $default-out-space;
     background-color: #fff;
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .09),
                 0 1px 2px rgba(0, 0, 0, .18);
+}
+
+.v-notify {
+    display: block;
+    padding: 10px;
 }
 
 .v-overflow-auto {

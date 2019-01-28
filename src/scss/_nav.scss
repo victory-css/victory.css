@@ -2,8 +2,6 @@
     box-shadow: 2px 1px 2px rgba(0, 0, 0, .2);
 }
 
-$nav-bar-height: 64px;
-
 .v-navbar {
     position: relative;
     width: 100%;
@@ -123,8 +121,8 @@ $nav-bar-height: 64px;
     transform-origin: 10% 90%;
 }
 
-@mixin nav-media($size, $class) {
-    @media (max-width: unquote($size)) {
+@mixin nav-media($width, $class) {
+    @media (max-width: #{$width - 1}) {
         .v-navbar.v-navbar-#{$class} .v-navbar-items-inner {
             display: block;
         }
@@ -144,10 +142,10 @@ $nav-bar-height: 64px;
     }
 }
 
-@include nav-media('575px', 'sm');
-@include nav-media('767px', 'md');
-@include nav-media('991px', 'lg');
-@include nav-media('1199px', 'xl');
+@include nav-media($global-view-port-sm, 'sm');
+@include nav-media($global-view-port-md, 'md');
+@include nav-media($global-view-port-lg, 'lg');
+@include nav-media($global-view-port-xl, 'xl');
 
 .v-navbar-toggled .v-navbar-items {
     background-color: inherit;

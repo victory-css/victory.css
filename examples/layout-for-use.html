@@ -6,8 +6,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
-    <link rel="stylesheet" type="text/css" href="../dist/victory.min.css">
-    <script src="../dist/victory.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../dist/victory.css">
+    <script src="../dist/victory.js"></script>
     <style type="text/css">
     body {
         font-family: "Helvetica Neue", Arial, sans-serif;
@@ -163,20 +163,18 @@
         background-color: transparent !important;
     }
 
-    .v-slide-inner > .v-slide-item img {
-        display: block;
-        width: 100%;
-    }
-
     .v-navbar-brand img {
         display: block;
     }
+
+    .v-slide-item > img {
+        display: block;
+        width: 100%;
+        max-width: 1500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     </style>
-    <script type="text/javascript">
-        window.onload = function () {
-            var x = document.querySelector('.v-slide-inner');
-        };
-    </script>
 </head>
 <body>
     <!-- navigation -->
@@ -216,55 +214,84 @@
     </nav>
     <!-- navigation -->
 
+    <!-- SLIDE -->
+    <div class="v-slide">
+        <div class="v-slide-inner">
+            <div class="v-slide-item">
+                <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%23800000' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example 1</text></svg>">
+            </div>
+            <div class="v-slide-item">
+                <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%23dc3545' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example 2</text></svg>">
+            </div>
+            <div class="v-slide-item">
+                <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%23ffc107' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example 3</text></svg>">
+            </div>
+            <div class="v-slide-item">
+                <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%230c0c0c' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example 4</text></svg>">
+            </div>
+            <div class="v-slide-item">
+                <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%23d8d8d8' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example 5</text></svg>">
+            </div>
+        </div>
+
+        <!-- « » -->
+        <a href="javascript:void(0);" class="v-slide-btn-back">‹</a>
+        <a href="javascript:void(0);" class="v-slide-btn-next">›</a>
+    </div>
+    <!-- SLIDE -->
+
     <div class="v-container main-news">
         <!-- items -->
-        <section class="v-row last-news section">
+        <section class="last-news section">
             <h2>Last news</h2>
-            <div class="v-col-md-4">
-                <div class="v-card">
-                    <img src="assets/example.png">
-                    <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+            <div class="v-row">
+                <div class="v-col-md-4">
+                    <div class="v-card">
+                        <img src="assets/example.png">
+                        <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+                    </div>
                 </div>
-            </div>
-            <div class="v-col-md-4">
-                <div class="v-card">
-                    <img src="assets/example.png">
-                    <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+                <div class="v-col-md-4">
+                    <div class="v-card">
+                        <img src="assets/example.png">
+                        <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+                    </div>
                 </div>
-            </div>
-            <div class="v-col-md-4">
-                <div class="v-card">
-                    <img src="assets/example.png">
-                    <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+                <div class="v-col-md-4">
+                    <div class="v-card">
+                        <img src="assets/example.png">
+                        <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="v-row popular-news section">
+        <section class="popular-news section">
             <h2>Popular news</h2>
-
-            <div class="v-col-md-3">
-                <div class="v-card">
-                    <img src="assets/example.png">
-                    <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+            <div class="v-row">
+                <div class="v-col-md-3">
+                    <div class="v-card">
+                        <img src="assets/example.png">
+                        <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+                    </div>
                 </div>
-            </div>
-            <div class="v-col-md-3">
-                <div class="v-card">
-                    <img src="assets/example.png">
-                    <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+                <div class="v-col-md-3">
+                    <div class="v-card">
+                        <img src="assets/example.png">
+                        <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+                    </div>
                 </div>
-            </div>
-            <div class="v-col-md-3">
-                <div class="v-card">
-                    <img src="assets/example.png">
-                    <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+                <div class="v-col-md-3">
+                    <div class="v-card">
+                        <img src="assets/example.png">
+                        <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+                    </div>
                 </div>
-            </div>
-            <div class="v-col-md-3">
-                <div class="v-card">
-                    <img src="assets/example.png">
-                    <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+                <div class="v-col-md-3">
+                    <div class="v-card">
+                        <img src="assets/example.png">
+                        <p>foo bar baz foo bar baz foo bar baz foo bar baz foo bar baz</p>
+                    </div>
                 </div>
             </div>
         </section>

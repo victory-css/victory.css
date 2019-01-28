@@ -60,12 +60,12 @@
     border-right: 0;
 }
 
-.v-btn-group[class*="v-bg-"] > .v-btn, .v-btn-group[class*="v-bg-"] > .v-btn {
+.v-btn-group[class^="v-bg-"] > .v-btn, .v-btn-group[class*=" v-bg-"] > .v-btn {
     border: none;
 }
 
 .v-btn-sm {
-    padding: 10px 15px;
+    padding: 4px 8px;
     font-size: 8pt;
 }
 

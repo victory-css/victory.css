@@ -1,54 +1,52 @@
-(function (d, w, u) {
-    return;
-    var selectorBtn = '.v-slide .v-slide-btn-';
-
-    function goToSlide(slide, e, target) {
-        e.preventDefault();
-
-        if (!target) return;
-
-        target = target.closest(".v-slide");
-
-        var items = target.querySelectorAll('.v-slide-inner > .v-slide-item'),
-            active = target.querySelector('.v-slide-inner > .v-active'),
-            inner = target.querySelector('.v-slide-inner'),
-            toNext = true;
-
-        var index = Array.prototype.indexOf.call(items, active);
-
-        if (items.length < 2) return;
-
-        if (typeof slide === 'number') {
-            slide--;
-        } else if (slide) {
-            if (index + 1 >= items.length) {
-                slide = 0;
-            } else {
-                slide = index + 1;
-            }
-        } else {
-            toNext = false;
-
-            if (index - 1 < 0) {
-                slide = 0;
-            } else {
-                slide = index - 1;
-            }
-        }
-
-        var ncurrent = items[slide];
-
-        w.Victory.classList.add(target, toNext ? 'v-slide-tn' : 'v-slide-tb');
-        w.Victory.classList.add(ncurrent, toNext ? 'v-slide-next' : 'v-slide-back');
-    }
+(function (w, d) {
+    var vclass = Victory.classList,
+        selectorBtn = '.v-slide .v-slide-btn-';
 
     d.addEventListener('click', function (e) {
+        if (e.button !== 0) return;
+
         var target = e.target;
 
         if (target.matches(selectorBtn + 'next') || target.matches(selectorBtn + 'next > *')) {
-            goToSlide(false, e, target);
+            goToSlide(target, true, e);
         } else if (target.matches(selectorBtn + 'back') || target.matches(selectorBtn + 'back > *')) {
-            goToSlide(false, e, target);
+            goToSlide(target, false, e);
         }
     });
-})(document, window);
+
+    function goToSlide(target, next, e)
+    {
+        e.preventDefault();
+
+        var slide = target.closest(".v-slide"),
+            inner = slide.querySelector(".v-slide-inner");
+
+        if (inner.vSlideActive) return;
+
+        inner.vSlideActive = true;
+
+        var items = inner.getElementsByClassName('v-slide-item');
+
+        if (items.length < 2) return;
+
+        vclass.remove(inner, 'v-no-transition');
+
+        if (next) {
+            vclass.add(inner, 'v-slide-next');
+        } else {
+            vclass.add(inner, 'v-slide-back');
+        }
+
+        setTimeout(resetSlide, 250, next, inner, next ? items[0] : items[items.length - 1]);
+    }
+
+    function resetSlide(next, inner, move)
+    {
+        vclass.add(inner, 'v-no-transition');
+        vclass.remove(inner, next ? 'v-slide-next' : 'v-slide-back');
+
+        inner.insertBefore(move, next ? inner.lastChild : inner.firstChild);
+
+        inner.vSlideActive = false;
+    }
+})(window, document);

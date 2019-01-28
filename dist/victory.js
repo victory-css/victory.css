@@ -1,6 +1,6 @@
 /*
- * victory.css 0.0.6
- * Copyright (c) 2018 Guilherme Nascimento (brcontainer@yahoo.com.br)
+ * victory.css 0.1.0
+ * Copyright (c) 2019 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
  * https://github.com/brcontainer/victory.css
@@ -9,41 +9,44 @@
 (function (w, d) {
     if (w.Victory) return;
 
-    function checkClass(el, className)
+    function checkClass(el, cls)
     {
         if (!el) return false;
 
-        var cls = className.replace(/([[\]\\.{}\-])/gi, '\\$1');
+        cls = cls.replace(/([[\]\\.{}\-])/gi, '\\$1');
 
         return new RegExp('\\b' + cls + '\\b', 'g');
     }
 
     w.Victory = {
         'classList': {
-            'toggle': function (el, className) {
-                if (!el) return;
+            'has': function (el, cls) {
+                var cre = checkClass(el, cls);
 
-                var cre = checkClass(el, className);
+                return cre && cre.test(el.className);
+            },
+            'toggle': function (el, cls) {
+                var cre = checkClass(el, cls);
 
                 if (!cre) return;
 
                 if (cre.test(el.className)) {
                     el.className = el.className.replace(cre, ' ').replace(/\s+/g, ' ').replace(/^\s|\s$/g, '');
                 } else {
-                    el.className += ' ' + className;
+                    el.className += ' ' + cls;
                 }
             },
-            'add': function (el, className) {
-                var cre = checkClass(el, className);
+            'add': function (el, cls) {
+                var cre = checkClass(el, cls);
 
                 if (cre && cre.test(el.className) === false) {
-                    el.className += ' ' + className;
+                    el.className += ' ' + cls;
                 }
             },
-            'remove': function (el, className) {
-                var cre = checkClass(el, className);
+            'remove': function (el, cls) {
+                var cre = checkClass(el, cls);
  
-                if (cre !== false) el.className = el.className.replace(cre, ' ').replace(/\s+/g, ' ').replace(/^\s|\s$/g, '');
+                if (cre) el.className = el.className.replace(cre, ' ').replace(/\s+/g, ' ').replace(/^\s|\s$/g, '');
             }
         },
         'addEvent': function (target, type, callback) {
@@ -155,3 +158,56 @@
         wh = w.innerHeight;
     });
 })(document, window);
+
+(function (w, d) {
+    var vclass = Victory.classList,
+        selectorBtn = '.v-slide .v-slide-btn-';
+
+    d.addEventListener('click', function (e) {
+        if (e.button !== 0) return;
+
+        var target = e.target;
+
+        if (target.matches(selectorBtn + 'next') || target.matches(selectorBtn + 'next > *')) {
+            goToSlide(target, true, e);
+        } else if (target.matches(selectorBtn + 'back') || target.matches(selectorBtn + 'back > *')) {
+            goToSlide(target, false, e);
+        }
+    });
+
+    function goToSlide(target, next, e)
+    {
+        e.preventDefault();
+
+        var slide = target.closest(".v-slide"),
+            inner = slide.querySelector(".v-slide-inner");
+
+        if (inner.vSlideActive) return;
+
+        inner.vSlideActive = true;
+
+        var items = inner.getElementsByClassName('v-slide-item');
+
+        if (items.length < 2) return;
+
+        vclass.remove(inner, 'v-no-transition');
+
+        if (next) {
+            vclass.add(inner, 'v-slide-next');
+        } else {
+            vclass.add(inner, 'v-slide-back');
+        }
+
+        setTimeout(resetSlide, 250, next, inner, next ? items[0] : items[items.length - 1]);
+    }
+
+    function resetSlide(next, inner, move)
+    {
+        vclass.add(inner, 'v-no-transition');
+        vclass.remove(inner, next ? 'v-slide-next' : 'v-slide-back');
+
+        inner.insertBefore(move, next ? inner.lastChild : inner.firstChild);
+
+        inner.vSlideActive = false;
+    }
+})(window, document);

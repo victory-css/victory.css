@@ -4,6 +4,7 @@ $default-out-space: 6px;
 $default-border-radius: 4px;
 
 $min-view-port-width: 240px;
+$nav-bar-height: 64px;
 
 $global-primary-color:   #007bff;
 $global-secondary-color: #6c757d;
@@ -36,3 +37,8 @@ $global-success-color-hover:   #18712c;
 $global-warning-color-hover:   #d2a00a;
 $global-dark-color-hover:      #1f1d15;
 $global-light-color-hover:     #d5d6d8;
+
+$global-view-port-sm: 576px;
+$global-view-port-md: 768px;
+$global-view-port-lg: 992px;
+$global-view-port-xl: 1200px;

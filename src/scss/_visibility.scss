@@ -1,5 +1,5 @@
 @mixin visibility($width, $size) {
-    @media (min-width: unquote($width)) {
+    @media (min-width: $width) {
         .v-block-#{$size} { display: block !important; }
         .v-inline-#{$size} { display: inline !important; }
         .v-inline-block-#{$size} { display: inline-block !important; }
@@ -47,7 +47,7 @@
     @include visibility-initial('none', 'none', 'none', '', 'visible', 'hidden');
 }
 
-@include visibility('576px', 'sm');
-@include visibility('768px', 'md');
-@include visibility('992px', 'lg');
-@include visibility('1200px', 'xl');
+@include visibility($global-view-port-sm, 'sm');
+@include visibility($global-view-port-md, 'md');
+@include visibility($global-view-port-lg, 'lg');
+@include visibility($global-view-port-xl, 'xl');

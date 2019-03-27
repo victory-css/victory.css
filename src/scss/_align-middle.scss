@@ -12,5 +12,8 @@
     }
 }
 
-@include align-middle(':');
+@if not $slim {
+    @include align-middle(':');    
+}
+
 @include align-middle('::');

@@ -1,10 +1,8 @@
 .v-slide {
     background-color: $global-secondary-color;
+    min-width: $min-view-port-width;
     position: relative;
     overflow: hidden;
-    min-width: 240px;
-    min-height: 240px;
-    border-radius: 4px;
 
     > .v-slide-inner {
         position: relative;
@@ -16,15 +14,15 @@
         height: 100%;
         font-size: 0;
         white-space: nowrap;
-        transition: left .2s ease-out;
+        transition: transform .2s ease-out;
     }
 
     > .v-slide-inner.v-slide-next {
-        left: -100%;
+        transform: translateX(-100%);
     }
 
     > .v-slide-inner.v-slide-back {
-        left: 100%;
+        transform: translateX(100%);
     }
 
     > .v-slide-inner > .v-slide-item {

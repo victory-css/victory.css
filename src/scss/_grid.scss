@@ -31,7 +31,10 @@
     }
 }
 
-@include protect-grid-structure(':');
+@if not $slim {
+    @include protect-grid-structure(':');
+}
+
 @include protect-grid-structure('::');
 
 @mixin cols($type) {
@@ -53,11 +56,13 @@
     .v-row > .v-col-#{$type}1 { width: 8.33333333%; }
 }
 
-/* Fallback for old browsers */
-@include cols('xl');
-@include cols('lg');
-@include cols('md');
-@include cols('sm');
+@if not $slim {
+    /* Fallback for old browsers */
+    @include cols('xl');
+    @include cols('lg');
+    @include cols('md');
+    @include cols('sm');
+}
 
 @media (min-width: 1px) {
     .v-row > [class^="v-col-"], .v-row > [class*=" v-col-"] {

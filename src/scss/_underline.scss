@@ -9,7 +9,10 @@
 }
 
 @mixin underline-color($type, $color) {
-    .v-bg-#{$type} .v-underline:after { background-color: $color; }
+    @if not $slim {
+        .v-bg-#{$type} .v-underline:after { background-color: $color; }
+    }
+    
     .v-bg-#{$type} .v-underline::after { background-color: $color; }
 }
 
@@ -18,16 +21,18 @@
     display: inline-block !important;
 }
 
-.v-underline:after {
-    @include underline();
+@if not $slim {
+    .v-underline:after {
+        @include underline();
+    }
+
+    .v-underline:hover:after {
+        width: 100%;
+    }
 }
 
 .v-underline::after {
     @include underline();
-}
-
-.v-underline:hover:after {
-    width: 100%;
 }
 
 .v-underline:hover::after {

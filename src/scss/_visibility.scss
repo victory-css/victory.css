@@ -37,14 +37,16 @@
     }
 }
 
-//Fallback for browsers without media-query support
-@media \0screen {
-    @include visibility-initial('block', 'inline', 'inline-block', 'none', 'hidden', 'visible');
-}
+@if not $slim {
+    /* Fallback for browsers without media-query support */
+    @media \0screen {
+        @include visibility-initial('block', 'inline', 'inline-block', 'none', 'hidden', 'visible');
+    }
 
-//"Overwrite" fallback
-@media (min-width: 1px) {
-    @include visibility-initial('none', 'none', 'none', '', 'visible', 'hidden');
+    /* Override fallback */
+    @media (min-width: 1px) {
+        @include visibility-initial('none', 'none', 'none', '', 'visible', 'hidden');
+    }
 }
 
 @include visibility($global-view-port-sm, 'sm');

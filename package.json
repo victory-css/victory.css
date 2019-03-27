@@ -1,6 +1,6 @@
 {
     "name": "victory.css",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A lightweight and very simple front-end framework",
     "main": "index.js",
     "scripts": {
@@ -23,16 +23,16 @@
     },
     "homepage": "https://github.com/brcontainer/victory.css#readme",
     "dependencies": {
-        "autoprefixer": "^8.6.5",
-        "gulp-clean-css": "^3.10.0",
+        "autoprefixer": "^9.4.7",
+        "gulp-clean-css": "^4.0.0",
         "gulp-concat": "^2.6.1",
-        "gulp-inject-string": "^1.1.1",
+        "gulp-header": "^2.0.7",
+        "gulp-inject-string": "^1.1.2",
         "gulp-minify": "^3.1.0",
-        "gulp-postcss": "^7.0.1",
+        "gulp-postcss": "^8.0.0",
         "gulp-rename": "^1.4.0",
-        "gulp-sass": "^4.0.1",
+        "gulp-sass": "^4.0.2",
         "gulp-sourcemaps": "^2.6.4",
-        "npm": "^6.4.1",
         "run-sequence": "^2.2.1"
     },
     "devDependencies": {

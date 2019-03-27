@@ -12,5 +12,8 @@
     }
 }
 
-@include clearfix(':');
+@if not $slim {
+    @include clearfix(':');    
+}
+
 @include clearfix('::');

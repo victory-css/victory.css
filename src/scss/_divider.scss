@@ -34,16 +34,20 @@
     right: -16px;
 }
 
-.v-divider-icon:before, .v-divider-icon:after {
-    @include divider-icon();
+@if not $slim {
+    .v-divider-icon:before, .v-divider-icon:after {
+        @include divider-icon();
+    }
 }
 
 .v-divider-icon::before, .v-divider-icon::after {
     @include divider-icon();
 }
 
-.v-divider-icon:after {
-    @include divider-icon-after();
+@if not $slim {
+    .v-divider-icon:after {
+        @include divider-icon-after();
+    }
 }
 
 .v-divider-icon::after {
@@ -60,10 +64,13 @@
     }
 }
 
-@include divider-style('dashed', 1, ':');
-@include divider-style('dotted', 1, ':');
-@include divider-style('double', 3, ':');
-@include divider-style('groove', 2, ':');
+@if not $slim {
+    @include divider-style('dashed', 1, ':');
+    @include divider-style('dotted', 1, ':');
+    @include divider-style('double', 3, ':');
+    @include divider-style('groove', 2, ':');
+}
+
 @include divider-style('dashed', 1, '::');
 @include divider-style('dotted', 1, '::');
 @include divider-style('double', 3, '::');

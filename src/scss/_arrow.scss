@@ -49,5 +49,8 @@
     height: auto;
 }
 
-@include arrow(':');
+@if not $slim {
+    @include arrow(':');    
+}
+
 @include arrow('::');

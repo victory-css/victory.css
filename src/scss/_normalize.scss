@@ -9,13 +9,20 @@ html, body {
 
 body {
     background-color: #fff;
-    min-width: 1000px;
     font-size: $default-font-size;
+
+    @if not $slim {
+        min-width: 1000px;
+    } @else {
+        min-width: $min-view-port-width;
+    }
 }
 
-@media (min-width: 1px) {
-    body {
-        min-width: $min-view-port-width;
+@if not $slim {
+    @media (min-width: 1px) {
+        body {
+            min-width: $min-view-port-width;
+        }
     }
 }
 
@@ -71,8 +78,10 @@ iframe {
     background-color: #fff;
 }
 
-*, :after, :before {
-    box-sizing: border-box;
+@if not $slim {
+    *, :after, :before {
+        box-sizing: border-box;
+    }
 }
 
 *, ::after, ::before {

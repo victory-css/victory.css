@@ -6,7 +6,11 @@
 .v-container {
     margin-right: auto;
     margin-left: auto;
-    width: 1000px;
+
+    @if not $slim {
+        /* Fallback for old browsers */
+        width: 1000px;
+    }
 }
 
 @mixin container-size($minmedia, $width) {

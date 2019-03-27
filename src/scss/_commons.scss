@@ -4,8 +4,11 @@
     }
 }
 
-@inclode user-select(':');
-@inclode user-select('::');
+@if not $slim {
+    @include user-select(':');    
+}
+
+@include user-select('::');
 
 .v-block {
     display: block;

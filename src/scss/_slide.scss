@@ -34,6 +34,28 @@
         white-space: normal;
     }
 
+    /*
+    .v-slide-guide {
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        width: 100%;
+        z-index: 999;
+        text-align: center;
+
+        &>.v-slide-item {
+            display: inline-block;
+            border: 2px solid #fff;
+            min-width: 10px;
+            min-height: 10px;
+            margin: 0 5px;
+            border-radius: 100%;
+            box-shadow: 0 0 2px rgba(255,255,255,.5),
+                        0 0 2px rgba(255,255,255,.5) inset;
+        }
+    }
+    */
+
     .v-slide-btn-back, .v-slide-btn-next {
         position: absolute;
         top: 0;
@@ -48,6 +70,10 @@
         font-size: 24pt;
         opacity: .8;
         cursor: pointer;
+        background: transparent;
+        border: none;
+        outline: none;
+        apparence: none;
         transition: all .2s ease;
     }
 

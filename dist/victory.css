@@ -1,5 +1,5 @@
 /*
- * victory.css 0.1.1
+ * victory.css 0.1.2
  * Copyright (c) 2019 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
@@ -9,6 +9,13 @@
 html, body, p, br, hr, div, form {
   padding: 0;
   margin: 0; }
+
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%; }
 
 html, body {
   border: none; }
@@ -192,6 +199,7 @@ audio:not([controls]) {
   border: none;
   height: 1px;
   opacity: .65;
+  background: currentColor;
   background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(50%, currentColor), to(rgba(255, 255, 255, 0)));
   background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, currentColor 50%, rgba(255, 255, 255, 0) 100%);
   background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, currentColor 50%, rgba(255, 255, 255, 0) 100%);
@@ -690,25 +698,25 @@ code, .v-code {
 .v-table[class^="v-table-responsive-"], .v-table[class*=" v-table-responsive-"] {
   width: 100%; }
 
-.v-table[class^="v-table-responsive-"] tr {
+.v-table[class^="v-table-responsive-"] tr, .v-table[class*=" v-table-responsive-"] tr {
   white-space: normal; }
 
 /* apply effect for browsers with media-query support */
 @media (min-width: 1px) {
   .v-table > caption,
   .v-table[class^="v-table-responsive-"],
-  .v-table[class*="v-table-responsive-"],
+  .v-table[class*=" v-table-responsive-"],
   .v-table[class^="v-table-responsive-"] > tbody,
-  .v-table[class*="v-table-responsive-"] > tbody,
+  .v-table[class*=" v-table-responsive-"] > tbody,
   .v-table[class^="v-table-responsive-"] > tbody > tr,
-  .v-table[class*="v-table-responsive-"] > tbody > tr,
+  .v-table[class*=" v-table-responsive-"] > tbody > tr,
   .v-table[class^="v-table-responsive-"] > tbody > tr > *,
-  .v-table[class*="v-table-responsive-"] > tbody > tr > * {
+  .v-table[class*=" v-table-responsive-"] > tbody > tr > * {
     display: block; }
   .v-table[class^="v-table-responsive-"] > thead,
-  .v-table[class*="v-table-responsive-"] > thead,
+  .v-table[class*=" v-table-responsive-"] > thead,
   .v-table[class^="v-table-responsive-"] > tfoot,
-  .v-table[class*="v-table-responsive-"] > tfoot {
+  .v-table[class*=" v-table-responsive-"] > tfoot {
     display: none; } }
 
 @media (min-width: 576px) {
@@ -1355,6 +1363,8 @@ select.v-field {
   background-color: transparent !important; }
 
 .v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr a.v-nav-item:hover,
+.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl a.v-nav-item:hover,
+.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr button.v-nav-item:hover,
 .v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl button.v-nav-item:hover {
   background-color: #e8e5f5 !important; }
 
@@ -1367,7 +1377,8 @@ select.v-field {
   height: 100%;
   left: 0;
   top: 0;
-  z-index: 5000; }
+  z-index: 5000;
+  -webkit-overflow-scrolling: touch; }
 
 .v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr .v-navbar-items-inner,
 .v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl .v-navbar-items-inner {
@@ -1510,7 +1521,28 @@ select.v-field {
   background-color: #6c757d;
   min-width: 240px;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  /*
+    .v-slide-guide {
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        width: 100%;
+        z-index: 999;
+        text-align: center;
+
+        &>.v-slide-item {
+            display: inline-block;
+            border: 2px solid #fff;
+            min-width: 10px;
+            min-height: 10px;
+            margin: 0 5px;
+            border-radius: 100%;
+            box-shadow: 0 0 2px rgba(255,255,255,.5),
+                        0 0 2px rgba(255,255,255,.5) inset;
+        }
+    }
+    */ }
   .v-slide > .v-slide-inner {
     position: relative;
     z-index: 998;
@@ -1555,6 +1587,10 @@ select.v-field {
     font-size: 24pt;
     opacity: .8;
     cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    apparence: none;
     -webkit-transition: all .2s ease;
     -o-transition: all .2s ease;
     transition: all .2s ease; }
@@ -1822,7 +1858,13 @@ select.v-field {
 .v-btn, .v-btn-group, .v-field-group, .v-underline {
   line-height: normal !important; }
 
+body.v-fix-render {
+  -webkit-transform: scale(1.0001, 1.0001);
+      -ms-transform: scale(1.0001, 1.0001);
+          transform: scale(1.0001, 1.0001);
+  zoom: 1.0001; }
+
 .v-container, .v-row, .v-row > [class^="v-col-"], .v-row > [class*=" v-col-"] {
-  -webkit-transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 0.1);
-  -o-transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 0.1);
-  transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 0.1); }
+  -webkit-transition: width 0.2s cubic-bezier(0.25, 0.8, 0.25, 0.1);
+  -o-transition: width 0.2s cubic-bezier(0.25, 0.8, 0.25, 0.1);
+  transition: width 0.2s cubic-bezier(0.25, 0.8, 0.25, 0.1); }

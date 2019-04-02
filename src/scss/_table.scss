@@ -45,29 +45,31 @@
     width: 100%;
 }
 
-.v-table[class^="v-table-responsive-"] tr {
-    white-space: normal;
+.v-table[class^="v-table-responsive-"], .v-table[class*=" v-table-responsive-"] {
+    tr {
+        white-space: normal;
+    }
 }
 
 /* apply effect for browsers with media-query support */
 @media (min-width: 1px) {
     .v-table > caption,
     .v-table[class^="v-table-responsive-"],
-    .v-table[class*="v-table-responsive-"],
+    .v-table[class*=" v-table-responsive-"],
     .v-table[class^="v-table-responsive-"] > tbody,
-    .v-table[class*="v-table-responsive-"] > tbody,
+    .v-table[class*=" v-table-responsive-"] > tbody,
     .v-table[class^="v-table-responsive-"] > tbody > tr,
-    .v-table[class*="v-table-responsive-"] > tbody > tr,
+    .v-table[class*=" v-table-responsive-"] > tbody > tr,
     .v-table[class^="v-table-responsive-"] > tbody > tr > *,
-    .v-table[class*="v-table-responsive-"] > tbody > tr > * {
+    .v-table[class*=" v-table-responsive-"] > tbody > tr > * {
         display: block;
     }
 
     .v-table[class^="v-table-responsive-"] > thead,
-    .v-table[class*="v-table-responsive-"] > thead,
+    .v-table[class*=" v-table-responsive-"] > thead,
 
     .v-table[class^="v-table-responsive-"] > tfoot,
-    .v-table[class*="v-table-responsive-"] > tfoot {
+    .v-table[class*=" v-table-responsive-"] > tfoot {
         display: none;
     }
 }

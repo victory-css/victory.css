@@ -1,0 +1,170 @@
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #f7f7f7;
+    padding-top: 64px;
+}
+
+.v-card {
+    min-height: 100px;
+}
+
+.section {
+    border-top: 1px solid #ccc;
+    padding: 1px 0 25px 0;
+    margin-top: 15px;
+}
+
+.section:first-child {
+    border: none;
+}
+
+#main-nav, #main-footer {
+    text-transform: uppercase;
+    font-size: 9pt;
+}
+
+#main-footer {
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    background-color: #fff;
+    padding-top: 75px;
+}
+
+#main-footer .v-container {
+    padding-bottom: 45px;
+}
+
+#main-footer a {
+    text-decoration: none;
+}
+
+#main-footer .logo {
+    margin-bottom: 15px;
+}
+
+#main-footer .logo img {
+    width: 200px;
+}
+
+#main-footer .handmade {
+    font-size: 8pt;
+}
+
+#main-footer dt {
+    padding: 0 0 35px 0;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+#main-footer dd {
+    margin: 0;
+    padding: 0 0 0 5px;
+    height: 35px;
+    font-size: 8pt;
+}
+#main-footer .high {
+    position: relative;
+    display: inline-block;
+}
+#main-footer .high .v-badge {
+    text-transform: none;
+    position: absolute;
+    left: 0;
+    top: -25px;
+    z-index: 1;
+    font-size: 8pt;
+}
+
+#main-footer .brand {
+    text-align: right;
+}
+
+#main-footer .copy {
+    border-top: 1px solid #e5e5e5;
+    padding: 15px 0;
+    text-align: center;
+}
+
+#main-footer .copy span {
+    font-weight: bold;
+}
+
+.prices {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.prices .v-divider-icon {
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prices h2 {
+    padding-top: 25px;
+}
+
+.prices p {
+    font-size: 11pt;
+    padding: 20px 0 55px 0;
+    margin: 0 10%;
+}
+
+.prices .v-card {
+    height: 400px;
+    color: #3c3c3c;
+    font-size: 14pt;
+}
+
+.prices .v-card h3 {
+    padding: 15px 0;
+    margin: 0;
+}
+.prices .v-card .price {
+    padding: 20px 0;
+    font-size: 20pt;
+}
+.prices .v-card ul {
+    list-style-type: none;
+    min-height: 180px;
+}
+.prices .v-card ul, .prices .v-card li {
+    padding: 0;
+    margin: 0;
+}
+.prices .v-card li {
+    padding: 5px 0;
+}
+.last-news img, .popular-news img {
+    display: block;
+    width: 100%;
+}
+.last-news p, .popular-news p {
+    padding: 20px;
+    text-align: justify;
+}
+
+.last-news, .popular-news {
+    font-size: 9pt;
+}
+
+.v-navbar .v-navbar-items .v-nav-item.down-btn .v-none-md {
+    width: 100%;
+}
+
+.v-navbar .v-navbar-items .v-nav-item.down-btn:hover {
+    background-color: transparent !important;
+}
+
+.v-navbar-brand img {
+    display: block;
+    width: 100%;
+}
+
+.v-slide-item > img {
+    display: block;
+    width: 100%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}

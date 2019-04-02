@@ -20,10 +20,11 @@
             elproto.oMatchesSelector ||
             elproto.webkitMatchesSelector ||
             function (s) {
-                var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+                var el = this,
+                    matches = (el.document || el.ownerDocument).querySelectorAll(s),
                     i = matches.length;
 
-                while (--i >= 0 && matches.item(i) !== this) {}
+                while (--i >= 0 && matches.item(i) !== el) {}
                 return i > -1; 
             };
         }
@@ -32,7 +33,7 @@
             elproto.closest = function (s) {
                 var el = this;
 
-                if (!d.documentElement.contains(el)) return null;
+                if (!(el.document || el.ownerDocument).documentElement.contains(el)) return null;
 
                 do {
                     if (el.matches(s)) return el;

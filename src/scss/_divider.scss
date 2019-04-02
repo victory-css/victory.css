@@ -80,5 +80,6 @@
     border: none;
     height: 1px;
     opacity: .65;
+    background: currentColor;
     background: linear-gradient(90deg, rgba(255,255,255,0) 0%, currentColor 50%, rgba(255,255,255,0) 100%);
 }

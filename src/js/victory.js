@@ -1,5 +1,10 @@
-(function (w, d) {
+(function (w, d, u) {
     if (w.Victory) return;
+
+    var attach = d.attachEvent,
+        listener = d.addEventListener,
+        docTouch = w.DocumentTouch,
+        touchSupport = 'ontouchstart' in w || docTouch && (d instanceof docTouch);
 
     function checkClass(el, cls)
     {
@@ -11,6 +16,8 @@
     }
 
     w.Victory = {
+        touch: touchSupport,
+
         'classList': {
             'has': function (el, cls) {
                 var cre = checkClass(el, cls);
@@ -42,17 +49,25 @@
             }
         },
         'addEvent': function (target, type, callback) {
-            if (target.addEventListener) {
+            if (listener) {
                 target.addEventListener(type, callback);
-            } else if (target.attachEvent) {
+            } else if (attach) {
                 target.attachEvent('on' + type, callback);
             }
         },
         'removeEvent': function (target, type, callback) {
-            if (target.removeEventListener) {
-                target.addEventListener(type, callback);
-            } else if (target.detachEvent) {
+            if (listener) {
+                target.removeEventListener(type, callback);
+            } else if (attach) {
                 target.detachEvent('on' + type, callback);
+            }
+        },
+        prevent: function (e)
+        {
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                e.returnValue = false;
             }
         }
     };

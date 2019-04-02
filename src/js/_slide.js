@@ -1,38 +1,47 @@
 (function (w, d, u) {
-    var vclass = Victory.classList,
+    var Victory = w.Victory,
+        vclass = Victory.classList,
         selectorBtn = '.v-slide .v-slide-btn-';
 
-    d.addEventListener('click', slideButtons);
+    Victory.addEvent(d, 'click', slideButtons);
 
-    d.addEventListener('touchstart', slideTouchStart, false);
-    d.addEventListener('touchmove', slideTouchMove, false);
-    d.addEventListener('touchend', slideTouchEnd, false);
+    Victory.addEvent(d, 'touchstart', slideTouchStart);
+    Victory.addEvent(d, 'touchmove', slideTouchMove);
+    Victory.addEvent(d, 'touchend', slideTouchEnd);
 
     function slideButtons(e)
     {
         if (e.button !== 0) return;
 
-        var target = e.target;
+        var target = e.target || e.srcElement;
+
+        if (!target) return;
+
+        var direction;
 
         if (target.matches(selectorBtn + 'next,' + selectorBtn + 'next > *')) {
-            goToSlide(target, true, e);
+            direction = true;
         } else if (target.matches(selectorBtn + 'back,' + selectorBtn + 'back > *')) {
-            goToSlide(target, false, e);
+            direction = false;
         }
+
+        if (direction === u) return;
+
+        Victory.prevent(e);
+
+        goToSlide(target, direction);
     }
 
-    function goToSlide(target, next, e)
+    function goToSlide(target, next)
     {
-        e.preventDefault();
-
-        var slide = target.closest(".v-slide"),
-            inner = slide.querySelector(".v-slide-inner");
+        var slide = target.closest('.v-slide'),
+            inner = slide.querySelector('.v-slide-inner');
 
         if (inner.vSlideActive) return;
 
         inner.vSlideActive = true;
 
-        var items = inner.getElementsByClassName('v-slide-item');
+        var items = inner.querySelectorAll('.v-slide-item');
 
         if (items.length < 2) return;
 
@@ -40,17 +49,19 @@
 
         vclass.add(inner, next ? 'v-slide-next' : 'v-slide-back');
 
-        setTimeout(resetSlide, 250, next, inner, next ? items[0] : items[items.length - 1]);
+        resetSlide(next, inner, next ? items[0] : items[items.length - 1]);
     }
 
     function resetSlide(next, inner, move)
     {
-        vclass.add(inner, 'v-no-transition');
-        vclass.remove(inner, next ? 'v-slide-next' : 'v-slide-back');
+        setTimeout(function () {
+            vclass.add(inner, 'v-no-transition');
+            vclass.remove(inner, next ? 'v-slide-next' : 'v-slide-back');
 
-        inner.insertBefore(move, next ? inner.lastChild : inner.firstChild);
+            inner.insertBefore(move, next ? inner.lastChild : inner.firstChild);
 
-        inner.vSlideActive = false;
+            inner.vSlideActive = false;
+        }, 250);
     }
 
     //Touch events
@@ -60,7 +71,7 @@
     {
         var firstTouch = e.touches[0], target = e.target;
 
-        if (!firstTouch || !target.matches('.v-slide-inner, .v-slide-inner *')) return;
+        if (!firstTouch || !target.matches('.v-slide-inner,.v-slide-inner *')) return;
 
         xTouch = firstTouch.clientX;
         yTouch = firstTouch.clientY;
@@ -80,14 +91,12 @@
 
     function slideTouchEnd(e)
     {
-        if (!targetTouch) return;
-
-        var type;
+        if (!targetTouch || xTouchDiff === u || yTouchDiff === u) return;
 
         if (Math.abs(xTouchDiff) > Math.abs(yTouchDiff)) {
             goToSlide(targetTouch, xTouchDiff > 0, e);
         }
 
-        targetTouch = u;
+        xTouchDiff = yTouchDiff = xTouch = yTouch = targetTouch = u;
     }
 })(window, document);

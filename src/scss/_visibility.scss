@@ -47,6 +47,8 @@
     @media (min-width: 1px) {
         @include visibility-initial('none', 'none', 'none', '', 'visible', 'hidden');
     }
+} @else {
+    @include visibility-initial('none', 'none', 'none', '', 'visible', 'hidden');
 }
 
 @include visibility($global-view-port-sm, 'sm');

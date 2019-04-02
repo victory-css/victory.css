@@ -165,6 +165,8 @@
 }
 
 .v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr a.v-nav-item:hover,
+.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl a.v-nav-item:hover,
+.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr button.v-nav-item:hover,
 .v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl button.v-nav-item:hover {
     background-color: #e8e5f5 !important;
 }
@@ -179,6 +181,7 @@
     left: 0;
     top: 0;
     z-index: 5000;
+    -webkit-overflow-scrolling: touch;
 }
 
 .v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr .v-navbar-items-inner,

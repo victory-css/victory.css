@@ -3,6 +3,11 @@ html, body, p, br, hr, div, form {
     margin: 0;
 }
 
+html {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-size-adjust: 100%;
+}
+
 html, body {
     border: none;
 }

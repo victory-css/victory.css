@@ -51,7 +51,7 @@ gulp.task('mergecss', () => {
 gulp.task('prefix', () => {
     return gulp.src('./dist/victory.css')
                 .pipe(postcss([
-                    autoprefixer({ browsers: [ 'last 15 versions' ] })
+                    autoprefixer()
                 ]))
                 .pipe(injectString.prepend(releaseComment()))
                 .pipe(gulp.dest('./dist'));

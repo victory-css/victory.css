@@ -15,6 +15,11 @@
         return new RegExp('\\b' + cls + '\\b', 'g');
     }
 
+    function removeClass(el, cre)
+    {
+        el.className = el.className.replace(cre, ' ').replace(/^\s+|\s+$/g, '').replace(/\s+/g, ' ');
+    }
+
     w.Victory = {
         touch: touchSupport,
 
@@ -30,7 +35,7 @@
                 if (!cre) return;
 
                 if (cre.test(el.className)) {
-                    el.className = el.className.replace(cre, ' ').replace(/\s+/g, ' ').replace(/^\s|\s$/g, '');
+                    removeClass(el, cre);
                 } else {
                     el.className += ' ' + cls;
                 }
@@ -45,7 +50,7 @@
             'remove': function (el, cls) {
                 var cre = checkClass(el, cls);
  
-                if (cre) el.className = el.className.replace(cre, ' ').replace(/\s+/g, ' ').replace(/^\s|\s$/g, '');
+                if (cre) removeClass(el, cre);
             }
         },
         'addEvent': function (target, type, callback) {

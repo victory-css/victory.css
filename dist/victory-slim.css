@@ -924,7 +924,7 @@ select.v-field {
   background-color: currentColor;
   overflow: hidden;
   display: block;
-  width: 22px;
+  width: 24px;
   height: .18em;
   border-radius: 1px;
   transform: translate3d(0, 0, 0) rotate(0) scale(1);
@@ -962,13 +962,13 @@ select.v-field {
   margin-top: .3em; }
 
 .v-navbar.v-navbar-toggled .v-icon-bar:nth-of-type(1) {
-  transform: translate3d(0, 0.48em, 0) rotate(45deg); }
+  transform: translate3d(0, 0.49em, 0) rotate(45deg); }
 
 .v-navbar.v-navbar-toggled .v-icon-bar:nth-of-type(2) {
   transform: translate3d(0, 0, 0) scale(0.01, 0.01); }
 
 .v-navbar.v-navbar-toggled .v-icon-bar:nth-of-type(3) {
-  transform: translate3d(0, -0.48em, 0) rotate(-45deg); }
+  transform: translate3d(0, -0.49em, 0) rotate(-45deg); }
 
 @media (max-width: 575px) {
   .v-navbar.v-navbar-sm .v-navbar-items-inner {

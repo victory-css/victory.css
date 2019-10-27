@@ -1065,36 +1065,6 @@ body .markdown-body
 <li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.css">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.css</a></li>
 <li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js</a></li>
 </ul>
-<p>To contribute or modify download using git (require <code>npm</code>):</p>
-<div class="codehilite"><pre>git clone https://github.com/inphinit/Victory.css.git [project_name]
-cd [project_name]
-npm update
-</pre></div>
-
-<p>After changes files in <code>./src</code> folder execute this command for deploy:</p>
-<div class="codehilite"><pre>gulp
-</pre></div>
-
-<p>For create only <code>victory.css</code> without create prefixes and without min version, execute:</p>
-<div class="codehilite"><pre>gulp mergecss
-</pre></div>
-
-<p>For put prefix properties in <code>victory.css</code> execute:</p>
-<div class="codehilite"><pre>gulp prefix
-</pre></div>
-
-<p>For create min version from <code>victory.css</code> execute:</p>
-<div class="codehilite"><pre>gulp mincss
-</pre></div>
-
-<p>For create only <code>victory.js</code> without min version, execute:</p>
-<div class="codehilite"><pre>gulp mergejs
-</pre></div>
-
-<p>For create min version from <code>victory.js</code> execute:</p>
-<div class="codehilite"><pre>gulp minjs
-</pre></div>
-
 <h2 id="using">Using<a class="headerlink" href="#using" title="Permanent link"></a></h2>
 <p>For use in your project copy <code>victory.min.css</code> and <code>victory.min.js</code> and put like this:</p>
 <div class="codehilite"><pre><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
@@ -1130,4 +1100,72 @@ npm update
 </table>
 <blockquote>
 <p><strong>Note:</strong> Victory.css has some fallbacks for browsers without media-queries, such as <em>Internet Explorer 8</em>, preventing your site from breaking into some older browsers.</p>
-</blockquote></article></body></html>
+</blockquote>
+<h2 id="slim-vs-standard">Slim vs Standard<a class="headerlink" href="#slim-vs-standard" title="Permanent link"></a></h2>
+<p>Slim version is more lightweight but don&rsquo;t support old browsers, in Slim version is required native from browser:</p>
+<ul>
+<li><code>Element.matches</code></li>
+<li><code>Element.closest</code></li>
+<li>Only uses CSS3 syntax to <code>::before</code> and <code>::after</code> pseudo elements</li>
+<li>Removed fallback for IE8</li>
+</ul>
+<p>With the standard version you will be able to support users accessing your site from an older mobile phone or older browser.</p>
+<p>The standard version weighs a little more (8KB or 1KB more), which is not much.</p>
+<p>The slim version is best recommended for indoor environments where you will be sure that only modern equipment will be used, for production download from:</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.css">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.css</a></li>
+<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.js">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.js</a></li>
+</ul>
+<p>then use in your project put like this:</p>
+<div class="codehilite"><pre><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;victory-slim.min.css&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;victory-slim.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="development">Development<a class="headerlink" href="#development" title="Permanent link"></a></h2>
+<p>To contribute or modify download using git (require <code>npm</code>):</p>
+<div class="codehilite"><pre>git clone https://github.com/inphinit/Victory.css.git [project_name]
+cd [project_name]
+npm update
+</pre></div>
+
+<p>After changes files in <code>./src</code> folder execute this command for deploy:</p>
+<div class="codehilite"><pre>gulp
+</pre></div>
+
+<p>For create only <code>victory.css</code> without create prefixes and without min version, execute:</p>
+<div class="codehilite"><pre>gulp mergecss
+</pre></div>
+
+<p>For put prefix properties in <code>victory.css</code> execute:</p>
+<div class="codehilite"><pre>gulp prefix
+</pre></div>
+
+<p>For create min version from <code>victory.css</code> execute:</p>
+<div class="codehilite"><pre>gulp mincss
+</pre></div>
+
+<p>For create only <code>victory.js</code> without min version, execute:</p>
+<div class="codehilite"><pre>gulp mergejs
+</pre></div>
+
+<p>For create min version from <code>victory.js</code> execute:</p>
+<div class="codehilite"><pre>gulp minjs
+</pre></div>
+
+<h2 id="deploying-slim-version">Deploying Slim version<a class="headerlink" href="#deploying-slim-version" title="Permanent link"></a></h2>
+<p>For create only <code>victory.css</code> without create prefixes and without min version, execute:</p>
+<div class="codehilite"><pre>gulp slim-mergecss
+</pre></div>
+
+<p>For create min version from <code>victory-slim.css</code> execute:</p>
+<div class="codehilite"><pre>gulp slim-mincss
+</pre></div>
+
+<p>For create only <code>victory-slim.js</code> without min version, execute:</p>
+<div class="codehilite"><pre>gulp slim-mergejs
+</pre></div>
+
+<p>For create min version from <code>victory-slim.js</code> execute:</p>
+<div class="codehilite"><pre>gulp slim-minjs
+</pre></div></article></body></html>

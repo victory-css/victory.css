@@ -1,5 +1,5 @@
 /*
- * victory.css 0.1.3
+ * victory.css 0.1.4
  * Copyright (c) 2019 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
@@ -922,33 +922,13 @@ select.v-field {
 
 .v-icon-bar {
   background-color: currentColor;
+  overflow: hidden;
   display: block;
   width: 22px;
-  height: 2px;
+  height: .18em;
   border-radius: 1px;
-  transform: rotate(0);
+  transform: translate3d(0, 0, 0) rotate(0) scale(1);
   transition: all .3s; }
-
-.v-bg-primary .v-icon-bar {
-  background-color: #fff; }
-
-.v-bg-secondary .v-icon-bar {
-  background-color: #fff; }
-
-.v-bg-danger .v-icon-bar {
-  background-color: #fff; }
-
-.v-bg-success .v-icon-bar {
-  background-color: #fff; }
-
-.v-bg-warning .v-icon-bar {
-  background-color: #4F4949; }
-
-.v-bg-dark .v-icon-bar {
-  background-color: #fff; }
-
-.v-bg-light .v-icon-bar {
-  background-color: #4F4949; }
 
 .v-bg-primary a.v-nav-item.v-active, .v-bg-primary a.v-nav-item:hover,
 .v-bg-primary button.v-nav-item.v-active, .v-bg-primary button.v-nav-item:hover {
@@ -979,18 +959,16 @@ select.v-field {
   background-color: #dddfe0; }
 
 .v-icon-bar + .v-icon-bar {
-  margin-top: 4px; }
+  margin-top: .3em; }
 
 .v-navbar.v-navbar-toggled .v-icon-bar:nth-of-type(1) {
-  transform: rotate(45deg);
-  transform-origin: 10% 10%; }
+  transform: translate3d(0, 0.48em, 0) rotate(45deg); }
 
 .v-navbar.v-navbar-toggled .v-icon-bar:nth-of-type(2) {
-  opacity: 0; }
+  transform: translate3d(0, 0, 0) scale(0.01, 0.01); }
 
 .v-navbar.v-navbar-toggled .v-icon-bar:nth-of-type(3) {
-  transform: rotate(-45deg);
-  transform-origin: 10% 90%; }
+  transform: translate3d(0, -0.48em, 0) rotate(-45deg); }
 
 @media (max-width: 575px) {
   .v-navbar.v-navbar-sm .v-navbar-items-inner {

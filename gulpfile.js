@@ -33,7 +33,7 @@ function commentData(glue, extras) {
 }
 
 function releaseComment() {
-    return '\/*\n * ' + commentData('\n * ', [ '', 'https://github.com/brcontainer/victory.css' ]) + '\n *\/\n\n';
+    return '\/*\n * ' + commentData('\n * ', [ '', packageData.homepage ]) + '\n *\/\n\n';
 }
 
 function releaseMinComment() {

@@ -1,6 +1,6 @@
 /*
- * victory.css 0.1.4
- * Copyright (c) 2019 Guilherme Nascimento (brcontainer@yahoo.com.br)
+ * victory.css 0.1.5
+ * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
  * https://github.com/brcontainer/victory.css
@@ -26,8 +26,7 @@ body, a {
   color: #4F4949; }
 
 h1, h2, h3, h4, h5, h6, dt {
-  line-height: 1.4em;
-  font-weight: 100; }
+  line-height: 1.4em; }
 
 sup, sub {
   font-size: small; }
@@ -66,21 +65,22 @@ iframe {
 *, ::after, ::before {
   box-sizing: border-box; }
 
-/* html5 tags for IE8 */
-article, aside, details, figcaption, figure, footer,
-header, hgroup, main, menu, nav, section, summary {
+/* html5 tags for IE8 (don't provide support, they are fallbacks only to avoid the layout breaking) */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block; }
 
-audio, canvas, progress, video {
+meter, progress, audio[controls], canvas, svg, video {
   display: inline-block;
   vertical-align: baseline; }
 
-audio:not([controls]) {
-  display: none;
-  height: 0; }
-
-[hidden], template {
+[hidden], audio, template {
   display: none; }
+
+svg {
+  overflow: hidden; }
+
+mark, bdi, source, math, output {
+  vertical-align: baseline; }
 
 .v-divider, .v-divider-icon, .v-divider-gradient, hr {
   display: block;
@@ -1443,7 +1443,7 @@ select.v-field {
 .v-btn, .v-btn-group, .v-field-group, .v-underline {
   line-height: normal !important; }
 
-body.v-fix-render {
+html.v-fix-render {
   transform: scale(1.0001, 1.0001);
   zoom: 1.0001; }
 

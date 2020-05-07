@@ -15,12 +15,17 @@ var autoprefixer = require('autoprefixer');
 
 var runSequence = require('run-sequence');
 
+var markdown = require('markdown-it')({
+    linkify: true
+});
+
 var buildDate = (new Date).getUTCFullYear();
 var packageData = JSON.parse(fs.readFileSync('./package.json'));
 
 runSequence.options.ignoreUndefinedTasks = true;
 
-function commentData(glue, extras) {
+function commentData(glue, extras)
+{
     let data = [
         `${packageData.name} ${packageData.version}`,
         `Copyright (c) ${buildDate} ${packageData.author} (${packageData.email})`,
@@ -32,13 +37,163 @@ function commentData(glue, extras) {
     return data.join(glue);
 }
 
-function releaseComment() {
+function releaseComment()
+{
     return '\/*\n * ' + commentData('\n * ', [ '', packageData.homepage ]) + '\n *\/\n\n';
 }
 
-function releaseMinComment() {
+function releaseMinComment()
+{
     return '\/* ' + commentData(' | ') + ' *\/\n';
 }
+
+function readRecursiveFolder(folder, mainFolder)
+{
+    var items = [], folderPath = mainFolder + '/' + folder;
+
+    fs.readdirSync(folderPath).forEach(file => {
+        if (file !== 'index.html') {
+            var path = folder + '/' + file;
+
+            if (fs.lstatSync(mainFolder + '/' + path).isDirectory()) {
+                items = items.concat(readRecursiveFolder(path, mainFolder));
+            } else if (/\.html$/i.test(file)) {
+                items.push(path.replace(/^\.\//, ''));
+            }
+        }
+    });
+
+    return items;
+}
+
+gulp.task('examples', () => {
+    var exampleFolder = __dirname + '/examples';
+    var examples = readRecursiveFolder('.', exampleFolder);
+
+    for (var i = examples.length - 1; i >= 0; i--) {
+        examples[i] = `<li><a href="${examples[i]}">${examples[i]}</a></li>`;
+    }
+
+    var htmlOutput = `<!DOCTYPE html>
+<html>
+<head>
+<title>Victory.css examples</title>
+</head>
+<body>
+<ul>
+${examples.join('\n')}
+</ul>
+</html>`;
+
+    fs.writeFileSync(exampleFolder + '/index.html', htmlOutput);
+});
+
+gulp.task('readme', () => {
+    var content = fs.readFileSync(__dirname + '/README.md', 'utf8');
+
+    content = markdown.render(content);
+
+    var htmlOutput = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>README - Victory.css</title>
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+*, :before, :after {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 300px;
+}
+
+code {
+    background: rgba(27,31,35,.05);
+    display: inline-block;
+    white-space: nowrap;
+    padding: 3px 6px;
+    margin: 3px 0;
+    border-radius: 3px;
+    font-size: 85%;
+    line-height: 1.45;
+}
+
+pre > code {
+    padding: 16px;
+    overflow: auto;
+    display: block;
+}
+
+ul {
+    padding: 0 0 0 23px;
+}
+
+h2 {
+    border-bottom: 1px solid #efefef;
+}
+
+main {
+    padding: 45px 0;
+    font-family: sans-serif;
+    color: #333333;
+    overflow: hidden;
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+    line-height: 1.6;
+    word-wrap: break-word;
+    max-width: 980px;
+    border: 1px solid #ddd;
+    margin: 16px auto;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-align: center;
+}
+
+main > article {
+    display: inline-block;
+    text-align: left;
+    min-width: 300px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    display: block;
+    min-width: 280px;
+    overflow-x: auto;
+}
+
+table tbody tr:nth-child(odd) {
+    background: #f6f8fa;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 6px 13px;
+}
+
+blockquote {
+    margin: 5px;
+    padding: 0 15px;
+    color: #777;
+    border-left: 4px solid #ddd;
+}
+</style>
+
+<main>
+    <article>${content}</article>
+</main>
+</body>
+</html>`;
+
+    fs.writeFileSync(__dirname + '/README.html', htmlOutput);
+});
+
 
 /* Default CSS project */
 gulp.task('mergecss', () => {
@@ -89,7 +244,7 @@ gulp.task('minjs', () => {
 });
 
 /* Slim CSS project */
-gulp.task('slim-mergecss', () => {
+gulp.task('slim:mergecss', () => {
     return gulp.src('./src/scss/victory.scss')
                 .pipe(header('$slim: true;\n'))
                 .pipe(sass.sync().on('error', sass.logError))
@@ -98,7 +253,7 @@ gulp.task('slim-mergecss', () => {
                 .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('slim-mincss', () => {
+gulp.task('slim:mincss', () => {
     return gulp.src('./dist/victory-slim.css')
                 .pipe(cleanCSS())
                 .pipe(rename({ suffix: '.min' }))
@@ -106,8 +261,8 @@ gulp.task('slim-mincss', () => {
                 .pipe(gulp.dest('./dist'));
 });
 
-/* Slim CSS project */
-gulp.task('slim-mergejs', () => {
+/* Slim JS project */
+gulp.task('slim:mergejs', () => {
     let src = [
         './src/js/victory.js',
         './src/js/_navbar.js',
@@ -120,7 +275,7 @@ gulp.task('slim-mergejs', () => {
                 .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('slim-minjs', () => {
+gulp.task('slim:minjs', () => {
     return gulp.src('./dist/victory-slim.js')
                 .pipe(minify({
                     ext: { min: '.min.js' }
@@ -128,9 +283,21 @@ gulp.task('slim-minjs', () => {
                 .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('noslim', () => {
+    runSequence(
+        'mergecss', 'prefix', 'mincss', 'mergejs', 'minjs'
+    );
+});
+
 gulp.task('default', () => {
     runSequence(
         'mergecss', 'prefix', 'mincss', 'mergejs', 'minjs',
-        'slim-mergecss', 'slim-mincss', 'slim-mergejs', 'slim-minjs'
+        'slim:mergecss', 'slim:mincss', 'slim:mergejs', 'slim:minjs'
+    );
+});
+
+gulp.task('slim', () => {
+    runSequence(
+        'slim:mergecss', 'slim:mincss', 'slim:mergejs', 'slim:minjs'
     );
 });

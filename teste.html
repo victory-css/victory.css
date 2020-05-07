@@ -1,0 +1,152 @@
+
+        <p>Victory.css is a simply and lightweight front-end framework for developing fast.</p>
+        <blockquote>
+        <p><strong>Note:</strong> under development</p>
+        </blockquote>
+        <h2>Download</h2>
+        <p>For production download from:</p>
+        <ul>
+        <li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.css">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.css</a></li>
+        <li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js</a></li>
+        </ul>
+        <h2>Using</h2>
+        <p>For use in your project copy <code>victory.min.css</code> and <code>victory.min.js</code> and put like this:</p>
+        <pre><code class="language-html">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;victory.min.css&quot;&gt;
+        &lt;script src=&quot;victory.min.js&quot;&gt;&lt;/script&gt;
+        </code></pre>
+        <h2>Browser Support</h2>
+        <table>
+        <thead>
+        <tr>
+        <th><img src="https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome"></th>
+        <th><img src="https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox"></th>
+        <th><img src="https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari"></th>
+        <th><img src="https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera"></th>
+        <th><img src="https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="Edge"></th>
+        <th><img src="https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png" alt="IE9+"></th>
+        <th><img src="https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_7-8/internet-explorer_7-8_48x48.png" alt="IE8"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Latest ✔</td>
+        <td>Latest ✔</td>
+        <td>8+ ✔</td>
+        <td>Latest ✔</td>
+        <td>Latest ✔</td>
+        <td>9+ ✔</td>
+        <td>8 (partial)</td>
+        </tr>
+        </tbody>
+        </table>
+        <blockquote>
+        <p><strong>Note:</strong> Victory.css has some fallbacks for browsers without media-queries, such as <em>Internet Explorer 8</em>, preventing your site from breaking into some older browsers.</p>
+        </blockquote>
+        <h2>Slim vs Standard</h2>
+        <p>Slim version is more lightweight but don't support old browsers, in Slim version is required native from browser:</p>
+        <ul>
+        <li><code>Element.matches</code></li>
+        <li><code>Element.closest</code></li>
+        <li>Only uses CSS3 syntax to <code>::before</code> and <code>::after</code> pseudo elements</li>
+        <li>Removed fallback for IE8</li>
+        </ul>
+        <p>With the standard version you will be able to support users accessing your site from an older mobile phone or older browser.</p>
+        <p>The standard version weighs a little more (8KB or 1KB more), which is not much.</p>
+        <p>The slim version is best recommended for indoor environments where you will be sure that only modern equipment will be used, for production download from:</p>
+        <ul>
+        <li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.css">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.css</a></li>
+        <li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.js">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.js</a></li>
+        </ul>
+        <p>then use in your project put like this:</p>
+        <pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;victory-slim.min.css&quot;&gt;
+        &lt;script src=&quot;victory-slim.min.js&quot;&gt;&lt;/script&gt;
+        </code></pre>
+        <h2>Development</h2>
+        <p>To contribute or modify download using git (require <code>npm</code>):</p>
+        <pre><code>git clone https://github.com/inphinit/Victory.css.git [project_name]
+        cd [project_name]
+        npm install
+        </code></pre>
+        <p>After changes files in <code>./src</code> folder execute this command for deploy:</p>
+        <h2>Commands</h2>
+        <table>
+        <thead>
+        <tr>
+        <th>Command</th>
+        <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>gulp examples</code></td>
+        <td>Generate <code>examples/index.html</code> for link all examples</td>
+        </tr>
+        <tr>
+        <td><code>gulp mergecss</code></td>
+        <td>For create only <code>victory.css</code> without create prefixes and without min version</td>
+        </tr>
+        <tr>
+        <td><code>gulp prefix</code></td>
+        <td>For put prefix properties in <code>victory.css</code></td>
+        </tr>
+        <tr>
+        <td><code>gulp mincss</code></td>
+        <td>For create min version from <code>victory.css</code></td>
+        </tr>
+        <tr>
+        <td><code>gulp mergejs</code></td>
+        <td>For create only <code>victory.js</code> without min version</td>
+        </tr>
+        <tr>
+        <td><code>gulp minjs</code></td>
+        <td>For create min version from <code>victory.js</code></td>
+        </tr>
+        <tr>
+        <td><code>gulp noslim</code></td>
+        <td>Deploy without create slim version, auto-execute follow commands <code>mergecss</code>, <code>prefix</code>, <code>mincss</code>, <code>mergejs</code>, <code>minjs</code></td>
+        </tr>
+        <tr>
+        <td><code>gulp</code></td>
+        <td>Full deploy, auto-execute follow commands <code>mergecss</code>, <code>prefix</code>, <code>mincss</code>, <code>mergejs</code>, <code>minjs</code>, <code>slim:mergecss</code>, <code>slim:mincss</code>, <code>slim:mergejs</code> and <code>slim:minjs</code> in sequence</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2>Slim version commands</h2>
+        <table>
+        <thead>
+        <tr>
+        <th>Command</th>
+        <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>gulp slim:mergecss</code></td>
+        <td>For create only <code>victory.css</code> without create prefixes and without min version</td>
+        </tr>
+        <tr>
+        <td><code>gulp slim:mincss</code></td>
+        <td>For create min version from <code>victory-slim.css</code></td>
+        </tr>
+        <tr>
+        <td><code>gulp slim:mergejs</code></td>
+        <td>For create only <code>victory-slim.js</code> without min version</td>
+        </tr>
+        <tr>
+        <td><code>gulp slim:minjs</code></td>
+        <td>For create min version from <code>victory-slim.js</code></td>
+        </tr>
+        <tr>
+        <td><code>gulp slim</code></td>
+        <td>Slim deploy, auto-execute follow commands <code>slim:mergecss</code>, <code>slim:mincss</code>, <code>slim:mergejs</code> and <code>slim:minjs</code> in sequence</td>
+        </tr>
+        </tbody>
+        </table>
+
+    </article>
+</main>
+</body>
+</html>

@@ -1,6 +1,6 @@
 /*
- * victory.css 0.1.4
- * Copyright (c) 2019 Guilherme Nascimento (brcontainer@yahoo.com.br)
+ * victory.css 0.1.5
+ * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
  * https://github.com/brcontainer/victory.css
@@ -16,11 +16,9 @@
 
     function checkClass(el, cls)
     {
-        if (!el) return false;
+        cls = cls.replace(/[[\]\\+\^*$&()<>!?:/.=]/g, '\\$&');
 
-        cls = cls.replace(/([[\]\\.{}\-])/gi, '\\$1');
-
-        return new RegExp('\\b' + cls + '\\b', 'g');
+        return new RegExp('(^|\\s)' + cls + '($|\\s)', 'g');
     }
 
     function removeClass(el, cre)
@@ -29,18 +27,15 @@
     }
 
     w.Victory = {
-        touch: touchSupport,
-
+        'touch': touchSupport,
         'classList': {
             'has': function (el, cls) {
-                var cre = checkClass(el, cls);
-
-                return cre && cre.test(el.className);
+                return el && checkClass(el, cls).test(el.className);
             },
             'toggle': function (el, cls) {
-                var cre = checkClass(el, cls);
+                if (!el) return;
 
-                if (!cre) return;
+                var cre = checkClass(el, cls);
 
                 if (cre.test(el.className)) {
                     removeClass(el, cre);
@@ -49,16 +44,12 @@
                 }
             },
             'add': function (el, cls) {
-                var cre = checkClass(el, cls);
-
-                if (cre && cre.test(el.className) === false) {
+                if (el && checkClass(el, cls).test(el.className) === false) {
                     el.className += ' ' + cls;
                 }
             },
             'remove': function (el, cls) {
-                var cre = checkClass(el, cls);
- 
-                if (cre) removeClass(el, cre);
+                if (el) removeClass(el, checkClass(el, cls));
             }
         },
         'addEvent': function (target, type, callback) {
@@ -75,8 +66,7 @@
                 target.detachEvent('on' + type, callback);
             }
         },
-        prevent: function (e)
-        {
+        'prevent': function (e) {
             if (e.preventDefault) {
                 e.preventDefault();
             } else {
@@ -94,6 +84,7 @@
         cls = Victory.classList,
         evt = Victory.touch ? 'touchstart' : 'click';
 
+    /* Add event click or touchstart for open menu in navbar */
     Victory.addEvent(d, evt, function (e) {
         var target = e.target || e.srcElement;
 
@@ -106,6 +97,7 @@
         }
     });
 
+    /* Hide all opened navbar menus */
     Victory.addEvent(w, 'resize', function (e) {
         if (ww !== w.innerWidth || wh !== w.innerHeight) {
             var navbars = d.querySelectorAll('.v-navbar');
@@ -121,16 +113,15 @@
 
     var fixtimeout;
 
+    /* Fix navbar width size when enter in mobile simulator on Chrome/Chromium browser */
     function fixRender()
     {
-        if (!d.body) return;
-
-        cls.add(d.body, 'v-fix-render');
+        cls.add(d.documentElement, 'v-fix-render');
 
         if (fixtimeout) clearTimeout(fixtimeout);
 
         fixtimeout = setTimeout(function () {
-            cls.remove(d.body, 'v-fix-render');
+            cls.remove(d.documentElement, 'v-fix-render');
         }, 500);
     }
 })(document, window);

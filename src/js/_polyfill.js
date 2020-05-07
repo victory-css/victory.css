@@ -1,10 +1,11 @@
 (function (w, d) {
     var tags = [
-        'nav', 'main', 'section', 'article', 'aside', 'header', 'footer',
-        'video', 'audio', 'figure', 'figcaption', 'summary', 'details', 'hgroup',
-        'mark', 'bdi', 'source', 'canvas', 'svg', 'math', 'keygen', 'output', 'progress', 'meter'
+        'article', 'aside', 'details', 'figcaption', 'figure', 'footer', 'header', 'hgroup', 'main', 'nav', 'section', 'summary',
+        'meter', 'progress', 'bdi', 'canvas', 'mark', 'math', 'output', 'source', 'svg', 'video',
+        'audio', 'template'
     ];
 
+    /* Fallback for HTML5 tags in IE8 */
     for (var i = tags.length - 1; i >= 0; i--) {
         d.createElement(tags[i]);
     }
@@ -12,6 +13,7 @@
     if (w.Element && w.Element.prototype) {
         var elproto = w.Element.prototype;
 
+        /* Polyfill for Element.matches() in old browsers  */
         if (!elproto.matches) {
             elproto.matches =
             elproto.matchesSelector ||
@@ -29,6 +31,7 @@
             };
         }
 
+        /* Polyfill for Element.closest() in old browsers */
         if (!elproto.closest) {
             elproto.closest = function (s) {
                 var el = this;

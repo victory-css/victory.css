@@ -61,7 +61,7 @@ To contribute or modify download using git (require `npm`):
 ```
 git clone https://github.com/inphinit/Victory.css.git [project_name]
 cd [project_name]
-npm update
+npm install
 ```
 
 After changes files in `./src` folder execute this command for deploy:
@@ -70,61 +70,32 @@ After changes files in `./src` folder execute this command for deploy:
 gulp
 ```
 
-For create only `victory.css` without create prefixes and without min version, execute:
+Or see another commands
 
-```
-gulp mergecss
-```
+## Commands
 
-For put prefix properties in `victory.css` execute:
+Command | Description
+---|---
+`gulp readme` | Generate `README.html` from `README.md`
+`gulp examples` | Generate `examples/index.html` for link all examples
+`gulp mergecss` | For create only `victory.css` without create prefixes and without min version
+`gulp prefix` | For put prefix properties in `victory.css`
+`gulp mincss` | For create min version from `victory.css`
+`gulp mergejs` | For create only `victory.js` without min version
+`gulp minjs` | For create min version from `victory.js`
+`gulp noslim` | Deploy without create slim version, auto-execute follow commands `mergecss`, `prefix`, `mincss`, `mergejs`, `minjs`
+`gulp` | Full deploy, auto-execute follow commands `mergecss`, `prefix`, `mincss`, `mergejs`, `minjs`, `slim:mergecss`, `slim:mincss`, `slim:mergejs` and `slim:minjs` in sequence
 
-```
-gulp prefix
-```
+## Slim commands
 
-For create min version from `victory.css` execute:
+Command | Description
+---|---
+`gulp slim:mergecss` | For create only `victory.css` without create prefixes and without min version
+`gulp slim:mincss` | For create min version from `victory-slim.css`
+`gulp slim:mergejs` | For create only `victory-slim.js` without min version
+`gulp slim:minjs` | For create min version from `victory-slim.js`
+`gulp slim` | Slim deploy, auto-execute follow commands `slim:mergecss`, `slim:mincss`, `slim:mergejs` and `slim:minjs` in sequence
 
-```
-gulp mincss
-```
-
-For create only `victory.js` without min version, execute:
-
-```
-gulp mergejs
-```
-
-For create min version from `victory.js` execute:
-
-```
-gulp minjs
-```
-
-## Deploying Slim version
-
-For create only `victory.css` without create prefixes and without min version, execute:
-
-```
-gulp slim-mergecss
-```
-
-For create min version from `victory-slim.css` execute:
-
-```
-gulp slim-mincss
-```
-
-For create only `victory-slim.js` without min version, execute:
-
-```
-gulp slim-mergejs
-```
-
-For create min version from `victory-slim.js` execute:
-
-```
-gulp slim-minjs
-```
 
 [1]: https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png
 [2]: https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png

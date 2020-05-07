@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IE8 html5 fallback test - Victory.css</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../dist/victory.css">
+    <script src="../dist/victory.js" class="el"></script>
+    <style type="text/css">
+    body {
+        background-color: #f7f7f7;
+    }
+
+    body, .v-card {
+        padding: 10px;
+    }
+
+    .el {
+        background: #fc0;
+        width: 300px;
+        height: 100px;
+    }
+    </style>
+</head>
+<body>
+    <h1>IE8 html5 fallback test</h1>
+    <h2>For test open this page in Internet Explorer (8, 9, 10 or 11 version)</h2>
+
+    <div class="v-card">
+        <h2>&lt;article&gt;</h2>
+        <article class="el"></article>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;aside&gt;</h2>
+        <aside class="el"></aside>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;details&gt;</h2>
+        <details class="el"></details>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;figcaption&gt;</h2>
+        <figcaption class="el"></figcaption>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;figure&gt;</h2>
+        <figure class="el"></figure>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;footer&gt;</h2>
+        <footer class="el"></footer>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;header&gt;</h2>
+        <header class="el"></header>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;hgroup&gt;</h2>
+        <hgroup class="el"></hgroup>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;main&gt;</h2>
+        <main class="el"></main>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;nav&gt;</h2>
+        <nav class="el"></nav>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;section&gt;</h2>
+        <section class="el"></section>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;summary&gt;</h2>
+        <summary class="el"></summary>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;meter&gt;</h2>
+        <meter class="el"></meter>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;progress&gt;</h2>
+        <progress class="el" max="100" value="70"></progress>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;bdi&gt;</h2>
+        <bdi class="el"></bdi>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;canvas&gt;</h2>
+        <canvas class="el"></canvas>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;mark&gt;</h2>
+        <mark class="el"></mark>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;math&gt;</h2>
+        <math class="el"></math>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;output&gt;</h2>
+        <output class="el"></output>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;source&gt;</h2>
+        <source class="el"></source>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;svg&gt;</h2>
+        <svg class="el"></svg>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;video&gt;</h2>
+        <video class="el"></video>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;audio&gt;</h2>
+        <audio class="el"></audio>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;audio controls&gt;</h2>
+        <audio class="el" controls></audio>
+    </div>
+
+    <hr>
+
+    <div class="v-card">
+        <h2>&lt;template&gt;</h2>
+        <template class="el"></template>
+    </div>
+
+    <script type="text/javascript">
+    var getComputed = window.getComputedStyle, elements = document.querySelectorAll(".v-card > .el");
+
+    for (var i = elements.length - 1; i >= 0; i--) {
+        var style, el = elements[i];
+
+        if (getComputed) {
+            style = window.getComputedStyle(el).getPropertyValue('display');
+        } else if (el.currentStyle) {
+            style = el.currentStyle['display'];
+        } else {
+            continue;
+        }
+
+        var title = el.parentNode.getElementsByTagName('h2')[0];
+
+        title.appendChild(document.createTextNode(' { display: ' + style + ' }'));
+    }
+    </script>
+</body>
+</html>

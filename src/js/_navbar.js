@@ -6,6 +6,7 @@
         cls = Victory.classList,
         evt = Victory.touch ? 'touchstart' : 'click';
 
+    /* Add event click or touchstart for open menu in navbar */
     Victory.addEvent(d, evt, function (e) {
         var target = e.target || e.srcElement;
 
@@ -18,6 +19,7 @@
         }
     });
 
+    /* Hide all opened navbar menus */
     Victory.addEvent(w, 'resize', function (e) {
         if (ww !== w.innerWidth || wh !== w.innerHeight) {
             var navbars = d.querySelectorAll('.v-navbar');
@@ -33,16 +35,15 @@
 
     var fixtimeout;
 
+    /* Fix navbar width size when enter in mobile simulator on Chrome/Chromium browser */
     function fixRender()
     {
-        if (!d.body) return;
-
-        cls.add(d.body, 'v-fix-render');
+        cls.add(d.documentElement, 'v-fix-render');
 
         if (fixtimeout) clearTimeout(fixtimeout);
 
         fixtimeout = setTimeout(function () {
-            cls.remove(d.body, 'v-fix-render');
+            cls.remove(d.documentElement, 'v-fix-render');
         }, 500);
     }
 })(document, window);

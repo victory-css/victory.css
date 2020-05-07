@@ -1,6 +1,6 @@
 {
     "name": "victory.css",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "A lightweight and very simple front-end framework",
     "main": "index.js",
     "scripts": {
@@ -33,6 +33,7 @@
         "gulp-rename": "^1.4.0",
         "gulp-sass": "^4.0.2",
         "gulp-sourcemaps": "^2.6.5",
+        "markdown-it": "^10.0.0",
         "run-sequence": "^2.2.1"
     },
     "devDependencies": {

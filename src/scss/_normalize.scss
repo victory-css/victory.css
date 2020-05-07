@@ -37,7 +37,6 @@ body, a {
 
 h1, h2, h3, h4, h5, h6, dt {
     line-height: 1.4em;
-    font-weight: 100;
 }
 
 sup, sub {
@@ -93,22 +92,24 @@ iframe {
     box-sizing: border-box;
 }
 
-/* html5 tags for IE8 */
-article, aside, details, figcaption, figure, footer,
-header, hgroup, main, menu, nav, section, summary {
+/* html5 tags for IE8 (don't provide support, they are fallbacks only to avoid the layout breaking) */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block;
 }
 
-audio, canvas, progress, video {
+meter, progress, audio[controls], canvas, svg, video {
     display: inline-block;
     vertical-align: baseline;
 }
 
-audio:not([controls]) {
+[hidden], audio, template {
     display: none;
-    height: 0;
 }
 
-[hidden], template {
-    display: none;
+svg {
+    overflow: hidden;
+}
+
+mark, bdi, source, math, output {
+    vertical-align: baseline;
 }

@@ -669,7 +669,7 @@ code, .v-code {
   color: #999;
   text-transform: uppercase; }
 
-.v-table > caption, .v-table > * > tr > th, .v-table > * > tr > td {
+.v-table > caption, .v-table > * > tr > * {
   padding: 16px 12px; }
 
 .v-table > tfoot > tr > th {
@@ -1253,6 +1253,21 @@ select.v-field {
 .v-navbar.v-navbar-toggled .v-icon-bar:nth-of-type(3) {
   -webkit-transform: translate3d(0, -0.49em, 0) rotate(-45deg);
           transform: translate3d(0, -0.49em, 0) rotate(-45deg); }
+
+.v-navbar.v-navbar-min .v-navbar-items-inner {
+  display: block; }
+
+.v-navbar.v-navbar-min .v-navbar-toggle {
+  display: inline-block; }
+
+.v-navbar.v-navbar-min .v-navbar-items {
+  display: none;
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); }
 
 @media (max-width: 575px) {
   .v-navbar.v-navbar-sm .v-navbar-items-inner {

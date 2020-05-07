@@ -20,7 +20,7 @@ var markdown = require('markdown-it')({
 });
 
 var buildDate = (new Date).getUTCFullYear();
-var packageData = JSON.parse(fs.readFileSync('./package.json'));
+var packageData = JSON.parse(fs.readFileSync(__dirname + '/package.json'));
 
 runSequence.options.ignoreUndefinedTasks = true;
 
@@ -194,71 +194,70 @@ blockquote {
     fs.writeFileSync(__dirname + '/README.html', htmlOutput);
 });
 
-
 /* Default CSS project */
 gulp.task('mergecss', () => {
-    return gulp.src('./src/scss/victory.scss')
+    return gulp.src(__dirname + '/src/scss/victory.scss')
                 .pipe(header('$slim: false;\n'))
                 .pipe(sass.sync().on('error', sass.logError))
-                .pipe(gulp.dest('./dist'));
+                .pipe(gulp.dest(__dirname + '/dist'));
 });
 
 gulp.task('prefix', () => {
-    return gulp.src('./dist/victory.css')
+    return gulp.src(__dirname + '/dist/victory.css')
                 .pipe(postcss([
                     autoprefixer()
                 ]))
                 .pipe(injectString.prepend(releaseComment()))
-                .pipe(gulp.dest('./dist'));
+                .pipe(gulp.dest(__dirname + '/dist'));
 });
 
 gulp.task('mincss', () => {
-    return gulp.src('./dist/victory.css')
+    return gulp.src(__dirname + '/dist/victory.css')
                 .pipe(cleanCSS({ compatibility: 'ie8' }))
                 .pipe(rename({ suffix: '.min' }))
                 .pipe(injectString.prepend(releaseMinComment()))
-                .pipe(gulp.dest('./dist'));
+                .pipe(gulp.dest(__dirname + '/dist'));
 });
 
 /* Default JS project */
 gulp.task('mergejs', () => {
     let src = [
-        './src/js/victory.js',
-        './src/js/_polyfill.js',
-        './src/js/_navbar.js',
-        './src/js/_slide.js'
+        __dirname + '/src/js/victory.js',
+        __dirname + '/src/js/_polyfill.js',
+        __dirname + '/src/js/_navbar.js',
+        __dirname + '/src/js/_slide.js'
     ];
 
     return gulp.src(src)
                 .pipe(concat('victory.js'))
                 .pipe(injectString.prepend(releaseComment()))
-                .pipe(gulp.dest('./dist/'));
+                .pipe(gulp.dest(__dirname + '/dist/'));
 });
 
 gulp.task('minjs', () => {
-    return gulp.src('./dist/victory.js')
+    return gulp.src(__dirname + '/dist/victory.js')
                 .pipe(minify({
                     ext: { min: '.min.js' }
                 }))
-                .pipe(gulp.dest('./dist'));
+                .pipe(gulp.dest(__dirname + '/dist'));
 });
 
 /* Slim CSS project */
 gulp.task('slim:mergecss', () => {
-    return gulp.src('./src/scss/victory.scss')
+    return gulp.src(__dirname + '/src/scss/victory.scss')
                 .pipe(header('$slim: true;\n'))
                 .pipe(sass.sync().on('error', sass.logError))
                 .pipe(rename({ suffix: '-slim' }))
                 .pipe(injectString.prepend(releaseComment()))
-                .pipe(gulp.dest('./dist'));
+                .pipe(gulp.dest(__dirname + '/dist'));
 });
 
 gulp.task('slim:mincss', () => {
-    return gulp.src('./dist/victory-slim.css')
+    return gulp.src(__dirname + '/dist/victory-slim.css')
                 .pipe(cleanCSS())
                 .pipe(rename({ suffix: '.min' }))
                 .pipe(injectString.prepend(releaseMinComment()))
-                .pipe(gulp.dest('./dist'));
+                .pipe(gulp.dest(__dirname + '/dist'));
 });
 
 /* Slim JS project */
@@ -272,15 +271,15 @@ gulp.task('slim:mergejs', () => {
     return gulp.src(src)
                 .pipe(concat('victory-slim.js'))
                 .pipe(injectString.prepend(releaseComment()))
-                .pipe(gulp.dest('./dist/'));
+                .pipe(gulp.dest(__dirname + '/dist/'));
 });
 
 gulp.task('slim:minjs', () => {
-    return gulp.src('./dist/victory-slim.js')
+    return gulp.src(__dirname + '/dist/victory-slim.js')
                 .pipe(minify({
                     ext: { min: '.min.js' }
                 }))
-                .pipe(gulp.dest('./dist'));
+                .pipe(gulp.dest(__dirname + '/dist'));
 });
 
 gulp.task('noslim', () => {

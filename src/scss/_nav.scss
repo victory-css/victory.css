@@ -112,27 +112,32 @@
     transform: translate3d(0, -.49em, 0) rotate(-45deg);
 }
 
-@mixin nav-media($width, $class) {
-    @media (max-width: #{$width - 1}) {
-        .v-navbar.v-navbar-#{$class} .v-navbar-items-inner {
-            display: block;
-        }
+@mixin nav-default($class) {
+    .v-navbar.v-navbar-#{$class} .v-navbar-items-inner {
+        display: block;
+    }
 
-        .v-navbar.v-navbar-#{$class} .v-navbar-toggle {
-            display: inline-block;
-        }
+    .v-navbar.v-navbar-#{$class} .v-navbar-toggle {
+        display: inline-block;
+    }
 
-        .v-navbar.v-navbar-#{$class} .v-navbar-items {
-            display: none;
-            position: absolute;
-            right: 0;
-            z-index: 100;
-            width: 100%;
-            @include nav-shadow();
-        }
+    .v-navbar.v-navbar-#{$class} .v-navbar-items {
+        display: none;
+        position: absolute;
+        right: 0;
+        z-index: 100;
+        width: 100%;
+        @include nav-shadow();
     }
 }
 
+@mixin nav-media($width, $class) {
+    @media (max-width: #{$width - 1}) {
+        @include nav-default($class);
+    }
+}
+
+@include nav-default('min');
 @include nav-media($global-view-port-sm, 'sm');
 @include nav-media($global-view-port-md, 'md');
 @include nav-media($global-view-port-lg, 'lg');

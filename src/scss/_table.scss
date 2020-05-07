@@ -11,7 +11,7 @@
     text-transform: uppercase;
 }
 
-.v-table > caption, .v-table > * > tr > th, .v-table > * > tr > td {
+.v-table > caption, .v-table > * > tr > * {
     padding: 16px 12px;
 }
 
@@ -67,7 +67,6 @@
 
     .v-table[class^="v-table-responsive-"] > thead,
     .v-table[class*=" v-table-responsive-"] > thead,
-
     .v-table[class^="v-table-responsive-"] > tfoot,
     .v-table[class*=" v-table-responsive-"] > tfoot {
         display: none;

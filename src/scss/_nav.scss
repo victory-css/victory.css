@@ -176,7 +176,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    z-index: 5000;
+    z-index: $nav-bar-z;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -206,9 +206,9 @@
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 5000;
+    z-index: $nav-bar-z;
 }
 
 .v-navbar.v-navbar-fix .v-navbar-items {
-    z-index: 5000;
+    z-index: $nav-bar-z;
 }

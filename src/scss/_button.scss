@@ -12,9 +12,9 @@
     outline: none;
     border: none;
     height: auto !important;
-    transition: .3s color, .3s background-color;
     position: relative;
     z-index: 10;
+    transition: .3s color, .3s background-color;
 }
 
 .v-btn:hover, .v-btn:focus, .v-btn.v-active {

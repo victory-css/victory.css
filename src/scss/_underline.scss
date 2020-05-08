@@ -4,21 +4,8 @@
     width: 0;
     margin-top: 2px;
     height: 1px;
-    background-color: $default-text-color;
-    transition: .15s width ease-out;
-}
-
-@mixin underline-color($type, $color) {
-    @if not $slim {
-        .v-bg-#{$type} .v-underline:after { background-color: $color; }
-    }
-    
-    .v-bg-#{$type} .v-underline::after { background-color: $color; }
-}
-
-.v-underline {
-    position: relative !important;
-    display: inline-block !important;
+    background-color: currentColor;
+    transition: width .15s ease-out;
 }
 
 @if not $slim {
@@ -39,10 +26,7 @@
     width: 100%;
 }
 
-@include underline-color('primary', $global-primary-text-color);
-@include underline-color('secondary', $global-secondary-text-color);
-@include underline-color('danger', $global-danger-text-color);
-@include underline-color('success', $global-success-text-color);
-@include underline-color('warning', $global-warning-text-color);
-@include underline-color('dark', $global-dark-text-color);
-@include underline-color('light', $global-light-text-color);
+.v-underline {
+    position: relative !important;
+    display: inline-block !important;
+}

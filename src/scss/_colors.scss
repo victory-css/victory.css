@@ -1,41 +1,42 @@
 /* outline colors */
 
 [class^="v-out-"], [class*=" v-out-"] {
+    border: thin solid;
     background-color: transparent;
 }
 
 .v-out-primary {
-    border: 1px solid $global-primary-color;
+    border-color: $global-primary-color;
     color: $global-primary-color;
 }
 
 .v-out-secondary {
-    border: 1px solid $global-secondary-color;
+    border-color: $global-secondary-color;
     color: $global-secondary-color;
 }
 
 .v-out-danger {
-    border: 1px solid $global-danger-color;
+    border-color: $global-danger-color;
     color: $global-danger-color;
 }
 
 .v-out-success {
-    border: 1px solid $global-success-color;
+    border-color: $global-success-color;
     color: $global-success-color;
 }
 
 .v-out-warning {
-    border: 1px solid $global-warning-color;
+    border-color: $global-warning-color;
     color: $global-warning-color;
 }
 
 .v-out-dark {
-    border: 1px solid $global-dark-color;
+    border-color: $global-dark-color;
     color: $global-dark-color;
 }
 
 .v-out-light {
-    border: 1px solid $global-light-color;
+    border-color: $global-light-color;
     color: $global-light-color;
 }
 

@@ -148,15 +148,15 @@ body {
     font-size: 9pt;
 }
 
-.v-navbar .v-navbar-items .v-nav-item.down-btn .v-none-md {
+.v-navbar .v-nav-items .v-nav-item.down-btn .v-none-md {
     width: 100%;
 }
 
-.v-navbar .v-navbar-items .v-nav-item.down-btn:hover {
+.v-navbar .v-nav-items .v-nav-item.down-btn:hover {
     background-color: transparent !important;
 }
 
-.v-navbar-brand img {
+.v-nav-brand img {
     display: block;
     width: 100%;
 }

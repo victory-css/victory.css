@@ -1,5 +1,5 @@
 /*
- * victory.css 0.1.6
+ * victory.css 0.2.0
  * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
@@ -128,7 +128,7 @@
 })(window, document);
 
 (function (d, w) {
-    var selector = '.v-navbar-items.v-navbar-',
+    var selector = '.v-nav-items.v-nav-',
         wh = w.innerHeight,
         ww = w.innerWidth,
         Victory = w.Victory,
@@ -141,10 +141,10 @@
 
         if (!target) return;
 
-        if (target.matches('.v-navbar .v-navbar-toggle,.v-navbar .v-navbar-toggle *')) {
-            cls.toggle(target.closest('.v-navbar'), 'v-navbar-toggled');
+        if (target.matches('.v-navbar .v-nav-toggle,.v-navbar .v-nav-toggle *')) {
+            cls.toggle(target.closest('.v-navbar'), 'v-nav-toggled');
         } else if (target.matches(selector + 'ltr,' + selector + 'rtl')) {
-            cls.remove(target.closest('.v-navbar'), 'v-navbar-toggled');
+            cls.remove(target.closest('.v-navbar'), 'v-nav-toggled');
         }
     });
 
@@ -153,7 +153,7 @@
         if (ww !== w.innerWidth || wh !== w.innerHeight) {
             var navbars = d.querySelectorAll('.v-navbar');
             
-            for (var i = navbars.length - 1; i >= 0; i--) cls.remove(navbars[i], 'v-navbar-toggled');
+            for (var i = navbars.length - 1; i >= 0; i--) cls.remove(navbars[i], 'v-nav-toggled');
 
             fixRender();
         }

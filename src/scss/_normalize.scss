@@ -68,6 +68,10 @@ fieldset {
     padding: .4em .8em 1em .8em;
 }
 
+button {
+    cursor: pointer;
+}
+
 button::-moz-focus-inner, input::-moz-focus-inner {
     border: none;
     outline: 0;

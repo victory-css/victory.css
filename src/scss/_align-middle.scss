@@ -1,6 +1,6 @@
 @mixin align-middle($colon) {
-    .v-navbar .v-navbar-right#{$colon}before,
-    .v-navbar .v-navbar-left#{$colon}before,
+    .v-navbar .v-nav-right#{$colon}before,
+    .v-navbar .v-nav-left#{$colon}before,
     .v-slide > .v-slide-inner#{$colon}before,
     .v-slide .v-slide-btn-back#{$colon}before,
     .v-slide .v-slide-btn-next#{$colon}before {

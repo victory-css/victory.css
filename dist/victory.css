@@ -1,5 +1,5 @@
 /*
- * victory.css 0.1.6
+ * victory.css 0.2.0
  * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
@@ -55,6 +55,9 @@ button, input, optgroup, select, textarea {
 
 fieldset {
   padding: .4em .8em 1em .8em; }
+
+button {
+  cursor: pointer; }
 
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: none;
@@ -306,7 +309,7 @@ code, .v-code {
   padding: .2em .4em;
   margin: 0;
   font-size: 85%;
-  background-color: rgba(27, 31, 35, 0.05);
+  background-color: rgba(27, 31, 35, 0.1);
   -webkit-border-radius: .3em;
           border-radius: .3em; }
 
@@ -1165,30 +1168,31 @@ select.v-field {
   transition: .2s background-color ease-out; }
 
 .v-navbar .v-nav-item > * {
-  line-height: normal; }
+  line-height: normal;
+  vertical-align: middle; }
 
-.v-navbar .v-navbar-left {
+.v-navbar .v-nav-left {
   float: left; }
 
-.v-navbar .v-navbar-right {
+.v-navbar .v-nav-right {
   float: right; }
 
-.v-navbar .v-navbar-brand, .v-navbar .v-navbar-items, .v-navbar .v-navbar-items-inner {
+.v-navbar .v-nav-brand, .v-navbar .v-nav-items, .v-navbar .v-nav-items-inner {
   display: inline-block;
   vertical-align: middle;
   padding: 0;
   margin: 0; }
 
-.v-navbar .v-navbar-brand {
+.v-navbar .v-nav-brand {
   width: 135px; }
 
 .v-navbar .v-container,
-.v-navbar .v-navbar-left,
-.v-navbar .v-navbar-right {
+.v-navbar .v-nav-left,
+.v-navbar .v-nav-right {
   background-color: inherit;
   height: 64px; }
 
-.v-navbar .v-navbar-toggle {
+.v-navbar .v-nav-toggle {
   vertical-align: middle;
   position: relative;
   cursor: pointer;
@@ -1242,25 +1246,25 @@ select.v-field {
 .v-icon-bar + .v-icon-bar {
   margin-top: .3em; }
 
-.v-navbar.v-navbar-toggled .v-icon-bar:nth-of-type(1) {
+.v-navbar.v-nav-toggled .v-icon-bar:nth-of-type(1) {
   -webkit-transform: translate3d(0, 0.49em, 0) rotate(45deg);
           transform: translate3d(0, 0.49em, 0) rotate(45deg); }
 
-.v-navbar.v-navbar-toggled .v-icon-bar:nth-of-type(2) {
+.v-navbar.v-nav-toggled .v-icon-bar:nth-of-type(2) {
   -webkit-transform: translate3d(0, 0, 0) scale(0.01, 0.01);
           transform: translate3d(0, 0, 0) scale(0.01, 0.01); }
 
-.v-navbar.v-navbar-toggled .v-icon-bar:nth-of-type(3) {
+.v-navbar.v-nav-toggled .v-icon-bar:nth-of-type(3) {
   -webkit-transform: translate3d(0, -0.49em, 0) rotate(-45deg);
           transform: translate3d(0, -0.49em, 0) rotate(-45deg); }
 
-.v-navbar.v-navbar-min .v-navbar-items-inner {
+.v-navbar.v-nav-min .v-nav-items-inner {
   display: block; }
 
-.v-navbar.v-navbar-min .v-navbar-toggle {
+.v-navbar.v-nav-min .v-nav-toggle {
   display: inline-block; }
 
-.v-navbar.v-navbar-min .v-navbar-items {
+.v-navbar.v-nav-min .v-nav-items {
   display: none;
   position: absolute;
   right: 0;
@@ -1270,11 +1274,11 @@ select.v-field {
           box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); }
 
 @media (max-width: 575px) {
-  .v-navbar.v-navbar-sm .v-navbar-items-inner {
+  .v-navbar .v-nav-items-inner {
     display: block; }
-  .v-navbar.v-navbar-sm .v-navbar-toggle {
+  .v-navbar .v-nav-toggle {
     display: inline-block; }
-  .v-navbar.v-navbar-sm .v-navbar-items {
+  .v-navbar .v-nav-items {
     display: none;
     position: absolute;
     right: 0;
@@ -1284,11 +1288,11 @@ select.v-field {
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); } }
 
 @media (max-width: 767px) {
-  .v-navbar.v-navbar-md .v-navbar-items-inner {
+  .v-navbar.v-nav-md .v-nav-items-inner {
     display: block; }
-  .v-navbar.v-navbar-md .v-navbar-toggle {
+  .v-navbar.v-nav-md .v-nav-toggle {
     display: inline-block; }
-  .v-navbar.v-navbar-md .v-navbar-items {
+  .v-navbar.v-nav-md .v-nav-items {
     display: none;
     position: absolute;
     right: 0;
@@ -1298,11 +1302,11 @@ select.v-field {
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); } }
 
 @media (max-width: 991px) {
-  .v-navbar.v-navbar-lg .v-navbar-items-inner {
+  .v-navbar.v-nav-lg .v-nav-items-inner {
     display: block; }
-  .v-navbar.v-navbar-lg .v-navbar-toggle {
+  .v-navbar.v-nav-lg .v-nav-toggle {
     display: inline-block; }
-  .v-navbar.v-navbar-lg .v-navbar-items {
+  .v-navbar.v-nav-lg .v-nav-items {
     display: none;
     position: absolute;
     right: 0;
@@ -1312,11 +1316,11 @@ select.v-field {
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); } }
 
 @media (max-width: 1199px) {
-  .v-navbar.v-navbar-xl .v-navbar-items-inner {
+  .v-navbar.v-nav-xl .v-nav-items-inner {
     display: block; }
-  .v-navbar.v-navbar-xl .v-navbar-toggle {
+  .v-navbar.v-nav-xl .v-nav-toggle {
     display: inline-block; }
-  .v-navbar.v-navbar-xl .v-navbar-items {
+  .v-navbar.v-nav-xl .v-nav-items {
     display: none;
     position: absolute;
     right: 0;
@@ -1325,29 +1329,29 @@ select.v-field {
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); } }
 
-.v-navbar-toggled .v-navbar-items {
+.v-nav-toggled .v-nav-items {
   background-color: inherit;
   display: block !important; }
 
-.v-navbar.v-navbar-toggled .v-nav-item {
+.v-navbar.v-nav-toggled .v-nav-item {
   -webkit-border-radius: 4px;
           border-radius: 4px;
   display: block;
   text-align: left;
   margin: 5px; }
 
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr .v-nav-item,
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl .v-nav-item {
+.v-navbar.v-nav-toggled .v-nav-items.v-nav-ltr .v-nav-item,
+.v-navbar.v-nav-toggled .v-nav-items.v-nav-rtl .v-nav-item {
   background-color: transparent !important; }
 
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr a.v-nav-item:hover,
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl a.v-nav-item:hover,
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr button.v-nav-item:hover,
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl button.v-nav-item:hover {
+.v-navbar.v-nav-toggled .v-nav-items.v-nav-ltr a.v-nav-item:hover,
+.v-navbar.v-nav-toggled .v-nav-items.v-nav-rtl a.v-nav-item:hover,
+.v-navbar.v-nav-toggled .v-nav-items.v-nav-ltr button.v-nav-item:hover,
+.v-navbar.v-nav-toggled .v-nav-items.v-nav-rtl button.v-nav-item:hover {
   background-color: #e8e5f5 !important; }
 
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr,
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl {
+.v-navbar.v-nav-toggled .v-nav-items.v-nav-ltr,
+.v-navbar.v-nav-toggled .v-nav-items.v-nav-rtl {
   background-color: rgba(0, 0, 0, 0.24);
   position: fixed;
   min-width: 220px;
@@ -1358,8 +1362,8 @@ select.v-field {
   z-index: 5000;
   -webkit-overflow-scrolling: touch; }
 
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-ltr .v-navbar-items-inner,
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl .v-navbar-items-inner {
+.v-navbar.v-nav-toggled .v-nav-items.v-nav-ltr .v-nav-items-inner,
+.v-navbar.v-nav-toggled .v-nav-items.v-nav-rtl .v-nav-items-inner {
   position: absolute;
   top: 0;
   left: 0;
@@ -1374,18 +1378,18 @@ select.v-field {
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); }
 
-.v-navbar.v-navbar-toggled .v-navbar-items.v-navbar-rtl .v-navbar-items-inner {
+.v-navbar.v-nav-toggled .v-nav-items.v-nav-rtl .v-nav-items-inner {
   left: auto;
   right: 0; }
 
-.v-navbar.v-navbar-fix {
+.v-navbar.v-nav-fix {
   min-width: 240px;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 5000; }
 
-.v-navbar.v-navbar-fix .v-navbar-items {
+.v-navbar.v-nav-fix .v-nav-items {
   z-index: 5000; }
 
 :after, :before, .v-no-select {
@@ -1764,8 +1768,8 @@ select.v-field {
   .v-text-justify-xl {
     text-align: justify !important; } }
 
-.v-navbar .v-navbar-right:before,
-.v-navbar .v-navbar-left:before,
+.v-navbar .v-nav-right:before,
+.v-navbar .v-nav-left:before,
 .v-slide > .v-slide-inner:before,
 .v-slide .v-slide-btn-back:before,
 .v-slide .v-slide-btn-next:before {
@@ -1775,8 +1779,8 @@ select.v-field {
   height: 100%;
   vertical-align: middle; }
 
-.v-navbar .v-navbar-right::before,
-.v-navbar .v-navbar-left::before,
+.v-navbar .v-nav-right::before,
+.v-navbar .v-nav-left::before,
 .v-slide > .v-slide-inner::before,
 .v-slide .v-slide-btn-back::before,
 .v-slide .v-slide-btn-next::before {

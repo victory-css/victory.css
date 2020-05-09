@@ -2,7 +2,7 @@
     display: block;
     margin: 15px $default-out-space;
     border: 0;
-    border-top: 1px solid;
+    border-top: thin solid;
 }
 
 .v-divider-icon {
@@ -25,7 +25,7 @@
     width: 50%;
     content: '';
     border: 0;
-    border-top: 1px solid;
+    border-top: thin solid;
     vertical-align: middle;
 }
 

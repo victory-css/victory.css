@@ -7,7 +7,7 @@
     max-width: 100%;
     width: 150px;
     outline: none;
-    border: 1px solid #9a9ca2;
+    border: thin solid #9a9ca2;
     background-color: #fff;
     border-radius: 2px;
     color: #0c0c0c;
@@ -68,7 +68,7 @@ select.v-field {
     }
 
     > :first-child {
-        border-left-width: 1px !important;
+        border-left-width: thin !important;
         border-radius: 2px 0 0 2px !important;
     }
     

@@ -122,6 +122,7 @@ code {
 }
 
 pre > code {
+    white-space: pre;
     padding: 16px;
     overflow: auto;
     display: block;
@@ -161,7 +162,6 @@ main > article {
 }
 
 table {
-    border: 1px solid #ddd;
     border-collapse: collapse;
     display: block;
     min-width: 280px;
@@ -173,7 +173,7 @@ table tbody tr:nth-child(odd) {
 }
 
 table td, table th {
-    border: 1px solid #ddd;
+    border: thin solid #ddd;
     padding: 6px 13px;
 }
 

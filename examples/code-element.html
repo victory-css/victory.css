@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Borders - Victory.css</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../dist/victory.min.css">
+    <style type="text/css">
+    body {
+        background-color: #f7f7f7;
+    }
+
+    .v-card {
+        padding: 15px;
+        min-height: 100px;
+        margin-bottom: 20px;
+    }
+
+    .example, .first {
+        display: inline-block;
+        margin: 5px;
+        width: 100px;
+        height: 100px;
+    }
+    .first {
+        width: 250px;
+    }
+    </style>
+</head>
+<body>
+    <div class="v-card">
+        <h2>Code box</h2>
+
+        <pre>
+        <code>&lt;?php
+use Inphinit\Routing\Route;
+use Inphinit\Experimental\Routing\Group;
+
+Route::set('ANY', '/', function () {
+    echo 'oi';
+});</code>
+        </pre>
+        
+        <hr>
+
+        <pre>
+        <code>&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+    &lt;Example&lt;/title>
+    &lt;meta charset="utf-8">
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></code>
+        </pre>
+    </div>
+
+    <div class="v-card">
+        <h2>Code inline</h2>
+
+        <p>
+            Foo bar <code>min-height: 500px</code> using lorem foo bar baz <code>@media()</code> get a result for small screens foo bar
+            baz <code>Victory.classList.toggle()</code> for apply class dinamic
+        </p>
+    </div>
+</body>
+</html>

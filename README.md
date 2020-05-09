@@ -22,9 +22,9 @@ For use in your project copy `victory.min.css` and `victory.min.js` and put like
 
 ## Browser Support
 
-![Chrome][1] | ![Firefox][2] | ![Safari][3] | ![Opera][4] | ![Edge][5] | ![IE9+][6] | ![IE8][7]
---- | --- | --- | --- | --- | --- | ---
-Latest ✔ | Latest ✔ | 8+ ✔ | Latest ✔ | Latest ✔ | 9+ ✔ | 8 (partial)
+![Chrome][1] | ![Firefox][2] | ![Safari][3] | ![Opera][4] | ![Edge][5] | ![EdgeHTML][6] | ![IE9+][7] | ![IE8][8]
+--- | --- | --- | --- | --- | --- | --- | ---
+✔ | ✔ | ✔ 8+ | ✔ | ✔ | ✔ | ✔ 9+ | 8 (partial)
 
 > **Note:** Victory.css has some fallbacks for browsers without media-queries, such as *Internet Explorer 8*, preventing your site from breaking into some older browsers.
 
@@ -102,5 +102,6 @@ Command | Description
 [3]: https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png
 [4]: https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png
 [5]: https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png
-[6]: https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png
-[7]: https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_7-8/internet-explorer_7-8_48x48.png
+[6]: https://raw.github.com/alrra/browser-logos/master/src/archive/edge_12-18/edge_12-18_48x48.png
+[7]: https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png
+[8]: https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_7-8/internet-explorer_7-8_48x48.png

@@ -1,32 +1,26 @@
-@mixin underline() {
-    display: block;
-    content: '';
-    width: 0;
-    margin-top: 2px;
-    height: 1px;
-    background-color: currentColor;
-    transition: width .15s ease-out;
-}
-
-@if not $slim {
-    .v-underline:after {
-        @include underline();
+@mixin underline($colon) {
+    .v-underline#{$colon}after {
+        display: block;
+        content: '';
+        width: 0;
+        margin-top: 2px;
+        height: 1px;
+        background-color: currentColor;
+        transition: width .15s ease-out;
     }
 
-    .v-underline:hover:after {
+    .v-underline:hover#{$colon}after {
         width: 100%;
     }
-}
-
-.v-underline::after {
-    @include underline();
-}
-
-.v-underline:hover::after {
-    width: 100%;
 }
 
 .v-underline {
     position: relative !important;
     display: inline-block !important;
 }
+
+@if not $slim {
+    @include underline(':');
+}
+
+@include underline('::');

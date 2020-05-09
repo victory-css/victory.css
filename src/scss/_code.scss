@@ -1,8 +1,14 @@
 code, .v-code {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    padding: .2em .4em;
+    padding: .4em;
     margin: 0;
     font-size: 85%;
-    background-color: rgba(27, 31, 35, .1);
+    background-color: rgba(27, 31, 35, .2);
     border-radius: .3em;
+}
+
+pre > code, pre > .v-code {
+    display: block;
+    padding: 1.2em;
+    overflow: auto;
 }

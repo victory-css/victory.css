@@ -1,5 +1,5 @@
 /*
- * victory.css 0.2.0
+ * victory.css 0.2.1
  * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 

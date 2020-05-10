@@ -1,5 +1,5 @@
 /*
- * victory.css 0.2.0
+ * victory.css 0.2.1
  * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
@@ -789,8 +789,7 @@ select.v-field {
 
 code, .v-code, .v-code-pre {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  padding: .4em;
-  margin: 0;
+  padding: .3em;
   font-size: 85%;
   background-color: rgba(27, 31, 35, 0.2);
   -webkit-border-radius: .3em;

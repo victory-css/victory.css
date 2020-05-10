@@ -67,6 +67,7 @@ Resource | Standard | Minimal
 `commons.scss` | ✔ | ✔
 `container.scss` | ✔ | ✔
 `grid.scss` | ✔ | ✔
+`normalize.scss` | ✔ | ✔
 `text-align.scss` | ✔ | ✔
 `visibility.scss` | ✔ | ✔
 `align-middle.scss` | ✔
@@ -78,7 +79,6 @@ Resource | Standard | Minimal
 `input.scss` | ✔
 `kbd.scss` | ✔
 `nav.scss` | ✔
-`normalize.scss` | ✔
 `resize.scss` | ✔
 `slide.scss` | ✔
 `table.scss` | ✔

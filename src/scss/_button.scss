@@ -4,7 +4,7 @@
     padding: 8px 17px;
     text-align: center;
     font-size: $default-font-size;
-    letter-spacing: .1rem;
+    letter-spacing: .1em;
     text-decoration: none;
     cursor: pointer;
     vertical-align: middle;
@@ -44,6 +44,7 @@
     border-radius: 0;
     border-width: 0 thin 0 0;
     background-color: transparent;
+    line-height: normal !important;
 }
 
 .v-btn-group > .v-btn:focus {

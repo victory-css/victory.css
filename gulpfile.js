@@ -5,7 +5,6 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
-var header = require('gulp-header');
 var minify = require('gulp-minify');
 var cleanCSS = require('gulp-clean-css');
 var injectString = require('gulp-inject-string');
@@ -19,7 +18,7 @@ var markdown = require('markdown-it')({
     linkify: true
 });
 
-var buildDate = (new Date).getUTCFullYear();
+var buildDate = new Date().getUTCFullYear();
 var packageData = JSON.parse(fs.readFileSync(__dirname + '/package.json'));
 
 runSequence.options.ignoreUndefinedTasks = true;
@@ -197,7 +196,6 @@ blockquote {
 /* Default CSS project */
 gulp.task('mergecss', () => {
     return gulp.src(__dirname + '/src/scss/victory.scss')
-                .pipe(header('$slim: false;\n'))
                 .pipe(sass.sync().on('error', sass.logError))
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
@@ -218,6 +216,8 @@ gulp.task('mincss', () => {
                 .pipe(injectString.prepend(releaseMinComment()))
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
+/* Default CSS project */
+
 
 /* Default JS project */
 gulp.task('mergejs', () => {
@@ -241,11 +241,12 @@ gulp.task('minjs', () => {
                 }))
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
+/* Default JS project */
+
 
 /* Slim CSS project */
 gulp.task('slim:mergecss', () => {
     return gulp.src(__dirname + '/src/scss/victory.scss')
-                .pipe(header('$slim: true;\n'))
                 .pipe(sass.sync().on('error', sass.logError))
                 .pipe(rename({ suffix: '-slim' }))
                 .pipe(injectString.prepend(releaseComment()))
@@ -259,6 +260,8 @@ gulp.task('slim:mincss', () => {
                 .pipe(injectString.prepend(releaseMinComment()))
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
+/* Slim CSS project */
+
 
 /* Slim JS project */
 gulp.task('slim:mergejs', () => {
@@ -281,17 +284,37 @@ gulp.task('slim:minjs', () => {
                 }))
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
+/* Slim JS project */
 
-gulp.task('noslim', () => {
-    runSequence(
-        'mergecss', 'prefix', 'mincss', 'mergejs', 'minjs'
-    );
+
+/* Minimal CSS project */
+gulp.task('minimal:mergecss', () => {
+    return gulp.src(__dirname + '/src/scss/minimal.scss')
+                .pipe(sass.sync().on('error', sass.logError))
+                .pipe(rename({ basename: 'victory-minimal' }))
+                .pipe(postcss([
+                    autoprefixer()
+                ]))
+                .pipe(injectString.prepend(releaseComment()))
+                .pipe(gulp.dest(__dirname + '/dist'));
 });
 
+gulp.task('minimal:mincss', () => {
+    return gulp.src(__dirname + '/dist/victory-minimal.css')
+                .pipe(cleanCSS())
+                .pipe(rename({ suffix: '.min' }))
+                .pipe(injectString.prepend(releaseMinComment()))
+                .pipe(gulp.dest(__dirname + '/dist'));
+});
+/* Minimal CSS project */
+
+
+/* Deploy commands */
 gulp.task('default', () => {
     runSequence(
         'mergecss', 'prefix', 'mincss', 'mergejs', 'minjs',
-        'slim:mergecss', 'slim:mincss', 'slim:mergejs', 'slim:minjs'
+        'slim:mergecss', 'slim:mincss', 'slim:mergejs', 'slim:minjs',
+        'minimal:mergecss', 'minimal:mincss'
     );
 });
 
@@ -300,3 +323,16 @@ gulp.task('slim', () => {
         'slim:mergecss', 'slim:mincss', 'slim:mergejs', 'slim:minjs'
     );
 });
+
+gulp.task('minimal', () => {
+    runSequence(
+        'minimal:mergecss', 'minimal:mincss', 'mergejs', 'minjs'
+    );
+});
+
+gulp.task('standard', () => {
+    runSequence(
+        'mergecss', 'prefix', 'mincss', 'mergejs', 'minjs',
+    );
+});
+/* Deploy commands */

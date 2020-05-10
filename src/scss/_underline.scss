@@ -17,6 +17,7 @@
 .v-underline {
     position: relative !important;
     display: inline-block !important;
+    line-height: normal !important;
 }
 
 @if not $slim {

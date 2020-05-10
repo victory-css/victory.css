@@ -26,7 +26,7 @@ For use in your project copy `victory.min.css` and `victory.min.js` and put like
 --- | --- | --- | --- | --- | --- | --- | ---
 ✔ | ✔ | ✔ 8+ | ✔ | ✔ | ✔ | ✔ 9+ | 8 (partial)
 
-> **Note:** Victory.css has some fallbacks for browsers without media-queries, such as *Internet Explorer 8*, preventing your site from breaking into some older browsers.
+> **Note:** Victory.css has some fallbacks for old browsers without media-queries support, such as *Internet Explorer 8*, preventing your site from breaking
 
 ## Slim vs Standard
 
@@ -35,7 +35,7 @@ Slim version is more lightweight but don't support old browsers, in Slim version
 - `Element.matches`
 - `Element.closest`
 - Only uses CSS3 syntax to `::before` and `::after` pseudo elements
-- Removed fallback for IE8
+- No fallback for IE8
 
 With the standard version you will be able to support users accessing your site from an older mobile phone or older browser.
 
@@ -52,6 +52,51 @@ then use in your project put like this:
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
 <link rel="stylesheet" type="text/css" href="victory-slim.min.css">
 <script src="victory-slim.min.js"></script>
+```
+
+## Minimal vs Standard
+
+Minimal contains only basic resources, `victory.min.js` is same from standard version, about differences see:
+
+Resource | Standard | Minimal
+--- | --- | ---
+`adaptive-animation.scss` | ✔ | ✔
+`border.scss` | ✔ |✔
+`clear-both.scss` | ✔ | ✔
+`colors.scss` | ✔ | ✔
+`commons.scss` | ✔ | ✔
+`container.scss` | ✔ | ✔
+`grid.scss` | ✔ | ✔
+`text-align.scss` | ✔ | ✔
+`visibility.scss` | ✔ | ✔
+`align-middle.scss` | ✔
+`arrow.scss` | ✔
+`badge.scss` | ✔
+`button.scss` | ✔
+`code.scss` | ✔
+`divider.scss` | ✔
+`input.scss` | ✔
+`kbd.scss` | ✔
+`nav.scss` | ✔
+`normalize.scss` | ✔
+`resize.scss` | ✔
+`slide.scss` | ✔
+`table.scss` | ✔
+`underline.scss` | ✔
+Minified size  | 38 kB | 15.6 kB
+Gziped size | 7.6 kB | 3.8 kB
+
+For production download from:
+
+- https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-minimal.min.css
+- https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js
+
+then use in your project put like this:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="stylesheet" type="text/css" href="victory-minimal.min.css">
+<script src="victory.min.js"></script>
 ```
 
 ## Development
@@ -83,18 +128,26 @@ Command | Description
 `gulp mincss` | For create min version from `victory.css`
 `gulp mergejs` | For create only `victory.js` without min version
 `gulp minjs` | For create min version from `victory.js`
-`gulp noslim` | Deploy without create slim version, auto-execute follow commands `mergecss`, `prefix`, `mincss`, `mergejs`, `minjs`
-`gulp` | Full deploy, auto-execute follow commands `mergecss`, `prefix`, `mincss`, `mergejs`, `minjs`, `slim:mergecss`, `slim:mincss`, `slim:mergejs` and `slim:minjs` in sequence
+`gulp standard` | Deploy without create slim and minimal versions, auto-execute follow commands `mergecss`, `prefix`, `mincss`, `mergejs`, `minjs`
+`gulp` | Full deploy, auto-execute follow commands `mergecss`, `prefix`, `mincss`, `mergejs`, `minjs`, `slim:mergecss`, `slim:mincss`, `slim:mergejs`, `slim:minjs`, `minimal:mergecss`, `minimal:mincss` in sequence
 
 ## Slim commands
 
 Command | Description
 ---|---
-`gulp slim:mergecss` | For create only `victory.css` without create prefixes and without min version
+`gulp slim:mergecss` | For create only `victory-slim.css` without min version
 `gulp slim:mincss` | For create min version from `victory-slim.css`
 `gulp slim:mergejs` | For create only `victory-slim.js` without min version
 `gulp slim:minjs` | For create min version from `victory-slim.js`
 `gulp slim` | Slim deploy, auto-execute follow commands `slim:mergecss`, `slim:mincss`, `slim:mergejs` and `slim:minjs` in sequence
+
+## Slim commands
+
+Command | Description
+---|---
+`gulp minimal:mergecss` | For create only `victory-minimal.css` without min version
+`gulp minimal:mincss` | For create min version from `victory-minimal.css`
+`gulp minimal` | Minimal deploy, auto-execute follow commands `minimal:mergecss`, `minimal:mincss`, `mergejs` and `minjs` in sequence
 
 
 [1]: https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png

@@ -1,4 +1,4 @@
-$slim: false;
+$slim: true;
 
 @import 'variables.scss';
 
@@ -22,12 +22,14 @@ $slim: false;
 @import 'divider.scss';
 @import 'kbd.scss';
 @import 'resize.scss';
-@import 'underline.scss';
 
 /* By view-port size */
 @import 'table.scss';
 @import 'text-align.scss';
 @import 'visibility.scss';
+
+/* Components */
+@import 'underline.scss';
 
 /* Extras */
 @import 'nav.scss';

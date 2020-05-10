@@ -136,7 +136,7 @@ blockquote {
 </tbody>
 </table>
 <blockquote>
-<p><strong>Note:</strong> Victory.css has some fallbacks for browsers without media-queries, such as <em>Internet Explorer 8</em>, preventing your site from breaking into some older browsers.</p>
+<p><strong>Note:</strong> Victory.css has some fallbacks for old browsers without media-queries support, such as <em>Internet Explorer 8</em>, preventing your site from breaking</p>
 </blockquote>
 <h2>Slim vs Standard</h2>
 <p>Slim version is more lightweight but don't support old browsers, in Slim version is required native from browser:</p>
@@ -144,7 +144,7 @@ blockquote {
 <li><code>Element.matches</code></li>
 <li><code>Element.closest</code></li>
 <li>Only uses CSS3 syntax to <code>::before</code> and <code>::after</code> pseudo elements</li>
-<li>Removed fallback for IE8</li>
+<li>No fallback for IE8</li>
 </ul>
 <p>With the standard version you will be able to support users accessing your site from an older mobile phone or older browser.</p>
 <p>The standard version weighs a little more (8KB or 1KB more), which is not much.</p>
@@ -157,6 +157,154 @@ blockquote {
 <pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;victory-slim.min.css&quot;&gt;
 &lt;script src=&quot;victory-slim.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h2>Minimal vs Standard</h2>
+<p>Minimal contains only basic resources, <code>victory.min.js</code> is same from standard version, about differences see:</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Standard</th>
+<th>Minimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>adaptive-animation.scss</code></td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>border.scss</code></td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>clear-both.scss</code></td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>colors.scss</code></td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>commons.scss</code></td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>container.scss</code></td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>grid.scss</code></td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>text-align.scss</code></td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>visibility.scss</code></td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>align-middle.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>arrow.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>badge.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>button.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>code.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>divider.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>input.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>kbd.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>nav.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>normalize.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>resize.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>slide.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>table.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td><code>underline.scss</code></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Minified size</td>
+<td>38 kB</td>
+<td>15.6 kB</td>
+</tr>
+<tr>
+<td>Gziped size</td>
+<td>7.6 kB</td>
+<td>3.8 kB</td>
+</tr>
+</tbody>
+</table>
+<p>For production download from:</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-minimal.min.css">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-minimal.min.css</a></li>
+<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js</a></li>
+</ul>
+<p>then use in your project put like this:</p>
+<pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;victory-minimal.min.css&quot;&gt;
+&lt;script src=&quot;victory.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <h2>Development</h2>
 <p>To contribute or modify download using git (require <code>npm</code>):</p>
@@ -206,12 +354,12 @@ npm install
 <td>For create min version from <code>victory.js</code></td>
 </tr>
 <tr>
-<td><code>gulp noslim</code></td>
-<td>Deploy without create slim version, auto-execute follow commands <code>mergecss</code>, <code>prefix</code>, <code>mincss</code>, <code>mergejs</code>, <code>minjs</code></td>
+<td><code>gulp standard</code></td>
+<td>Deploy without create slim and minimal versions, auto-execute follow commands <code>mergecss</code>, <code>prefix</code>, <code>mincss</code>, <code>mergejs</code>, <code>minjs</code></td>
 </tr>
 <tr>
 <td><code>gulp</code></td>
-<td>Full deploy, auto-execute follow commands <code>mergecss</code>, <code>prefix</code>, <code>mincss</code>, <code>mergejs</code>, <code>minjs</code>, <code>slim:mergecss</code>, <code>slim:mincss</code>, <code>slim:mergejs</code> and <code>slim:minjs</code> in sequence</td>
+<td>Full deploy, auto-execute follow commands <code>mergecss</code>, <code>prefix</code>, <code>mincss</code>, <code>mergejs</code>, <code>minjs</code>, <code>slim:mergecss</code>, <code>slim:mincss</code>, <code>slim:mergejs</code>, <code>slim:minjs</code>, <code>minimal:mergecss</code>, <code>minimal:mincss</code> in sequence</td>
 </tr>
 </tbody>
 </table>
@@ -226,7 +374,7 @@ npm install
 <tbody>
 <tr>
 <td><code>gulp slim:mergecss</code></td>
-<td>For create only <code>victory.css</code> without create prefixes and without min version</td>
+<td>For create only <code>victory-slim.css</code> without min version</td>
 </tr>
 <tr>
 <td><code>gulp slim:mincss</code></td>
@@ -243,6 +391,29 @@ npm install
 <tr>
 <td><code>gulp slim</code></td>
 <td>Slim deploy, auto-execute follow commands <code>slim:mergecss</code>, <code>slim:mincss</code>, <code>slim:mergejs</code> and <code>slim:minjs</code> in sequence</td>
+</tr>
+</tbody>
+</table>
+<h2>Slim commands</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gulp minimal:mergecss</code></td>
+<td>For create only <code>victory-minimal.css</code> without min version</td>
+</tr>
+<tr>
+<td><code>gulp minimal:mincss</code></td>
+<td>For create min version from <code>victory-minimal.css</code></td>
+</tr>
+<tr>
+<td><code>gulp minimal</code></td>
+<td>Minimal deploy, auto-execute follow commands <code>minimal:mergecss</code>, <code>minimal:mincss</code>, <code>mergejs</code> and <code>minjs</code> in sequence</td>
 </tr>
 </tbody>
 </table>

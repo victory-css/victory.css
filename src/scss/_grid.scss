@@ -9,15 +9,15 @@
 }
 
 @mixin grid-error($content) {
-    content: $content;
-    background: $global-danger-color;
-    color: #fff;
+    content: $content !important;
+    background: $global-danger-color !important;
+    color: #fff !important;
+    visibility: visible !important;
+    display: block !important;
+    font-size: 14pt !important;
     margin: 5px;
     padding: 5px;
     border-radius: 4px;
-    font-size: 14pt;
-    visibility: visible !important;
-    display: block !important;
 }
 
 @mixin protect-grid-structure($colon) {
@@ -38,30 +38,35 @@
 @include protect-grid-structure('::');
 
 @mixin cols($type) {
-    @if $type != '' {
-        $type: $type + '-';
-    }
-
-    .v-row > .v-col-#{$type}12 { width: 100%; }
-    .v-row > .v-col-#{$type}11 { width: 91.66666667%; }
-    .v-row > .v-col-#{$type}10 { width: 83.33333333%; }
-    .v-row > .v-col-#{$type}9 { width: 75%; }
-    .v-row > .v-col-#{$type}8 { width: 66.66666667%; }
-    .v-row > .v-col-#{$type}7 { width: 58.33333333%; }
-    .v-row > .v-col-#{$type}6 { width: 50%; }
-    .v-row > .v-col-#{$type}5 { width: 41.66666667%; }
-    .v-row > .v-col-#{$type}4 { width: 33.33333333%; }
-    .v-row > .v-col-#{$type}3 { width: 25%; }
-    .v-row > .v-col-#{$type}2 { width: 16.66666667%; }
-    .v-row > .v-col-#{$type}1 { width: 8.33333333%; }
+    .v-row > .v-col-#{$type}-12 { width: 100%; }
+    .v-row > .v-col-#{$type}-11 { width: 91.66666667%; }
+    .v-row > .v-col-#{$type}-10 { width: 83.33333333%; }
+    .v-row > .v-col-#{$type}-9 { width: 75%; }
+    .v-row > .v-col-#{$type}-8 { width: 66.66666667%; }
+    .v-row > .v-col-#{$type}-7 { width: 58.33333333%; }
+    .v-row > .v-col-#{$type}-6 { width: 50%; }
+    .v-row > .v-col-#{$type}-5 { width: 41.66666667%; }
+    .v-row > .v-col-#{$type}-4 { width: 33.33333333%; }
+    .v-row > .v-col-#{$type}-3 { width: 25%; }
+    .v-row > .v-col-#{$type}-2 { width: 16.66666667%; }
+    .v-row > .v-col-#{$type}-1 { width: 8.33333333%; }
 }
 
 @if not $slim {
     /* Fallback for old browsers */
-    @include cols('xl');
-    @include cols('lg');
-    @include cols('md');
-    @include cols('sm');
+    .v-row > .v-col-xl-12, .v-row > .v-col-lg-12, .v-row > .v-col-md-12, .v-row > .v-col-sm-12 { width: 100%; }
+    .v-row > .v-col-xl-11, .v-row > .v-col-lg-11, .v-row > .v-col-md-11, .v-row > .v-col-sm-11 { width: 91.66666667%; }
+    .v-row > .v-col-xl-10, .v-row > .v-col-lg-10, .v-row > .v-col-md-10, .v-row > .v-col-sm-10 { width: 83.33333333%; }
+    .v-row > .v-col-xl-9, .v-row > .v-col-lg-9, .v-row > .v-col-md-9, .v-row > .v-col-sm-9 { width: 75%; }
+    .v-row > .v-col-xl-8, .v-row > .v-col-lg-8, .v-row > .v-col-md-8, .v-row > .v-col-sm-8 { width: 66.66666667%; }
+    .v-row > .v-col-xl-7, .v-row > .v-col-lg-7, .v-row > .v-col-md-7, .v-row > .v-col-sm-7 { width: 58.33333333%; }
+    .v-row > .v-col-xl-6, .v-row > .v-col-lg-6, .v-row > .v-col-md-6, .v-row > .v-col-sm-6 { width: 50%; }
+    .v-row > .v-col-xl-5, .v-row > .v-col-lg-5, .v-row > .v-col-md-5, .v-row > .v-col-sm-5 { width: 41.66666667%; }
+    .v-row > .v-col-xl-4, .v-row > .v-col-lg-4, .v-row > .v-col-md-4, .v-row > .v-col-sm-4 { width: 33.33333333%; }
+    .v-row > .v-col-xl-3, .v-row > .v-col-lg-3, .v-row > .v-col-md-3, .v-row > .v-col-sm-3 { width: 25%; }
+    .v-row > .v-col-xl-2, .v-row > .v-col-lg-2, .v-row > .v-col-md-2, .v-row > .v-col-sm-2 { width: 16.66666667%; }
+    .v-row > .v-col-xl-1, .v-row > .v-col-lg-1, .v-row > .v-col-md-1, .v-row > .v-col-sm-1 { width: 8.33333333%; }
+    /* Fallback for old browsers */
 }
 
 @media (min-width: 1px) {

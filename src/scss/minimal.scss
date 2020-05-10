@@ -11,27 +11,9 @@ $slim: false;
 @import 'container.scss';
 @import 'grid.scss';
 
-/* Forms */
-@import 'button.scss';
-@import 'input.scss';
-
-/* Components */
-@import 'arrow.scss';
-@import 'badge.scss';
-@import 'code.scss';
-@import 'divider.scss';
-@import 'kbd.scss';
-@import 'resize.scss';
-@import 'underline.scss';
-
 /* By view-port size */
-@import 'table.scss';
 @import 'text-align.scss';
 @import 'visibility.scss';
-
-/* Extras */
-@import 'nav.scss';
-@import 'slide.scss';
 
 /* Styles */
 @import 'border.scss';

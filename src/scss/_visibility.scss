@@ -39,9 +39,7 @@
 
 @if not $slim {
     /* Fallback for browsers without media-query support */
-    @media \0screen {
-        @include visibility-initial('block', 'inline', 'inline-block', 'none', 'hidden', 'visible');
-    }
+    @include visibility-initial('block', 'inline', 'inline-block', 'none', 'hidden', 'visible');
 
     /* Override fallback */
     @media (min-width: 1px) {

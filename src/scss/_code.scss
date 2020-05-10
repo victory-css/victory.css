@@ -1,4 +1,4 @@
-code, .v-code {
+code, .v-code, .v-code-pre {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
     padding: .4em;
     margin: 0;
@@ -7,8 +7,12 @@ code, .v-code {
     border-radius: .3em;
 }
 
-pre > code, pre > .v-code {
+pre > code, pre > .v-code, .v-code-pre {
     display: block;
     padding: 1.2em;
     overflow: auto;
+}
+
+.v-code-pre {
+    white-space: pre-wrap;
 }

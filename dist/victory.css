@@ -305,7 +305,7 @@ mark, bdi, source, math, output {
   -webkit-border-radius: 12px 12px 3px 12px;
           border-radius: 12px 12px 3px 12px; }
 
-code, .v-code {
+code, .v-code, .v-code-pre {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   padding: .4em;
   margin: 0;
@@ -314,10 +314,28 @@ code, .v-code {
   -webkit-border-radius: .3em;
           border-radius: .3em; }
 
-pre > code, pre > .v-code {
+pre > code, pre > .v-code, .v-code-pre {
   display: block;
   padding: 1.2em;
   overflow: auto; }
+
+.v-code-pre {
+  white-space: pre-wrap; }
+
+kbd {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  border: thin solid #13171b;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  padding: .2em .4em;
+  background: #fcfcfc;
+  color: #95969a;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 1px rgba(0, 0, 0, 0.15); }
+
+kbd[class^="v-out-"], kbd[class*=" v-out-"] {
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
 
 .v-row {
   padding: .1px; }

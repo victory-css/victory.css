@@ -38,18 +38,18 @@
 @include protect-grid-structure('::');
 
 @mixin cols($type) {
-    .v-row > .v-col-#{$type}-12 { width: 100%; }
-    .v-row > .v-col-#{$type}-11 { width: 91.66666667%; }
-    .v-row > .v-col-#{$type}-10 { width: 83.33333333%; }
-    .v-row > .v-col-#{$type}-9 { width: 75%; }
-    .v-row > .v-col-#{$type}-8 { width: 66.66666667%; }
-    .v-row > .v-col-#{$type}-7 { width: 58.33333333%; }
-    .v-row > .v-col-#{$type}-6 { width: 50%; }
-    .v-row > .v-col-#{$type}-5 { width: 41.66666667%; }
-    .v-row > .v-col-#{$type}-4 { width: 33.33333333%; }
-    .v-row > .v-col-#{$type}-3 { width: 25%; }
-    .v-row > .v-col-#{$type}-2 { width: 16.66666667%; }
-    .v-row > .v-col-#{$type}-1 { width: 8.33333333%; }
+    .v-row > .v-col#{$type}-12 { width: 100%; }
+    .v-row > .v-col#{$type}-11 { width: 91.66666667%; }
+    .v-row > .v-col#{$type}-10 { width: 83.33333333%; }
+    .v-row > .v-col#{$type}-9 { width: 75%; }
+    .v-row > .v-col#{$type}-8 { width: 66.66666667%; }
+    .v-row > .v-col#{$type}-7 { width: 58.33333333%; }
+    .v-row > .v-col#{$type}-6 { width: 50%; }
+    .v-row > .v-col#{$type}-5 { width: 41.66666667%; }
+    .v-row > .v-col#{$type}-4 { width: 33.33333333%; }
+    .v-row > .v-col#{$type}-3 { width: 25%; }
+    .v-row > .v-col#{$type}-2 { width: 16.66666667%; }
+    .v-row > .v-col#{$type}-1 { width: 8.33333333%; }
 }
 
 @if not $slim {
@@ -76,19 +76,19 @@
 }
 
 @media (min-width: $global-view-port-sm) {
-    @include cols('sm');
+    @include cols('-sm');
 }
 
 @media (min-width: $global-view-port-md) {
-    @include cols('md');
+    @include cols('-md');
 }
 
 @media (min-width: $global-view-port-lg) {
-    @include cols('lg');
+    @include cols('-lg');
 }
 
 @media (min-width: $global-view-port-xl) {
-    @include cols('xl');
+    @include cols('-xl');
 }
 
 /* standard cols (no-media querys) */

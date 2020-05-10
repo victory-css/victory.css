@@ -387,40 +387,40 @@ html.v-fix-render {
     width: 8.33333333%; } }
 
 /* standard cols (no-media querys) */
-.v-row > .v-col--12 {
+.v-row > .v-col-12 {
   width: 100%; }
 
-.v-row > .v-col--11 {
+.v-row > .v-col-11 {
   width: 91.66666667%; }
 
-.v-row > .v-col--10 {
+.v-row > .v-col-10 {
   width: 83.33333333%; }
 
-.v-row > .v-col--9 {
+.v-row > .v-col-9 {
   width: 75%; }
 
-.v-row > .v-col--8 {
+.v-row > .v-col-8 {
   width: 66.66666667%; }
 
-.v-row > .v-col--7 {
+.v-row > .v-col-7 {
   width: 58.33333333%; }
 
-.v-row > .v-col--6 {
+.v-row > .v-col-6 {
   width: 50%; }
 
-.v-row > .v-col--5 {
+.v-row > .v-col-5 {
   width: 41.66666667%; }
 
-.v-row > .v-col--4 {
+.v-row > .v-col-4 {
   width: 33.33333333%; }
 
-.v-row > .v-col--3 {
+.v-row > .v-col-3 {
   width: 25%; }
 
-.v-row > .v-col--2 {
+.v-row > .v-col-2 {
   width: 16.66666667%; }
 
-.v-row > .v-col--1 {
+.v-row > .v-col-1 {
   width: 8.33333333%; }
 
 /* By view-port size */

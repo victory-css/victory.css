@@ -7,10 +7,8 @@
     margin-right: auto;
     margin-left: auto;
 
-    @if not $slim {
-        /* Fallback for old browsers */
-        width: 1000px;
-    }
+    /* Fallback for old browsers */
+    width: 1000px;
 }
 
 @mixin container-size($minmedia, $width) {

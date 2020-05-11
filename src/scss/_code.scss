@@ -2,8 +2,16 @@ code, .v-code, .v-code-pre {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
     padding: .3em;
     font-size: 85%;
+    background-color: #0c0c0c;
+    color: #fff;
     background-color: rgba(27, 31, 35, .2);
     border-radius: .3em;
+}
+
+@media (min-width: 1px) {
+    code, .v-code, .v-code-pre {
+        color: inherit;
+    }
 }
 
 pre > code, pre > .v-code, .v-code-pre {
@@ -13,5 +21,5 @@ pre > code, pre > .v-code, .v-code-pre {
 }
 
 .v-code-pre {
-    white-space: pre-wrap;
+    white-space: pre;
 }

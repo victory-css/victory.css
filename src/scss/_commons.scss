@@ -4,10 +4,7 @@
     }
 }
 
-@if not $slim {
-    @include user-select(':');    
-}
-
+@include user-select(':');
 @include user-select('::');
 
 .v-sr-only {
@@ -18,7 +15,7 @@
     margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
-    border: 0;
+    border: none;
 }
 
 .v-card, .v-notify {

@@ -44,13 +44,10 @@
 }
 
 .v-arrow-ud {
-    border: 0;
+    border: none;
     width: auto;
     height: auto;
 }
 
-@if not $slim {
-    @include arrow(':');    
-}
-
+@include arrow(':');
 @include arrow('::');

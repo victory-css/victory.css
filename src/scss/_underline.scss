@@ -20,8 +20,5 @@
     line-height: normal !important;
 }
 
-@if not $slim {
-    @include underline(':');
-}
-
+@include underline(':');
 @include underline('::');

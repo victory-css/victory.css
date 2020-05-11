@@ -1,3 +1,11 @@
+/*
+ * victory.css 0.4.0
+ * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
+ * Released under the MIT license
+ * 
+ * https://github.com/brcontainer/victory.css
+ */
+
 (function (w, d) {
     var tags = [
         //none

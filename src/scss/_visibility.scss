@@ -37,15 +37,11 @@
     }
 }
 
-@if not $slim {
-    /* Fallback for browsers without media-query support */
-    @include visibility-initial('block', 'inline', 'inline-block', 'none', 'hidden', 'visible');
+/* Fallback for browsers without media-query support */
+@include visibility-initial('block', 'inline', 'inline-block', 'none', 'hidden', 'visible');
 
-    /* Override fallback */
-    @media (min-width: 1px) {
-        @include visibility-initial('none', 'none', 'none', '', 'visible', 'hidden');
-    }
-} @else {
+/* Override fallback */
+@media (min-width: 1px) {
     @include visibility-initial('none', 'none', 'none', '', 'visible', 'hidden');
 }
 

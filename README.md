@@ -4,10 +4,17 @@ Victory.css is a simply and lightweight front-end framework for developing fast.
 
 ## Download
 
-For production download from:
+Use CDN:
 
-- https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.css
-- https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js
+```html
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory.css@0.2.1/dist/victory.min.css">
+<script src="https://cdn.jsdelivr.net/npm/victory.css@0.2.1/dist/victory.min.js></script>
+```
+
+Or download from:
+
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.2.1/dist/victory.min.css
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.2.1/dist/victory.min.js
 
 ## Using
 
@@ -28,37 +35,11 @@ For use in your project copy `victory.min.css` and `victory.min.js` and put like
 
 > **Note:** Victory.css has some fallbacks for old browsers without media-queries support, such as *Internet Explorer 8*, preventing your site from breaking
 
-## Slim vs Standard
+## Basic vs Standard
 
-Slim version is more lightweight but don't support old browsers, in Slim version is required native from browser:
+Basic contains only basic resources, `victory.min.js` is same from standard version, about differences see:
 
-- `Element.matches`
-- `Element.closest`
-- Only uses CSS3 syntax to `::before` and `::after` pseudo elements
-- No fallback for IE8
-
-With the standard version you will be able to support users accessing your site from an older mobile phone or older browser.
-
-The standard version weighs a little more (8KB or 1KB more), which is not much.
-
-The slim version is best recommended for indoor environments where you will be sure that only modern equipment will be used, for production download from:
-
-- https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.css
-- https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.js
-
-then use in your project put like this:
-
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
-<link rel="stylesheet" type="text/css" href="victory-slim.min.css">
-<script src="victory-slim.min.js"></script>
-```
-
-## Minimal vs Standard
-
-Minimal contains only basic resources, `victory.min.js` is same from standard version, about differences see:
-
-Resource | Standard | Minimal
+Resource | Standard | Basic
 --- | --- | ---
 `adaptive-animation.scss` | ✔ | ✔
 `border.scss` | ✔ |✔
@@ -86,18 +67,27 @@ Resource | Standard | Minimal
 Minified size  | 38 kB | 15.6 kB
 Gziped size | 7.6 kB | 3.8 kB
 
-For production download from:
+For production use CDN:
 
-- https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-minimal.min.css
-- https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js
+```html
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory-basic.css@0.2.1/dist/victory.min.css">
+<script src="https://cdn.jsdelivr.net/npm/victory.css@0.2.1/dist/victory-basic.min.js></script>
+```
+
+Or download from:
+
+- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.2.1/dist/victory.min.css
+- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.2.1/dist/victory.min.js
 
 then use in your project put like this:
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
-<link rel="stylesheet" type="text/css" href="victory-minimal.min.css">
-<script src="victory.min.js"></script>
+<link rel="stylesheet" type="text/css" href="victory-basic.min.css">
+<script src="victory-basic.min.js"></script>
 ```
+
+---
 
 ## Development
 
@@ -131,23 +121,15 @@ Command | Description
 `gulp standard` | Deploy without create slim and minimal versions, auto-execute follow commands `mergecss`, `prefix`, `mincss`, `mergejs`, `minjs`
 `gulp` | Full deploy, auto-execute follow commands `mergecss`, `prefix`, `mincss`, `mergejs`, `minjs`, `slim:mergecss`, `slim:mincss`, `slim:mergejs`, `slim:minjs`, `minimal:mergecss`, `minimal:mincss` in sequence
 
-## Slim commands
+## Basic commands
 
 Command | Description
 ---|---
-`gulp slim:mergecss` | For create only `victory-slim.css` without min version
-`gulp slim:mincss` | For create min version from `victory-slim.css`
-`gulp slim:mergejs` | For create only `victory-slim.js` without min version
-`gulp slim:minjs` | For create min version from `victory-slim.js`
-`gulp slim` | Slim deploy, auto-execute follow commands `slim:mergecss`, `slim:mincss`, `slim:mergejs` and `slim:minjs` in sequence
-
-## Slim commands
-
-Command | Description
----|---
-`gulp minimal:mergecss` | For create only `victory-minimal.css` without min version
-`gulp minimal:mincss` | For create min version from `victory-minimal.css`
-`gulp minimal` | Minimal deploy, auto-execute follow commands `minimal:mergecss`, `minimal:mincss`, `mergejs` and `minjs` in sequence
+`gulp basic:mergecss` | For create only `victory-basic.css` without min version
+`gulp basic:mincss` | For create min version from `victory-basic.css`
+`gulp basic:mergejs` | For create only `victory-basic.js` without min version
+`gulp basic:minjs` | For create min version from `victory-basic.js`
+`gulp basic` | Minimal deploy, auto-execute follow commands `basic:mergecss`, `basic:mincss`, `basic:mergejs` and `basic:minjs` in sequence
 
 
 [1]: https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png

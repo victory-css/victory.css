@@ -6,11 +6,12 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
 var minify = require('gulp-minify');
-var cleanCSS = require('gulp-clean-css');
-var injectString = require('gulp-inject-string');
+var clean = require('gulp-clean-css');
+var inject = require('gulp-inject-string');
 
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+//var sourcemaps = require('gulp-sourcemaps');
 
 var runSequence = require('run-sequence');
 
@@ -193,7 +194,7 @@ blockquote {
     fs.writeFileSync(__dirname + '/README.html', htmlOutput);
 });
 
-/* Default CSS project */
+/* Default project */
 gulp.task('mergecss', () => {
     return gulp.src(__dirname + '/src/scss/victory.scss')
                 .pipe(sass.sync().on('error', sass.logError))
@@ -205,21 +206,18 @@ gulp.task('prefix', () => {
                 .pipe(postcss([
                     autoprefixer()
                 ]))
-                .pipe(injectString.prepend(releaseComment()))
+                .pipe(inject.prepend(releaseComment()))
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
 
 gulp.task('mincss', () => {
     return gulp.src(__dirname + '/dist/victory.css')
-                .pipe(cleanCSS({ compatibility: 'ie8' }))
+                .pipe(clean({ compatibility: 'ie8' }))
                 .pipe(rename({ suffix: '.min' }))
-                .pipe(injectString.prepend(releaseMinComment()))
+                .pipe(inject.prepend(releaseMinComment()))
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
-/* Default CSS project */
 
-
-/* Default JS project */
 gulp.task('mergejs', () => {
     let src = [
         __dirname + '/src/js/victory.js',
@@ -230,8 +228,8 @@ gulp.task('mergejs', () => {
 
     return gulp.src(src)
                 .pipe(concat('victory.js'))
-                .pipe(injectString.prepend(releaseComment()))
-                .pipe(gulp.dest(__dirname + '/dist/'));
+                .pipe(inject.prepend(releaseComment()))
+                .pipe(gulp.dest(__dirname + '/dist'));
 });
 
 gulp.task('minjs', () => {
@@ -241,92 +239,58 @@ gulp.task('minjs', () => {
                 }))
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
-/* Default JS project */
 
-
-/* Slim CSS project */
-gulp.task('slim:mergecss', () => {
-    return gulp.src(__dirname + '/src/scss/victory.scss')
+/* Basic project */
+gulp.task('basic:mergecss', () => {
+    return gulp.src(__dirname + '/src/scss/basic.scss')
                 .pipe(sass.sync().on('error', sass.logError))
-                .pipe(rename({ suffix: '-slim' }))
-                .pipe(injectString.prepend(releaseComment()))
+                .pipe(rename({ basename: 'victory-basic' }))
+                .pipe(postcss([
+                    autoprefixer()
+                ]))
+                .pipe(inject.prepend(releaseComment()))
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
 
-gulp.task('slim:mincss', () => {
-    return gulp.src(__dirname + '/dist/victory-slim.css')
-                .pipe(cleanCSS())
+gulp.task('basic:mincss', () => {
+    return gulp.src(__dirname + '/dist/victory-basic.css')
+                .pipe(clean({ compatibility: 'ie8' }))
                 .pipe(rename({ suffix: '.min' }))
-                .pipe(injectString.prepend(releaseMinComment()))
+                .pipe(inject.prepend(releaseMinComment()))
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
-/* Slim CSS project */
 
-
-/* Slim JS project */
-gulp.task('slim:mergejs', () => {
+gulp.task('basic:mergejs', () => {
     let src = [
-        './src/js/victory.js',
-        './src/js/_navbar.js',
-        './src/js/_slide.js'
+        __dirname + '/src/js/victory.js',
+        __dirname + '/src/js/_polyfill.js'
     ];
 
     return gulp.src(src)
-                .pipe(concat('victory-slim.js'))
-                .pipe(injectString.prepend(releaseComment()))
-                .pipe(gulp.dest(__dirname + '/dist/'));
+                .pipe(rename({ basename: 'victory-basic' }))
+                .pipe(inject.prepend(releaseComment()))
+                .pipe(gulp.dest(__dirname + '/dist'));
 });
 
-gulp.task('slim:minjs', () => {
-    return gulp.src(__dirname + '/dist/victory-slim.js')
+gulp.task('basic:minjs', () => {
+    return gulp.src(__dirname + '/dist/victory-basic.js')
                 .pipe(minify({
                     ext: { min: '.min.js' }
                 }))
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
-/* Slim JS project */
-
-
-/* Minimal CSS project */
-gulp.task('minimal:mergecss', () => {
-    return gulp.src(__dirname + '/src/scss/minimal.scss')
-                .pipe(sass.sync().on('error', sass.logError))
-                .pipe(rename({ basename: 'victory-minimal' }))
-                .pipe(postcss([
-                    autoprefixer()
-                ]))
-                .pipe(injectString.prepend(releaseComment()))
-                .pipe(gulp.dest(__dirname + '/dist'));
-});
-
-gulp.task('minimal:mincss', () => {
-    return gulp.src(__dirname + '/dist/victory-minimal.css')
-                .pipe(cleanCSS())
-                .pipe(rename({ suffix: '.min' }))
-                .pipe(injectString.prepend(releaseMinComment()))
-                .pipe(gulp.dest(__dirname + '/dist'));
-});
-/* Minimal CSS project */
-
 
 /* Deploy commands */
 gulp.task('default', () => {
     runSequence(
         'mergecss', 'prefix', 'mincss', 'mergejs', 'minjs',
-        'slim:mergecss', 'slim:mincss', 'slim:mergejs', 'slim:minjs',
-        'minimal:mergecss', 'minimal:mincss'
+        'basic:mergecss', 'basic:mincss', 'basic:mergejs', 'basic:minjs'
     );
 });
 
-gulp.task('slim', () => {
+gulp.task('basic', () => {
     runSequence(
-        'slim:mergecss', 'slim:mincss', 'slim:mergejs', 'slim:minjs'
-    );
-});
-
-gulp.task('minimal', () => {
-    runSequence(
-        'minimal:mergecss', 'minimal:mincss', 'mergejs', 'minjs'
+        'basic:mergecss', 'basic:mincss', 'basic:mergejs', 'basic:minjs'
     );
 });
 
@@ -335,4 +299,3 @@ gulp.task('standard', () => {
         'mergecss', 'prefix', 'mincss', 'mergejs', 'minjs',
     );
 });
-/* Deploy commands */

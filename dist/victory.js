@@ -1,5 +1,5 @@
 /*
- * victory.css 0.2.1
+ * victory.css 0.4.0
  * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
@@ -78,9 +78,17 @@
 
 (function (w, d) {
     var tags = [
-        'article', 'aside', 'details', 'figcaption', 'figure', 'footer', 'header', 'hgroup', 'main', 'nav', 'section', 'summary',
-        'meter', 'progress', 'bdi', 'canvas', 'mark', 'math', 'output', 'source', 'svg', 'video',
-        'audio', 'template'
+        //none
+        'audio', 'dialog', 'datalist', 'template',
+
+        //inline
+        'abbr', 'bdi', 'data', 'mark', 'math', 'output', 'picture', 'source', 'time', 'track',
+
+        //inline-block
+        'canvas', 'meter', 'progress', 'video', 'svg',
+
+        //block
+        'article', 'aside', 'details', 'figcaption', 'figure', 'footer', 'header', 'hgroup', 'main', 'nav', 'section', 'summary'
     ];
 
     /* Fallback for HTML5 tags in IE8 */

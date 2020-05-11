@@ -15,19 +15,12 @@ html, body {
 body {
     background-color: #fff;
     font-size: $default-font-size;
-
-    @if not $slim {
-        min-width: 1000px;
-    } @else {
-        min-width: $min-view-port-width;
-    }
+    min-width: 1000px;
 }
 
-@if not $slim {
-    @media (min-width: 1px) {
-        body {
-            min-width: $min-view-port-width;
-        }
+@media (min-width: 1px) {
+    body {
+        min-width: $min-view-port-width;
     }
 }
 
@@ -86,10 +79,8 @@ iframe {
     background-color: #fff;
 }
 
-@if not $slim {
-    *, :after, :before {
-        box-sizing: border-box;
-    }
+*, :after, :before {
+    box-sizing: border-box;
 }
 
 *, ::after, ::before {
@@ -97,23 +88,23 @@ iframe {
 }
 
 /* html5 tags for IE8 (don't provide support, they are fallbacks only to avoid the layout breaking) */
+audio, dialog, datalist, template {
+    display: none;
+}
+
+[hidden], audio[controls], canvas, meter, progress, video, svg {
+    display: inline-block;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block;
 }
 
-meter, progress, audio[controls], canvas, svg, video {
+meter, progress, audio[controls], canvas, video {
     display: inline-block;
-    vertical-align: baseline;
-}
-
-[hidden], audio, template {
-    display: none;
 }
 
 svg {
     overflow: hidden;
 }
 
-mark, bdi, source, math, output {
-    vertical-align: baseline;
-}

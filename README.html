@@ -96,10 +96,14 @@ blockquote {
 <p><strong>Note:</strong> under development</p>
 </blockquote>
 <h2>Download</h2>
-<p>For production download from:</p>
+<p>Use CDN:</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/npm/victory.css@0.2.1/dist/victory.min.css&quot;&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/victory.css@0.2.1/dist/victory.min.js&gt;&lt;/script&gt;
+</code></pre>
+<p>Or download from:</p>
 <ul>
-<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.css">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.css</a></li>
-<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js</a></li>
+<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/0.2.1/dist/victory.min.css">https://raw.githubusercontent.com/brcontainer/victory.css/0.2.1/dist/victory.min.css</a></li>
+<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/0.2.1/dist/victory.min.js">https://raw.githubusercontent.com/brcontainer/victory.css/0.2.1/dist/victory.min.js</a></li>
 </ul>
 <h2>Using</h2>
 <p>For use in your project copy <code>victory.min.css</code> and <code>victory.min.js</code> and put like this:</p>
@@ -138,34 +142,14 @@ blockquote {
 <blockquote>
 <p><strong>Note:</strong> Victory.css has some fallbacks for old browsers without media-queries support, such as <em>Internet Explorer 8</em>, preventing your site from breaking</p>
 </blockquote>
-<h2>Slim vs Standard</h2>
-<p>Slim version is more lightweight but don't support old browsers, in Slim version is required native from browser:</p>
-<ul>
-<li><code>Element.matches</code></li>
-<li><code>Element.closest</code></li>
-<li>Only uses CSS3 syntax to <code>::before</code> and <code>::after</code> pseudo elements</li>
-<li>No fallback for IE8</li>
-</ul>
-<p>With the standard version you will be able to support users accessing your site from an older mobile phone or older browser.</p>
-<p>The standard version weighs a little more (8KB or 1KB more), which is not much.</p>
-<p>The slim version is best recommended for indoor environments where you will be sure that only modern equipment will be used, for production download from:</p>
-<ul>
-<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.css">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.css</a></li>
-<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.js">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-slim.min.js</a></li>
-</ul>
-<p>then use in your project put like this:</p>
-<pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;victory-slim.min.css&quot;&gt;
-&lt;script src=&quot;victory-slim.min.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-<h2>Minimal vs Standard</h2>
-<p>Minimal contains only basic resources, <code>victory.min.js</code> is same from standard version, about differences see:</p>
+<h2>Basic vs Standard</h2>
+<p>Basic contains only basic resources, <code>victory.min.js</code> is same from standard version, about differences see:</p>
 <table>
 <thead>
 <tr>
 <th>Resource</th>
 <th>Standard</th>
-<th>Minimal</th>
+<th>Basic</th>
 </tr>
 </thead>
 <tbody>
@@ -201,6 +185,11 @@ blockquote {
 </tr>
 <tr>
 <td><code>grid.scss</code></td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>normalize.scss</code></td>
 <td>✔</td>
 <td>✔</td>
 </tr>
@@ -260,11 +249,6 @@ blockquote {
 <td></td>
 </tr>
 <tr>
-<td><code>normalize.scss</code></td>
-<td>✔</td>
-<td></td>
-</tr>
-<tr>
 <td><code>resize.scss</code></td>
 <td>✔</td>
 <td></td>
@@ -296,16 +280,21 @@ blockquote {
 </tr>
 </tbody>
 </table>
-<p>For production download from:</p>
+<p>For production use CDN:</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/npm/victory-basic.css@0.2.1/dist/victory.min.css&quot;&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/victory.css@0.2.1/dist/victory-basic.min.js&gt;&lt;/script&gt;
+</code></pre>
+<p>Or download from:</p>
 <ul>
-<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-minimal.min.css">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory-minimal.min.css</a></li>
-<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js">https://raw.githubusercontent.com/brcontainer/victory.css/master/dist/victory.min.js</a></li>
+<li><a href="https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.2.1/dist/victory.min.css">https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.2.1/dist/victory.min.css</a></li>
+<li><a href="https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.2.1/dist/victory.min.js">https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.2.1/dist/victory.min.js</a></li>
 </ul>
 <p>then use in your project put like this:</p>
 <pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;victory-minimal.min.css&quot;&gt;
-&lt;script src=&quot;victory.min.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;victory-basic.min.css&quot;&gt;
+&lt;script src=&quot;victory-basic.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
+<hr>
 <h2>Development</h2>
 <p>To contribute or modify download using git (require <code>npm</code>):</p>
 <pre><code>git clone https://github.com/inphinit/Victory.css.git [project_name]
@@ -363,7 +352,7 @@ npm install
 </tr>
 </tbody>
 </table>
-<h2>Slim commands</h2>
+<h2>Basic commands</h2>
 <table>
 <thead>
 <tr>
@@ -373,47 +362,24 @@ npm install
 </thead>
 <tbody>
 <tr>
-<td><code>gulp slim:mergecss</code></td>
-<td>For create only <code>victory-slim.css</code> without min version</td>
+<td><code>gulp basic:mergecss</code></td>
+<td>For create only <code>victory-basic.css</code> without min version</td>
 </tr>
 <tr>
-<td><code>gulp slim:mincss</code></td>
-<td>For create min version from <code>victory-slim.css</code></td>
+<td><code>gulp basic:mincss</code></td>
+<td>For create min version from <code>victory-basic.css</code></td>
 </tr>
 <tr>
-<td><code>gulp slim:mergejs</code></td>
-<td>For create only <code>victory-slim.js</code> without min version</td>
+<td><code>gulp basic:mergejs</code></td>
+<td>For create only <code>victory-basic.js</code> without min version</td>
 </tr>
 <tr>
-<td><code>gulp slim:minjs</code></td>
-<td>For create min version from <code>victory-slim.js</code></td>
+<td><code>gulp basic:minjs</code></td>
+<td>For create min version from <code>victory-basic.js</code></td>
 </tr>
 <tr>
-<td><code>gulp slim</code></td>
-<td>Slim deploy, auto-execute follow commands <code>slim:mergecss</code>, <code>slim:mincss</code>, <code>slim:mergejs</code> and <code>slim:minjs</code> in sequence</td>
-</tr>
-</tbody>
-</table>
-<h2>Slim commands</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>gulp minimal:mergecss</code></td>
-<td>For create only <code>victory-minimal.css</code> without min version</td>
-</tr>
-<tr>
-<td><code>gulp minimal:mincss</code></td>
-<td>For create min version from <code>victory-minimal.css</code></td>
-</tr>
-<tr>
-<td><code>gulp minimal</code></td>
-<td>Minimal deploy, auto-execute follow commands <code>minimal:mergecss</code>, <code>minimal:mincss</code>, <code>mergejs</code> and <code>minjs</code> in sequence</td>
+<td><code>gulp basic</code></td>
+<td>Minimal deploy, auto-execute follow commands <code>basic:mergecss</code>, <code>basic:mincss</code>, <code>basic:mergejs</code> and <code>basic:minjs</code> in sequence</td>
 </tr>
 </tbody>
 </table>

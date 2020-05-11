@@ -7,12 +7,12 @@
     font-weight: normal;
     text-align: center;
     font-size: 10pt;
-    color: #999;
     text-transform: uppercase;
 }
 
 .v-table > caption, .v-table > * > tr > * {
     padding: 16px 12px;
+    color: inherit;
 }
 
 .v-table > tfoot > tr > th {
@@ -32,7 +32,7 @@
 }
 
 .v-table-striped > tbody > tr:nth-child(odd) {
-    background-color: #f8f8f8;
+    background-color: rgba(255,255,255,.5);
     border-top: thin solid #e5e5e5;
     border-bottom: thin solid #e5e5e5;
 }

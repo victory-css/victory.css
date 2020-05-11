@@ -1,7 +1,7 @@
 .v-divider, .v-divider-icon, .v-divider-gradient, hr {
     display: block;
     margin: 15px $default-out-space;
-    border: 0;
+    border: none;
     border-top: thin solid;
 }
 
@@ -9,7 +9,7 @@
     position: relative;
     text-align: center;
     min-height: 24px;
-    border: 0;
+    border: none;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -18,41 +18,31 @@
     vertical-align: middle;
 }
 
-@mixin divider-icon() {
-    position: relative;
-    display: inline-block;
-    left: -16px;
-    width: 50%;
-    content: '';
-    border: 0;
-    border-top: thin solid;
-    vertical-align: middle;
-}
-
-@mixin divider-icon-after() {
-    left: auto;
-    right: -16px;
-}
-
-@if not $slim {
-    .v-divider-icon:before, .v-divider-icon:after {
-        @include divider-icon();
+@mixin divider-icon($colon) {
+    .v-divider-icon#{$colon}before, .v-divider-icon#{$colon}after {
+        position: relative;
+        display: inline-block;
+        left: -16px;
+        width: 50%;
+        content: '';
+        border: none;
+        border-top: thin solid;
+        vertical-align: middle;
     }
 }
 
-.v-divider-icon::before, .v-divider-icon::after {
-    @include divider-icon();
-}
-
-@if not $slim {
-    .v-divider-icon:after {
-        @include divider-icon-after();
+@mixin divider-icon-after($colon) {
+    .v-divider-icon#{$colon}after {
+        left: auto;
+        right: -16px;
     }
 }
 
-.v-divider-icon::after {
-    @include divider-icon-after();
-}
+@include divider-icon(':');
+@include divider-icon('::');
+
+@include divider-icon-after(':');
+@include divider-icon-after('::');
 
 @mixin divider-style($type, $size, $colon) {
     .v-divider.v-divider-#{$type},
@@ -64,12 +54,10 @@
     }
 }
 
-@if not $slim {
-    @include divider-style('dashed', 1, ':');
-    @include divider-style('dotted', 1, ':');
-    @include divider-style('double', 3, ':');
-    @include divider-style('groove', 2, ':');
-}
+@include divider-style('dashed', 1, ':');
+@include divider-style('dotted', 1, ':');
+@include divider-style('double', 3, ':');
+@include divider-style('groove', 2, ':');
 
 @include divider-style('dashed', 1, '::');
 @include divider-style('dotted', 1, '::');

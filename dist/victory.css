@@ -83,11 +83,6 @@ iframe {
 audio, dialog, datalist, template {
   display: none; }
 
-/*
-abbr, bdi, data, mark, math, output, picture, source, time, track {
-    display: inline;
-}
-*/
 [hidden], audio[controls], canvas, meter, progress, video, svg {
   display: inline-block; }
 

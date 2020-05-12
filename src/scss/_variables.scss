@@ -8,6 +8,9 @@ $min-view-port-width: 240px;
 $nav-bar-height: 64px;
 $nav-bar-z: 5000;
 
+$global-transition-function: cubic-bezier(.25, .8, .25, .1);
+$global-transition-duration: .2s;
+
 $global-primary-color:   #007bff;
 $global-secondary-color: #6c757d;
 $global-danger-color:    #dc3545;

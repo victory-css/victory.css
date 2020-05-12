@@ -1,78 +1,78 @@
 /* outline colors */
 
 [class^="v-out-"], [class*=" v-out-"] {
-    border: thin solid;
-    background-color: transparent;
+    border: thin solid !important;
+    background-color: transparent !important;
 }
 
 .v-out-primary {
-    border-color: $global-primary-color;
-    color: $global-primary-color;
+    border-color: $global-primary-color !important;
+    color: $global-primary-color !important;
 }
 
 .v-out-secondary {
-    border-color: $global-secondary-color;
-    color: $global-secondary-color;
+    border-color: $global-secondary-color !important;
+    color: $global-secondary-color !important;
 }
 
 .v-out-danger {
-    border-color: $global-danger-color;
-    color: $global-danger-color;
+    border-color: $global-danger-color !important;
+    color: $global-danger-color !important;
 }
 
 .v-out-success {
-    border-color: $global-success-color;
-    color: $global-success-color;
+    border-color: $global-success-color !important;
+    color: $global-success-color !important;
 }
 
 .v-out-warning {
-    border-color: $global-warning-color;
-    color: $global-warning-color;
+    border-color: $global-warning-color !important;
+    color: $global-warning-color !important;
 }
 
 .v-out-dark {
-    border-color: $global-dark-color;
-    color: $global-dark-color;
+    border-color: $global-dark-color !important;
+    color: $global-dark-color !important;
 }
 
 .v-out-light {
-    border-color: $global-light-color;
-    color: $global-light-color;
+    border-color: $global-light-color !important;
+    color: $global-light-color !important;
 }
 
 /* fill colors */
 
 .v-bg-primary {
-    background-color: $global-primary-color;
-    color: $global-primary-text-color;
+    background-color: $global-primary-color !important;
+    color: $global-primary-text-color !important;
 }
 
 .v-bg-secondary {
-    background-color: $global-secondary-color;
-    color: $global-secondary-text-color;
+    background-color: $global-secondary-color !important;
+    color: $global-secondary-text-color !important;
 }
 
 .v-bg-danger {
-    background-color: $global-danger-color;
-    color: $global-danger-text-color;
+    background-color: $global-danger-color !important;
+    color: $global-danger-text-color !important;
 }
 
 .v-bg-success {
-    background-color: $global-success-color;
-    color: $global-success-text-color;
+    background-color: $global-success-color !important;
+    color: $global-success-text-color !important;
 }
 
 .v-bg-warning {
-    background-color: $global-warning-color;
-    color: $global-warning-text-color;
+    background-color: $global-warning-color !important;
+    color: $global-warning-text-color !important;
 }
 
 .v-bg-dark {
-    background-color: $global-dark-color;
-    color: $global-dark-text-color;
+    background-color: $global-dark-color !important;
+    color: $global-dark-text-color !important;
 }
 
 .v-bg-light {
-    background-color: $global-light-color;
-    color: $global-light-text-color;
+    background-color: $global-light-color !important;
+    color: $global-light-text-color !important;
 }

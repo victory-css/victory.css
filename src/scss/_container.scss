@@ -16,6 +16,7 @@
 
     /* Fallback for old browsers */
     max-width: 1000px;
+    transition: max-width $global-transition-duration $global-transition-function;
 }
 
 @mixin container-size($minmedia, $width) {

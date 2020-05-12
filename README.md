@@ -41,7 +41,6 @@ Basic contains only basic resources, `victory.min.js` is same from standard vers
 
 Resource | Standard | Basic
 --- | --- | ---
-`adaptive-animation.scss` | ✔ | ✔
 `border.scss` | ✔ |✔
 `clear-both.scss` | ✔ | ✔
 `colors.scss` | ✔ | ✔

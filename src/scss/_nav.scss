@@ -5,6 +5,7 @@
     min-width: 1000px;
     background-color: #fff;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+    transition: all $global-transition-duration $global-transition-function;
 }
 
 @media (min-width: 1px) {

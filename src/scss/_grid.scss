@@ -8,6 +8,10 @@
     padding: .1px;
 }
 
+.v-row, .v-row > [class^="v-col-"], .v-row > [class*=" v-col-"] {
+    transition: width $global-transition-duration $global-transition-function;
+}
+
 @mixin grid-error($content) {
     content: $content !important;
     background: $global-danger-color !important;

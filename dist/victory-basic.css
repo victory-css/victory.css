@@ -169,7 +169,9 @@ html.v-fix-render {
   margin-right: auto;
   margin-left: auto;
   /* Fallback for old browsers */
-  max-width: 1000px; }
+  max-width: 1000px;
+  -webkit-transition: max-width 0.2s cubic-bezier(0.25, 0.8, 0.25, 0.1);
+  transition: max-width 0.2s cubic-bezier(0.25, 0.8, 0.25, 0.1); }
 
 @media (min-width: 1px) {
   .v-container {
@@ -194,6 +196,10 @@ html.v-fix-render {
   float: left;
   margin: -.1px;
   padding: .1px; }
+
+.v-row, .v-row > [class^="v-col-"], .v-row > [class*=" v-col-"] {
+  -webkit-transition: width 0.2s cubic-bezier(0.25, 0.8, 0.25, 0.1);
+  transition: width 0.2s cubic-bezier(0.25, 0.8, 0.25, 0.1); }
 
 .v-row > :not([class^="v-col-"]):not([class*=" v-col-"]):before {
   content: "WARNING: Something is wrong with its structure, this html-element is not a .v-col-, only .v-col- can be direct children of .v-row elements" !important;
@@ -662,65 +668,65 @@ html.v-fix-render {
 
 /* outline colors */
 [class^="v-out-"], [class*=" v-out-"] {
-  border: thin solid;
-  background-color: transparent; }
+  border: thin solid !important;
+  background-color: transparent !important; }
 
 .v-out-primary {
-  border-color: #007bff;
-  color: #007bff; }
+  border-color: #007bff !important;
+  color: #007bff !important; }
 
 .v-out-secondary {
-  border-color: #6c757d;
-  color: #6c757d; }
+  border-color: #6c757d !important;
+  color: #6c757d !important; }
 
 .v-out-danger {
-  border-color: #dc3545;
-  color: #dc3545; }
+  border-color: #dc3545 !important;
+  color: #dc3545 !important; }
 
 .v-out-success {
-  border-color: #2fc752;
-  color: #2fc752; }
+  border-color: #2fc752 !important;
+  color: #2fc752 !important; }
 
 .v-out-warning {
-  border-color: #ffc107;
-  color: #ffc107; }
+  border-color: #ffc107 !important;
+  color: #ffc107 !important; }
 
 .v-out-dark {
-  border-color: #3e3c3c;
-  color: #3e3c3c; }
+  border-color: #3e3c3c !important;
+  color: #3e3c3c !important; }
 
 .v-out-light {
-  border-color: #f8f9fa;
-  color: #f8f9fa; }
+  border-color: #f8f9fa !important;
+  color: #f8f9fa !important; }
 
 /* fill colors */
 .v-bg-primary {
-  background-color: #007bff;
-  color: #fff; }
+  background-color: #007bff !important;
+  color: #fff !important; }
 
 .v-bg-secondary {
-  background-color: #6c757d;
-  color: #fff; }
+  background-color: #6c757d !important;
+  color: #fff !important; }
 
 .v-bg-danger {
-  background-color: #dc3545;
-  color: #fff; }
+  background-color: #dc3545 !important;
+  color: #fff !important; }
 
 .v-bg-success {
-  background-color: #2fc752;
-  color: #fff; }
+  background-color: #2fc752 !important;
+  color: #fff !important; }
 
 .v-bg-warning {
-  background-color: #ffc107;
-  color: #4F4949; }
+  background-color: #ffc107 !important;
+  color: #4F4949 !important; }
 
 .v-bg-dark {
-  background-color: #3e3c3c;
-  color: #fff; }
+  background-color: #3e3c3c !important;
+  color: #fff !important; }
 
 .v-bg-light {
-  background-color: #f8f9fa;
-  color: #4F4949; }
+  background-color: #f8f9fa !important;
+  color: #4F4949 !important; }
 
 .v-navbar .v-nav-right:before,
 .v-navbar .v-nav-left:before,
@@ -765,11 +771,3 @@ html.v-fix-render {
   display: block;
   content: '';
   height: 0; }
-
-.v-container {
-  -webkit-transition: max-width 0.2s cubic-bezier(0.25, 0.8, 0.25, 0.1);
-  transition: max-width 0.2s cubic-bezier(0.25, 0.8, 0.25, 0.1); }
-
-.v-row, .v-row > [class^="v-col-"], .v-row > [class*=" v-col-"] {
-  -webkit-transition: width 0.2s cubic-bezier(0.25, 0.8, 0.25, 0.1);
-  transition: width 0.2s cubic-bezier(0.25, 0.8, 0.25, 0.1); }

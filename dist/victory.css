@@ -1015,6 +1015,10 @@ pre > code, pre > .v-code, .v-code-pre {
   height: 1px;
   opacity: .65;
   color: inherit;
+  /*fallback no currentColor support*/
+  border-bottom: 1px solid;
+  border-bottom: 0 solid rgba(0, 0, 0, 0);
+  /*fallback no linear-gradient support*/
   background: currentColor;
   background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(50%, currentColor), to(rgba(255, 255, 255, 0)));
   background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, currentColor 50%, rgba(255, 255, 255, 0) 100%);
@@ -1046,35 +1050,57 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
 .v-no-resize {
   resize: none; }
 
-.v-underline {
+.v-underline, [class^="v-underline-"], [class*=" v-underline-"] {
   position: relative !important;
   display: inline-block !important;
   line-height: normal !important; }
 
-.v-underline:after {
+.v-underline:after,
+[class^="v-underline-"]:after,
+[class*=" v-underline-"]:after {
   display: block;
   content: '';
   width: 0;
+  height: 0;
+  margin: 0;
   margin-top: 2px;
-  height: 1px;
-  background-color: currentColor;
+  border-bottom: thin solid;
   -webkit-transition: width .15s ease-out;
   transition: width .15s ease-out; }
 
-.v-underline:hover:after {
+.v-underline-center:after {
+  margin: 0 auto; }
+
+.v-underline-right:after {
+  margin-left: auto; }
+
+.v-underline:hover:after,
+[class^="v-underline-"]:hover:after,
+[class*=" v-underline-"]:hover:after {
   width: 100%; }
 
-.v-underline::after {
+.v-underline::after,
+[class^="v-underline-"]::after,
+[class*=" v-underline-"]::after {
   display: block;
   content: '';
   width: 0;
+  height: 0;
+  margin: 0;
   margin-top: 2px;
-  height: 1px;
-  background-color: currentColor;
+  border-bottom: thin solid;
   -webkit-transition: width .15s ease-out;
   transition: width .15s ease-out; }
 
-.v-underline:hover::after {
+.v-underline-center::after {
+  margin: 0 auto; }
+
+.v-underline-right::after {
+  margin-left: auto; }
+
+.v-underline:hover::after,
+[class^="v-underline-"]:hover::after,
+[class*=" v-underline-"]:hover::after {
   width: 100%; }
 
 /* By view-port size */

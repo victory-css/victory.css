@@ -69,6 +69,13 @@
     height: 1px;
     opacity: .65;
     color: inherit;
+
+    /*fallback no currentColor support*/
+    border-bottom: 1px solid;
+    border-bottom: 0 solid rgba(0,0,0,0);
+
+    /*fallback no linear-gradient support*/
     background: currentColor;
+
     background: linear-gradient(90deg, rgba(255,255,255,0) 0%, currentColor 50%, rgba(255,255,255,0) 100%);
 }

@@ -7,14 +7,14 @@ Victory.css is a simply and lightweight front-end framework for developing fast.
 Use CDN:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory.css@0.4.0/dist/victory.min.css">
-<script src="https://cdn.jsdelivr.net/npm/victory.css@0.4.0/dist/victory.min.js></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory.css@0.5.0/dist/victory.min.css">
+<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5.0/dist/victory.min.js></script>
 ```
 
 Or download from:
 
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.4.0/dist/victory.min.css
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.4.0/dist/victory.min.js
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.0/dist/victory.min.css
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.0/dist/victory.min.js
 
 ## Using
 
@@ -69,14 +69,14 @@ Gziped size | 7.6 kB | 3.8 kB
 For production use CDN:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory-basic.css@0.4.0/dist/victory.min.css">
-<script src="https://cdn.jsdelivr.net/npm/victory.css@0.4.0/dist/victory-basic.min.js></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory-basic.css@0.5.0/dist/victory.min.css">
+<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5.0/dist/victory-basic.min.js></script>
 ```
 
 Or download from:
 
-- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.4.0/dist/victory.min.css
-- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.4.0/dist/victory.min.js
+- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.0/dist/victory.min.css
+- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.0/dist/victory.min.js
 
 then use in your project put like this:
 

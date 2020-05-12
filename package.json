@@ -39,10 +39,10 @@
         "gulp": "^3.9.1"
     },
     "browserslist": [
-        "Firefox > 28",
-        "Opera > 15",
-        "iOS > 7",
-        "Android >= 2",
-        "ie > 6"
+        "Android >= 2.3",
+        "Firefox >= 28",
+        "ie >= 8",
+        "iOS >= 7",
+        "Opera >= 15"
     ]
 }

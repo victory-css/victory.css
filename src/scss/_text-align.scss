@@ -1,18 +1,26 @@
-@mixin text-align($width, $size) {
-    @media (min-width: $width) {
-        .v-text-left-#{$size} { text-align: left !important; }
-        .v-text-right-#{$size} { text-align: right !important; }
-        .v-text-center-#{$size} { text-align: center !important; }
-        .v-text-justify-#{$size} { text-align: justify !important; }
-    }
+@mixin text-align($size) {
+    .v-text-left-#{$size} { text-align: left !important; }
+    .v-text-right-#{$size} { text-align: right !important; }
+    .v-text-center-#{$size} { text-align: center !important; }
+    .v-text-justify-#{$size} { text-align: justify !important; }
 }
 
-.v-text-left { text-align: left !important; }
-.v-text-right { text-align: right !important; }
-.v-text-center { text-align: center !important; }
-.v-text-justify { text-align: justify !important; }
+@media (min-width: $global-view-port-sm) {
+    @include text-align('sm');
+}
 
-@include text-align($global-view-port-sm, 'sm');
-@include text-align($global-view-port-md, 'md');
-@include text-align($global-view-port-lg, 'lg');
-@include text-align($global-view-port-xl, 'xl');
+@media (min-width: $global-view-port-md) {
+    @include text-align('md');
+}
+
+@media (min-width: $global-view-port-lg) {
+    @include text-align('lg');
+}
+
+@media (min-width: $global-view-port-xl) {
+    @include text-align('xl');
+}
+
+@media \0screen {
+    @include text-align('md');
+}

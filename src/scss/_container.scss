@@ -3,18 +3,25 @@
     padding-right: 15px;
 }
 
+@media (max-width: 319px) {
+    .v-container-fluid, .v-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
 .v-container {
     margin-right: auto;
     margin-left: auto;
 
     /* Fallback for old browsers */
-    width: 1000px;
+    max-width: 1000px;
 }
 
 @mixin container-size($minmedia, $width) {
     @media (min-width: $minmedia) {
         .v-container {
-            width: unquote($width);
+            max-width: unquote($width);
         }
     }
 }

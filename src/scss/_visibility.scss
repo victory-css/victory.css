@@ -1,51 +1,28 @@
-@mixin visibility($width, $size) {
-    @media (min-width: $width) {
-        .v-block-#{$size} { display: block !important; }
-        .v-inline-#{$size} { display: inline !important; }
-        .v-inline-block-#{$size} { display: inline-block !important; }
-        .v-none-#{$size} { display: none !important; }
-        .v-hidden-#{$size} { visibility: hidden !important; }
-        .v-visible-#{$size} { visibility: visible !important; }
-    }
+@mixin visibility($size) {
+    .v-block-#{$size} { display: block !important; }
+    .v-inline-#{$size} { display: inline !important; }
+    .v-inline-block-#{$size} { display: inline-block !important; }
+    .v-none-#{$size} { display: none !important; }
+    .v-hidden-#{$size} { visibility: hidden !important; }
+    .v-visible-#{$size} { visibility: visible !important; }
 }
 
-@mixin visibility-initial($vblock, $vinline, $vinlineblock, $vnone, $vhidden, $vvisible) {
-    [class^="v-block-"], [class*=" v-block-"] {
-        display: unquote($vblock) !important;
-    }
-
-    [class^="v-inline-"], [class*=" v-inline-"] {
-        display: unquote($vinline) !important;
-    }
-
-    [class^="v-inline-block-"], [class*=" v-inline-block-"] {
-        display: unquote($vinlineblock) !important;
-    }
-
-    @if $vnone != '' {
-        [class^="v-none-"], [class*=" v-none-"] {
-            display: unquote($vnone) !important;
-        }
-    }
-
-    [class^="v-hidden-"], [class*=" v-hidden-"] {
-         visibility: unquote($vhidden) !important;
-    }
-
-    [class^="v-visible-"], [class*=" v-visible-"] {
-        visibility: unquote($vvisible) !important;
-    }
+@media (min-width: $global-view-port-sm) {
+    @include visibility('sm');
 }
 
-/* Fallback for browsers without media-query support */
-@include visibility-initial('block', 'inline', 'inline-block', 'none', 'hidden', 'visible');
-
-/* Override fallback */
-@media (min-width: 1px) {
-    @include visibility-initial('none', 'none', 'none', '', 'visible', 'hidden');
+@media (min-width: $global-view-port-md) {
+    @include visibility('md');
 }
 
-@include visibility($global-view-port-sm, 'sm');
-@include visibility($global-view-port-md, 'md');
-@include visibility($global-view-port-lg, 'lg');
-@include visibility($global-view-port-xl, 'xl');
+@media (min-width: $global-view-port-lg) {
+    @include visibility('lg');
+}
+
+@media (min-width: $global-view-port-xl) {
+    @include visibility('xl');
+}
+
+@media \0screen {
+    @include visibility('md');
+}

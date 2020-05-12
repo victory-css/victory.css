@@ -1,5 +1,5 @@
 /*
- * victory.css 0.4.0
+ * victory.css 0.5.0
  * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
@@ -727,28 +727,6 @@ html.v-fix-render {
 .v-bg-light {
   background-color: #f8f9fa !important;
   color: #4F4949 !important; }
-
-.v-navbar .v-nav-right:before,
-.v-navbar .v-nav-left:before,
-.v-slide > .v-slide-inner:before,
-.v-slide .v-slide-btn-back:before,
-.v-slide .v-slide-btn-next:before {
-  content: '';
-  display: inline-block;
-  width: 0;
-  height: 100%;
-  vertical-align: middle; }
-
-.v-navbar .v-nav-right::before,
-.v-navbar .v-nav-left::before,
-.v-slide > .v-slide-inner::before,
-.v-slide .v-slide-btn-back::before,
-.v-slide .v-slide-btn-next::before {
-  content: '';
-  display: inline-block;
-  width: 0;
-  height: 100%;
-  vertical-align: middle; }
 
 .v-clear,
 .v-clear-in:after,

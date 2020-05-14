@@ -8,26 +8,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="../../dist/victory.min.css">
     <script src="../../dist/victory.min.js"></script>
+    <style type="text/css">
+    code {
+        margin: 15px 0;
+    }
+    </style>
 </head>
 <body>
     <!-- SLIDE -->
     <div class="v-slide">
         <div class="v-slide-inner">
-            <div class="v-slide-item" data-x="100">
+            <div class="v-slide-item">
                 <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%23800000' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example</text></svg>">
             </div>
-            <div class="v-slide-item" data-x="200">
+            <div class="v-slide-item">
                 <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%230000ff' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example</text></svg>">
             </div>
-            <div class="v-slide-item" data-x="300">
+            <div class="v-slide-item">
                 <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 800 320' height='320' width='800'><rect fill='%23ff0000' y='0' x='0' height='320' width='800'/><text style='font-weight:bold;font-size:17pt;font-family:Arial,Helvetica,Open Sans,sans-serif,monospace;fill:%23eceeef' y='165.50964' x='355.93192'>Example</text></svg>">
             </div>
         </div>
 
         <!-- « » -->
-        <a href="javascript:void(0);" class="v-slide-btn-back">‹</a>
-        <a href="javascript:void(0);" class="v-slide-btn-next">›</a>
+        <button class="v-slide-btn-back">‹</button>
+        <button class="v-slide-btn-next">›</button>
     </div>
     <!-- SLIDE -->
+
+    <code class="v-code-pre">&lt;!-- SLIDE -->
+&lt;div class="v-slide">
+    &lt;div class="v-slide-inner">
+        &lt;div class="v-slide-item">
+            &lt;img src="image1.jpg">
+        &lt;/div>
+        &lt;div class="v-slide-item">
+            &lt;img src="image2.jpg">
+        &lt;/div>
+        &lt;div class="v-slide-item">
+            &lt;img src="image3.jpg">
+        &lt;/div>
+    &lt;/div>
+
+    &lt;!-- « » -->
+    &lt;button class="v-slide-btn-back">‹&lt;/button>
+    &lt;button class="v-slide-btn-next">›&lt;/button>
+&lt;/div>
+&lt;!-- SLIDE --></code>
 </body>
 </html>

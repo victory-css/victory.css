@@ -7,14 +7,14 @@ Victory.css is a simply and lightweight front-end framework for developing fast.
 Use CDN:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory.css@0.5.0/dist/victory.min.css">
-<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5.0/dist/victory.min.js></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory.css@0.5.1/dist/victory.min.css">
+<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5.1/dist/victory.min.js></script>
 ```
 
 Or download from:
 
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.0/dist/victory.min.css
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.0/dist/victory.min.js
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.1/dist/victory.min.css
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.1/dist/victory.min.js
 
 ## Using
 
@@ -39,44 +39,44 @@ For use in your project copy `victory.min.css` and `victory.min.js` and put like
 
 Basic contains only basic resources, `victory.min.js` is same from standard version, about differences see:
 
-Resource | Standard | Basic
---- | --- | ---
-`border.scss` | ✔ |✔
-`clear-both.scss` | ✔ | ✔
-`colors.scss` | ✔ | ✔
-`commons.scss` | ✔ | ✔
-`container.scss` | ✔ | ✔
-`grid.scss` | ✔ | ✔
-`normalize.scss` | ✔ | ✔
-`text-align.scss` | ✔ | ✔
-`visibility.scss` | ✔ | ✔
-`align-middle.scss` | ✔
-`arrow.scss` | ✔
-`badge.scss` | ✔
-`button.scss` | ✔
-`code.scss` | ✔
-`divider.scss` | ✔
-`input.scss` | ✔
-`kbd.scss` | ✔
-`nav.scss` | ✔
-`resize.scss` | ✔
-`slide.scss` | ✔
-`table.scss` | ✔
-`underline.scss` | ✔
-Minified size  | 38 kB | 15.6 kB
-Gziped size | 7.6 kB | 3.8 kB
+Resource | Standard | Basic | About
+--- | --- | --- | ---
+`border.scss` | ✔ | ✔ | Utility for arround any element
+`clear-both.scss` | ✔ | ✔ | Clear both "global"
+`colors.scss` | ✔ | ✔ | Background and border color classes
+`commons.scss` | ✔ | ✔ | Various classes of common use
+`container.scss` | ✔ | ✔ | container (adpatative width `@media-query`) and container-fluid
+`grid.scss` | ✔ | ✔ | Grid system
+`normalize.scss` | ✔ | ✔ | Basic normalize and fallback for html5 tags for old browsers
+`text-align.scss` | ✔ | ✔ | `text-align` basead in view-port size
+`visibility.scss` | ✔ | ✔ | `visibility:` and `display:` basead in view-port size
+`arrow.scss` | ✔ | - | Various arrow "icons"
+`badge.scss` | ✔ | - | Badges system
+`button.scss` | ✔ | - | Styled buttons
+`code.scss` | ✔ | - | Pre defined style for `<code>` tags
+`divider.scss` | ✔ | - | Style horizontal lines (like `<hr>`)
+`fix-render.scss` | ✔ | - | fix-render (fix bug in elements with `position:fixed` on enter Chromium/Chrome DevTools)
+`input.scss` | ✔ | - | Styled inputs
+`kbd.scss` | ✔ | - | Pre defined style for `<kbd>` tags
+`nav.scss` | ✔ | - | Navbar system
+`resize.scss` | ✔ | - | Resize elements (only Desktop)
+`slide.scss` | ✔ | - | Slide system
+`table.scss` | ✔ | - | Styled tables
+`underline.scss` | ✔ | - | Underline text animated
+Minified size  | 42kB | 16kB | -
+Gziped size | 7.5kB | 2.7kB | -
 
 For production use CDN:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory-basic.css@0.5.0/dist/victory.min.css">
-<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5.0/dist/victory-basic.min.js></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory-basic.css@0.5.1/dist/victory.min.css">
+<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5.1/dist/victory-basic.min.js></script>
 ```
 
 Or download from:
 
-- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.0/dist/victory.min.css
-- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.0/dist/victory.min.js
+- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.1/dist/victory.min.css
+- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.1/dist/victory.min.js
 
 then use in your project put like this:
 

@@ -53,7 +53,7 @@
     .v-row > .v-col#{$type}-1 { width: 8.33333333%; }
 }
 
-/* Fallback for old browsers */
+/* Fallback requires inverted order priority */
 @include cols('-xl');
 @include cols('-lg');
 @include cols('-sm');

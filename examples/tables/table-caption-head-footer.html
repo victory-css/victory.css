@@ -15,66 +15,83 @@
     .v-table {
         width: 100%;
     }
+
+    code {
+        margin: 10px 5px;
+    }
     </style>
 </head>
 <body>
     <div class="v-card">
-        <table class="v-table v-table-responsive-md v-table-hover v-table-striped">
-            <caption>Nice Projects</caption>
-            <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Description</th>
-                    <th>Download</th>
-                </tr>
-            </thead>
-            <tfoot>
-                <tr>
-                    <th>Project</th>
-                    <th>Description</th>
-                    <th>Download</th>
-                </tr>
-            </tfoot>
-            <tbody>
-                <tr>
-                    <td><code>Victory.css</code></td>
-                    <td>An lightweight front-end framework</td>
-                    <td><a href="https://github.com/victory-css">https://github.com/victory-css</a></td>
-                </tr>
-                <tr>
-                    <td><code>Inphinit PHP framework</code></td>
-                    <td>An lightweight back-end framework</td>
-                    <td><a href="https://inphinit.github.io/">https://inphinit.github.io/</a></td>
-                </tr>
-                <tr>
-                    <td><code>simple-copy.js</code></td>
-                    <td>Copy DOM, textarea or fields values to clipboard, no Flash, only 1.75kB minified (0.95kB gzipped)</td>
-                    <td><a href="https://github.com/brcontainer/simple-copy.js">https://github.com/brcontainer/simple-copy.js</a></td>
-                </tr>
-                <tr>
-                    <td><code>Responsive-youtube.js</code></td>
-                    <td>Responsive youtube api embeded players</td>
-                    <td><a href="https://github.com/brcontainer/responsive-youtube.js">https://github.com/brcontainer/responsive-youtube.js</a></td>
-                </tr>
-                <tr>
-                    <td><code>Pjax.js</code></td>
-                    <td>The <code>Pjax.js</code> is a script that uses ajax, pushState and automatically detects links and forms, for configure page you need use <code>id="pjax-container"</code> in all pages, example:</td>
-                    <td><a href="https://github.com/brcontainer/pjax.js">https://github.com/brcontainer/pjax.js</a></td>
-                </tr>
+    <table class="v-table v-table-responsive-md v-table-hover v-table-striped">
+        <caption>Nice Projects</caption>
+        <thead>
+            <tr>
+                <th>Project</th>
+                <th>Description</th>
+                <th>Download</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Project</th>
+                <th>Description</th>
+                <th>Download</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td><code>Victory.css</code></td>
+                <td>An lightweight front-end framework</td>
+                <td><a href="https://github.com/victory-css">https://github.com/victory-css</a></td>
+            </tr>
+            <tr>
+                <td><code>Inphinit PHP framework</code></td>
+                <td>An lightweight back-end framework</td>
+                <td><a href="https://inphinit.github.io/">https://inphinit.github.io/</a></td>
+            </tr>
+            <tr>
+                <td><code>simple-copy.js</code></td>
+                <td>Copy DOM, textarea or fields values to clipboard, no Flash, only 1.75kB minified (0.95kB gzipped)</td>
+                <td><a href="https://github.com/brcontainer/simple-copy.js">https://github.com/brcontainer/simple-copy.js</a></td>
+            </tr>
+            <tr>
+                <td><code>Responsive-youtube.js</code></td>
+                <td>Responsive youtube api embeded players</td>
+                <td><a href="https://github.com/brcontainer/responsive-youtube.js">https://github.com/brcontainer/responsive-youtube.js</a></td>
+            </tr>
+            <tr>
+                <td><code>Pjax.js</code></td>
+                <td>The <code>Pjax.js</code> is a script that uses ajax, pushState and automatically detects links and forms, for configure page you need use <code>id="pjax-container"</code> in all pages, example:</td>
+                <td><a href="https://github.com/brcontainer/pjax.js">https://github.com/brcontainer/pjax.js</a></td>
+            </tr>
 
-                <tr>
-                    <td><code>Full Screen Helper</code></td>
-                    <td>Cross-browser fullscreen HTML elements (with jQuery support)</td>
-                    <td><a href="https://github.com/brcontainer/full-screen-helper.js">https://github.com/brcontainer/full-screen-helper.js</a></td>
-                </tr>
+            <tr>
+                <td><code>Full Screen Helper</code></td>
+                <td>Cross-browser fullscreen HTML elements (with jQuery support)</td>
+                <td><a href="https://github.com/brcontainer/full-screen-helper.js">https://github.com/brcontainer/full-screen-helper.js</a></td>
+            </tr>
 
-                <tr>
-                    <td><code>BypassCache.js</code></td>
-                    <td>An lightweight front-end framework</td>
-                    <td><a href="https://github.com/brcontainer/bypasscache.js">https://github.com/brcontainer/bypasscache.js</a></td>
-                </tr>
-            </tbody>
-        </table>
+            <tr>
+                <td><code>BypassCache.js</code></td>
+                <td>An lightweight front-end framework</td>
+                <td><a href="https://github.com/brcontainer/bypasscache.js">https://github.com/brcontainer/bypasscache.js</a></td>
+            </tr>
+        </tbody>
+    </table>
     </div>
+
+    <script type="text/javascript">
+    var els = document.querySelectorAll(".v-table");
+
+    for (var i = els.length - 1; i >= 0; i--) {
+        var el = els[i], code = document.createElement("code");
+
+        code.className = "v-code-pre";
+        code.innerText = el.outerHTML.replace(/(\n)[ ]{4}/g, "$1").replace(/^\s+|\s+$/, "");
+
+        el.parentElement.insertBefore(code, el.nextSibling);
+    }
+    </script>
 </body>
 </html>

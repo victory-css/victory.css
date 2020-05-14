@@ -1,3 +1,5 @@
+$to-fix-in-render: append($to-fix-in-render, '.v-nav-fix');
+
 .v-navbar {
     position: relative;
     z-index: $nav-bar-z;
@@ -162,7 +164,7 @@
         right: 0;
         top: 100%;
         width: 100%;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.1);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1);
     }
 }
 
@@ -198,7 +200,7 @@
 .v-navbar a.v-nav-item:hover,
 .v-navbar button.v-nav-item:hover,
 .v-navbar button.v-nav-item:hover {
-    background-color: rgba(0,0,0,.2);
+    background-color: rgba(0, 0, 0, .2);
 }
 
 .v-navbar.v-nav-toggled .v-nav-items.v-nav-ltr a.v-nav-item:hover,
@@ -210,6 +212,7 @@
 
 .v-navbar.v-nav-toggled .v-nav-items.v-nav-ltr,
 .v-navbar.v-nav-toggled .v-nav-items.v-nav-rtl {
+    background-color: transparent;
     background-color: rgba(0, 0, 0, .24);
     position: fixed;
     min-width: 220px;

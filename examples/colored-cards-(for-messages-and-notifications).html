@@ -14,6 +14,10 @@
     .v-card {
         padding: 10px;
     }
+
+    code {
+        margin: 10px 5px;
+    }
     </style>
 </head>
 <body>
@@ -23,5 +27,18 @@
     <div class="v-card v-bg-success">Registred with success</div>
     <div class="v-card v-bg-warning">Warning: your missing some fields</div>
     <div class="v-card v-bg-dark">See <strong>GREAT event</strong></div>
+
+    <script type="text/javascript">
+    var els = document.querySelectorAll(".v-card");
+
+    for (var i = els.length - 1; i >= 0; i--) {
+        var el = els[i], code = document.createElement("code");
+
+        code.className = "v-code-pre";
+        code.innerText = el.outerHTML.replace(/(\n)[ ]{4}/g, "$1").replace(/^\s+|\s+$/, "");
+
+        el.parentElement.insertBefore(code, el.nextSibling);
+    }
+    </script>
 </body>
 </html>

@@ -1,28 +1,33 @@
 @mixin visibility($size) {
-    .v-block-#{$size} { display: block !important; }
-    .v-inline-#{$size} { display: inline !important; }
-    .v-inline-block-#{$size} { display: inline-block !important; }
-    .v-none-#{$size} { display: none !important; }
-    .v-hidden-#{$size} { visibility: hidden !important; }
-    .v-visible-#{$size} { visibility: visible !important; }
+    .v-block#{$size} { display: block !important; }
+    .v-inline#{$size} { display: inline !important; }
+    .v-inline-block#{$size} { display: inline-block !important; }
+    .v-none#{$size} { display: none !important; }
+    .v-hidden#{$size} { visibility: hidden !important; }
+    .v-visible#{$size} { visibility: visible !important; }
+}
+
+/* standard aligns (no-media querys) */
+@include visibility('');
+
+/* Fallback requires inverted order priority, md is priority */
+@media \0screen {
+    @include visibility('-sm');
+    @include visibility('-md');
 }
 
 @media (min-width: $global-view-port-sm) {
-    @include visibility('sm');
+    @include visibility('-sm');
 }
 
 @media (min-width: $global-view-port-md) {
-    @include visibility('md');
+    @include visibility('-md');
 }
 
 @media (min-width: $global-view-port-lg) {
-    @include visibility('lg');
+    @include visibility('-lg');
 }
 
 @media (min-width: $global-view-port-xl) {
-    @include visibility('xl');
-}
-
-@media \0screen {
-    @include visibility('md');
+    @include visibility('-xl');
 }

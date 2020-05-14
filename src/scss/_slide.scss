@@ -1,3 +1,5 @@
+$to-fix-in-render: append($to-fix-in-render, '.v-slide');
+
 .v-slide {
     background-color: $global-secondary-color;
     min-width: $min-view-port-width;
@@ -50,8 +52,8 @@
             min-height: 10px;
             margin: 0 5px;
             border-radius: 100%;
-            box-shadow: 0 0 2px rgba(255,255,255,.5),
-                        0 0 2px rgba(255,255,255,.5) inset;
+            box-shadow: 0 0 2px rgba(255, 255, 255, .5),
+                        0 0 2px rgba(255, 255, 255, .5) inset;
         }
     }
     */

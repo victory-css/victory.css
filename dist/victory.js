@@ -1,5 +1,5 @@
 /*
- * victory.css 0.5.0
+ * victory.css 0.5.1
  * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
@@ -191,7 +191,6 @@
         selectorBtn = '.v-slide .v-slide-btn-';
 
     Victory.addEvent(d, 'click', slideButtons);
-
     Victory.addEvent(d, 'touchstart', slideTouchStart);
     Victory.addEvent(d, 'touchmove', slideTouchMove);
     Victory.addEvent(d, 'touchend', slideTouchEnd);

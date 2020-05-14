@@ -1,5 +1,5 @@
 /*
- * victory.css 0.5.0
+ * victory.css 0.5.1
  * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
@@ -97,12 +97,6 @@ meter, progress, audio[controls], canvas, video {
 svg {
   overflow: hidden; }
 
-html.v-fix-render {
-  -webkit-transform: scale(1.0001, 1.0001);
-      -ms-transform: scale(1.0001, 1.0001);
-          transform: scale(1.0001, 1.0001);
-  zoom: 1.0001; }
-
 /* Basic */
 :after, :before, .v-no-select {
   -webkit-user-select: none;
@@ -175,7 +169,7 @@ html.v-fix-render {
 
 @media (min-width: 1px) {
   .v-container {
-    max-width: auto; } }
+    max-width: 750px; } }
 
 @media (min-width: 768px) {
   .v-container {
@@ -247,7 +241,7 @@ html.v-fix-render {
   padding: 5px;
   border-radius: 4px; }
 
-/* Fallback for old browsers */
+/* Fallback requires inverted order priority */
 .v-row > .v-col-xl-12 {
   width: 100%; }
 
@@ -1226,6 +1220,38 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
   .v-table.v-table-responsive-xl > tbody > tr > * {
     display: table-cell; } }
 
+/* standard aligns (no-media querys) */
+.v-text-left {
+  text-align: left !important; }
+
+.v-text-right {
+  text-align: right !important; }
+
+.v-text-center {
+  text-align: center !important; }
+
+.v-text-justify {
+  text-align: justify !important; }
+
+/* Fallback requires inverted order priority, md is priority */
+@media \0screen {
+  .v-text-left-sm {
+    text-align: left !important; }
+  .v-text-right-sm {
+    text-align: right !important; }
+  .v-text-center-sm {
+    text-align: center !important; }
+  .v-text-justify-sm {
+    text-align: justify !important; }
+  .v-text-left-md {
+    text-align: left !important; }
+  .v-text-right-md {
+    text-align: right !important; }
+  .v-text-center-md {
+    text-align: center !important; }
+  .v-text-justify-md {
+    text-align: justify !important; } }
+
 @media (min-width: 576px) {
   .v-text-left-sm {
     text-align: left !important; }
@@ -1266,15 +1292,51 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
   .v-text-justify-xl {
     text-align: justify !important; } }
 
+/* standard aligns (no-media querys) */
+.v-block {
+  display: block !important; }
+
+.v-inline {
+  display: inline !important; }
+
+.v-inline-block {
+  display: inline-block !important; }
+
+.v-none {
+  display: none !important; }
+
+.v-hidden {
+  visibility: hidden !important; }
+
+.v-visible {
+  visibility: visible !important; }
+
+/* Fallback requires inverted order priority, md is priority */
 @media \0screen {
-  .v-text-left-md {
-    text-align: left !important; }
-  .v-text-right-md {
-    text-align: right !important; }
-  .v-text-center-md {
-    text-align: center !important; }
-  .v-text-justify-md {
-    text-align: justify !important; } }
+  .v-block-sm {
+    display: block !important; }
+  .v-inline-sm {
+    display: inline !important; }
+  .v-inline-block-sm {
+    display: inline-block !important; }
+  .v-none-sm {
+    display: none !important; }
+  .v-hidden-sm {
+    visibility: hidden !important; }
+  .v-visible-sm {
+    visibility: visible !important; }
+  .v-block-md {
+    display: block !important; }
+  .v-inline-md {
+    display: inline !important; }
+  .v-inline-block-md {
+    display: inline-block !important; }
+  .v-none-md {
+    display: none !important; }
+  .v-hidden-md {
+    visibility: hidden !important; }
+  .v-visible-md {
+    visibility: visible !important; } }
 
 @media (min-width: 576px) {
   .v-block-sm {
@@ -1330,20 +1392,6 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
   .v-hidden-xl {
     visibility: hidden !important; }
   .v-visible-xl {
-    visibility: visible !important; } }
-
-@media \0screen {
-  .v-block-md {
-    display: block !important; }
-  .v-inline-md {
-    display: inline !important; }
-  .v-inline-block-md {
-    display: inline-block !important; }
-  .v-none-md {
-    display: none !important; }
-  .v-hidden-md {
-    visibility: hidden !important; }
-  .v-visible-md {
     visibility: visible !important; } }
 
 /* Extras */
@@ -1587,6 +1635,7 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
 
 .v-navbar.v-nav-toggled .v-nav-items.v-nav-ltr,
 .v-navbar.v-nav-toggled .v-nav-items.v-nav-rtl {
+  background-color: transparent;
   background-color: rgba(0, 0, 0, 0.24);
   position: fixed;
   min-width: 220px;
@@ -1643,8 +1692,8 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
             min-height: 10px;
             margin: 0 5px;
             border-radius: 100%;
-            box-shadow: 0 0 2px rgba(255,255,255,.5),
-                        0 0 2px rgba(255,255,255,.5) inset;
+            box-shadow: 0 0 2px rgba(255, 255, 255, .5),
+                        0 0 2px rgba(255, 255, 255, .5) inset;
         }
     }
     */ }
@@ -1852,3 +1901,9 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
   display: block;
   content: '';
   height: 0; }
+
+html.v-fix-render .v-nav-fix, html.v-fix-render .v-slide {
+  zoom: 99.99%;
+  -webkit-transform: scale(1.0001, 1.0001);
+      -ms-transform: scale(1.0001, 1.0001);
+          transform: scale(1.0001, 1.0001); }

@@ -13,6 +13,10 @@
         font-family: "Helvetica Neue", Arial, sans-serif;
         background-color: #f7f7f7;
     }
+
+    code {
+        margin: 15px 0;
+    }
     </style>
 </head>
 <body>
@@ -38,6 +42,17 @@
         </div>
     </div>
 
-    <h1>navbar colored</h1>
+    <script type="text/javascript">
+    var els = document.querySelectorAll(".v-navbar");
+
+    for (var i = els.length - 1; i >= 0; i--) {
+        var el = els[i], code = document.createElement("code");
+
+        code.className = "v-code-pre";
+        code.innerText = el.outerHTML.replace(/(\n)[ ]{4}/g, "$1").replace(/^\s+|\s+$/, "");
+
+        el.parentElement.insertBefore(code, el.nextSibling);
+    }
+    </script>
 </body>
 </html>

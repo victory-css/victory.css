@@ -27,7 +27,7 @@
     }
 }
 
-@include container-size(1px, 'auto');
+@include container-size(1px, '750px');
 @include container-size($global-view-port-md, '750px');
 @include container-size($global-view-port-lg, '970px');
 @include container-size($global-view-port-xl, '1170px');

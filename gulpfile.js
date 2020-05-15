@@ -13,16 +13,12 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 //var sourcemaps = require('gulp-sourcemaps');
 
-//var runSequence = require('run-sequence');
-
 var markdown = require('markdown-it')({
     linkify: true
 });
 
 var buildDate = new Date().getUTCFullYear();
 var packageData = JSON.parse(fs.readFileSync(__dirname + '/package.json'));
-
-//runSequence.options.ignoreUndefinedTasks = true;
 
 function commentData(glue, extras)
 {

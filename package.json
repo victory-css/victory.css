@@ -30,13 +30,13 @@
         "gulp-minify": "^3.1.0",
         "gulp-postcss": "^8.0.0",
         "gulp-rename": "^1.4.0",
-        "gulp-sass": "^4.0.2",
+        "gulp-sass": "^4.1.0",
         "gulp-sourcemaps": "^2.6.5",
         "markdown-it": "^10.0.0",
         "run-sequence": "^2.2.1"
     },
     "devDependencies": {
-        "gulp": "^3.9.1"
+        "gulp": "^4.0.2"
     },
     "browserslist": [
         "Android >= 2.3",

@@ -13,7 +13,7 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 //var sourcemaps = require('gulp-sourcemaps');
 
-var runSequence = require('run-sequence');
+//var runSequence = require('run-sequence');
 
 var markdown = require('markdown-it')({
     linkify: true
@@ -22,7 +22,7 @@ var markdown = require('markdown-it')({
 var buildDate = new Date().getUTCFullYear();
 var packageData = JSON.parse(fs.readFileSync(__dirname + '/package.json'));
 
-runSequence.options.ignoreUndefinedTasks = true;
+//runSequence.options.ignoreUndefinedTasks = true;
 
 function commentData(glue, extras)
 {
@@ -281,21 +281,11 @@ gulp.task('basic:minjs', () => {
 });
 
 /* Deploy commands */
-gulp.task('default', () => {
-    runSequence(
-        'mergecss', 'prefix', 'mincss', 'mergejs', 'minjs',
-        'basic:mergecss', 'basic:mincss', 'basic:mergejs', 'basic:minjs'
-    );
-});
+gulp.task('default', gulp.series(
+    'mergecss', 'prefix', 'mincss', 'mergejs', 'minjs',
+    'basic:mergecss', 'basic:mincss', 'basic:mergejs', 'basic:minjs'
+));
 
-gulp.task('basic', () => {
-    runSequence(
-        'basic:mergecss', 'basic:mincss', 'basic:mergejs', 'basic:minjs'
-    );
-});
+gulp.task('basic', gulp.series('basic:mergecss', 'basic:mincss', 'basic:mergejs', 'basic:minjs'));
 
-gulp.task('standard', () => {
-    runSequence(
-        'mergecss', 'prefix', 'mincss', 'mergejs', 'minjs',
-    );
-});
+gulp.task('standard', gulp.series('mergecss', 'prefix', 'mincss', 'mergejs', 'minjs'));

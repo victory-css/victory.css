@@ -16,35 +16,58 @@
         padding: 5px;
         min-height: 100px;
     }
+
+    code {
+        margin: 5px;
+    }
     </style>
 </head>
 <body>
-    <h2>Wrong structures</h2>
+    <div class="example">
+        <h2>Wrong structures</h2>
 
-    <div class="v-row">
-        <div class="doo">Homer</div>
-        <div class="v-col-sm-6">col-1</div>
-        <div class="v-col-sm-6">col-2</div>
-    </div>
-
-    <hr class="v-divider">
-
-    <div class="v-row">
-        <label>Homer</label>
-        <div class="v-col-sm-6">
-            <input type="text" name="foo">
+        <div class="v-row">
+            <div class="doo">Homer</div>
+            <div class="v-col-sm-6">col-1</div>
+            <div class="v-col-sm-6">col-2</div>
         </div>
-        <div class="v-col-sm-6">
-            <input type="text" name="bar">
+
+        <hr class="v-divider">
+
+        <div class="v-row">
+            <label>Homer</label><!-- invalid element, requires .v-col-* -->
+
+            <div class="v-col-sm-6">
+                <input type="text" name="foo">
+            </div>
+            <div class="v-col-sm-6">
+                <input type="text" name="bar">
+            </div>
+        </div>
+
+        <hr class="v-divider">
+
+        <div class="anything"><!-- invalid element, requires .v-row -->
+            <label>Homer</label>
+            <div class="v-col-sm-6">col-1</div>
+            <div class="v-col-sm-6">col-2</div>
         </div>
     </div>
 
-    <hr class="v-divider">
+    <script type="text/javascript">
+    var els = document.querySelectorAll(".example");
 
-    <div class="anything">
-        <label>Homer</label>
-        <div class="v-col-sm-6">col-1</div>
-        <div class="v-col-sm-6">col-2</div>
-    </div>
+    for (var i = els.length - 1; i >= 0; i--) {
+        var el = els[i], code = document.createElement("code"), html = el.outerHTML,
+            re = new RegExp('(\\n)[ ]{' + (/[ ]{8,}[<][^\n]+$/.test(html) ? 8 : 4) + '}', 'g');
+
+        var j = 0;
+
+        code.className = "v-code-pre";
+        code.innerText = html.replace(re, "$1").replace(/^\s+|\s+$/, "");
+
+        el.parentElement.insertBefore(code, el.nextSibling);
+    }
+    </script>
 </body>
 </html>

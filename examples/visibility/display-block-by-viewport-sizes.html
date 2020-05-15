@@ -38,10 +38,11 @@
     var els = document.querySelectorAll(".test");
 
     for (var i = els.length - 1; i >= 0; i--) {
-        var el = els[i], code = document.createElement("code");
+        var el = els[i], code = document.createElement("code"), html = el.outerHTML,
+            re = new RegExp('(\\n)[ ]{' + (/[ ]{8,}[<][^\n]+$/.test(html) ? 8 : 4) + '}', 'g');
 
         code.className = "v-code-pre";
-        code.innerText = el.outerHTML.replace(/(\n)[ ]{4}/g, "$1").replace(/^\s+|\s+$/, "");
+        code.innerText = html.replace(re, "$1").replace(/^\s+|\s+$/, "");
 
         el.parentElement.insertBefore(code, el.nextSibling);
     }

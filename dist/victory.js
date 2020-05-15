@@ -188,16 +188,41 @@
 (function (w, d, u) {
     var Victory = w.Victory,
         vclass = Victory.classList,
-        selectorBtn = '.v-slide .v-slide-btn-';
+        selectorBtn = '.v-slide .v-slide-btn-',
+        currentSlide;
 
     Victory.addEvent(d, 'click', slideButtons);
     Victory.addEvent(d, 'touchstart', slideTouchStart);
     Victory.addEvent(d, 'touchmove', slideTouchMove);
     Victory.addEvent(d, 'touchend', slideTouchEnd);
+    Victory.addEvent(d, 'keydown', slideKeyboard);
+
+    function slideKeyboard(e)
+    {
+        if (!currentSlide) return;
+
+        var next;
+
+        if (e.key !== u) {
+            if (e.key === 'ArrowRight') {
+                next = true;
+            } else if (e.key === 'ArrowLeft') {
+                next = false;
+            }
+        } else if (e.keyDown === 39) {
+            next = true;
+        } else if (e.keyDown === 37) {
+            next = false;
+        }
+
+        if (next !== u) goToSlide(currentSlide.querySelector('.v-slide-inner'), next);
+    }
 
     function slideButtons(e)
     {
         if (e.button !== 0) return;
+
+        currentSlide = u;
 
         var target = e.target || e.srcElement;
 
@@ -222,6 +247,8 @@
     {
         var slide = target.closest('.v-slide'),
             inner = slide.querySelector('.v-slide-inner');
+
+        currentSlide = slide;
 
         if (inner.vSlideActive) return;
 
@@ -256,6 +283,8 @@
     function slideTouchStart(e)
     {
         var firstTouch = e.touches[0], target = e.target;
+
+        currentSlide = u;
 
         if (!firstTouch || !target.matches('.v-slide-inner,.v-slide-inner *')) return;
 

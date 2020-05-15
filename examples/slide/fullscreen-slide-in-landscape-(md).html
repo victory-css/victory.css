@@ -14,7 +14,8 @@
     }
 
     code {
-        margin: 15px 0;
+        margin: 5px;
+        margin-bottom: 40px;
     }
     </style>
 </head>
@@ -39,24 +40,24 @@
     </div>
     <!-- SLIDE -->
 
-    <code class="v-code-pre">&lt;!-- SLIDE -->
-&lt;div class="v-slide v-slide-landscape-md">
-    &lt;div class="v-slide-inner">
-        &lt;div class="v-slide-item">
-            &lt;img src="image1.jpg">
-        &lt;/div>
-        &lt;div class="v-slide-item">
-            &lt;img src="image2.jpg">
-        &lt;/div>
-        &lt;div class="v-slide-item">
-            &lt;img src="image3.jpg">
-        &lt;/div>
-    &lt;/div>
+    <script type="text/javascript">
+    var els = document.querySelectorAll(".v-slide");
 
-    &lt;!-- « » -->
-    &lt;button class="v-slide-btn-back">‹&lt;/button>
-    &lt;button class="v-slide-btn-next">›&lt;/button>
-&lt;/div>
-&lt;!-- SLIDE --></code>
+    for (var i = els.length - 1; i >= 0; i--) {
+        var el = els[i], code = document.createElement("code"), html = el.outerHTML,
+            re = new RegExp('(\\n)[ ]{' + (/[ ]{8,}[<][^\n]+$/.test(html) ? 8 : 4) + '}', 'g');
+
+        var j = 0;
+
+        html = html.replace(/\<img src="data\:image\/svg.*?\<\/svg\>"\>/g, function () {
+            return '<img src="image-' + (++j) + '.jpg">';;
+        });
+
+        code.className = "v-code-pre";
+        code.innerText = html.replace(re, "$1").replace(/^\s+|\s+$/, "");
+
+        el.parentElement.insertBefore(code, el.nextSibling);
+    }
+    </script>
 </body>
 </html>

@@ -1,6 +1,4 @@
-Victory.css is a simply and lightweight front-end framework for developing fast.
-
-> **Note:** under development
+Victory.css is a simply and lightweight front-end framework/toolkit (call it what you want) for developing fast.
 
 ## Download
 

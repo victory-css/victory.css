@@ -228,13 +228,17 @@ gulp.task('mergejs', () => {
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
 
-gulp.task('minjs', () => {
+gulp.task('minjs', gulp.series(() => {
     return gulp.src(__dirname + '/dist/victory.js')
-                .pipe(minify({
-                    ext: { min: '.min.js' }
-                }))
-                .pipe(gulp.dest(__dirname + '/dist'));
-});
+            .pipe(minify({
+                ext: { min: '.min.js' }
+            }))
+            .pipe(gulp.dest(__dirname + '/dist'));
+}, () => {
+    return gulp.src(__dirname + '/dist/victory.min.js')
+            .pipe(inject.prepend(releaseMinComment()))
+            .pipe(gulp.dest(__dirname + '/dist'));
+}));
 
 /* Basic project */
 gulp.task('basic:mergecss', () => {
@@ -268,13 +272,17 @@ gulp.task('basic:mergejs', () => {
                 .pipe(gulp.dest(__dirname + '/dist'));
 });
 
-gulp.task('basic:minjs', () => {
+gulp.task('basic:minjs', gulp.series(() => {
     return gulp.src(__dirname + '/dist/victory-basic.js')
-                .pipe(minify({
-                    ext: { min: '.min.js' }
-                }))
-                .pipe(gulp.dest(__dirname + '/dist'));
-});
+            .pipe(minify({
+                ext: { min: '.min.js' }
+            }))
+            .pipe(gulp.dest(__dirname + '/dist'));
+}, () => {
+    return gulp.src(__dirname + '/dist/victory-basic.min.js')
+            .pipe(inject.prepend(releaseMinComment()))
+            .pipe(gulp.dest(__dirname + '/dist'));
+}));
 
 /* Deploy commands */
 gulp.task('default', gulp.series(

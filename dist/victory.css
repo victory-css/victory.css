@@ -1492,7 +1492,7 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
   overflow: hidden;
   display: block;
   width: 24px;
-  height: .18em;
+  height: 2px;
   border-radius: 1px;
   -webkit-transform: translate3d(0, 0, 0) rotate(0) scale(1);
           transform: translate3d(0, 0, 0) rotate(0) scale(1);
@@ -1500,7 +1500,7 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
   transition: all .3s; }
 
 .v-icon-bar + .v-icon-bar {
-  margin-top: .3em; }
+  margin-top: 5px; }
 
 .v-bg-primary .v-icon-bar {
   background: #fff; }
@@ -1527,16 +1527,16 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
   height: auto; }
 
 .v-navbar.v-nav-toggled .v-icon-bar:nth-of-type(1) {
-  -webkit-transform: translate3d(0, 0.49em, 0) rotate(45deg);
-          transform: translate3d(0, 0.49em, 0) rotate(45deg); }
+  -webkit-transform: translate3d(0, 7px, 0) rotate(45deg);
+          transform: translate3d(0, 7px, 0) rotate(45deg); }
 
 .v-navbar.v-nav-toggled .v-icon-bar:nth-of-type(2) {
   -webkit-transform: translate3d(0, 0, 0) scale(0.01, 0.01);
           transform: translate3d(0, 0, 0) scale(0.01, 0.01); }
 
 .v-navbar.v-nav-toggled .v-icon-bar:nth-of-type(3) {
-  -webkit-transform: translate3d(0, -0.49em, 0) rotate(-45deg);
-          transform: translate3d(0, -0.49em, 0) rotate(-45deg); }
+  -webkit-transform: translate3d(0, -7px, 0) rotate(-45deg);
+          transform: translate3d(0, -7px, 0) rotate(-45deg); }
 
 .v-navbar.v-nav-min .v-nav-items-inner {
   display: block; }

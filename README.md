@@ -20,7 +20,7 @@ For use in your project copy `victory.min.css` and `victory.min.js` and put like
 
 ```html
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="victory.min.css">
 <script src="victory.min.js"></script>
 ```
@@ -68,7 +68,7 @@ For production use CDN:
 
 ```html
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory-basic.css@0.5/dist/victory.min.css">
-<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory-basic.min.js></script>
+<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory-basic.min.js"></script>
 ```
 
 Or download from:
@@ -79,7 +79,7 @@ Or download from:
 then use in your project put like this:
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="victory-basic.min.css">
 <script src="victory-basic.min.js"></script>
 ```

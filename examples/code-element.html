@@ -19,94 +19,241 @@
         margin-bottom: 20px;
     }
 
-    .example, .first {
-        display: inline-block;
-        margin: 5px;
-        width: 100px;
-        height: 100px;
-    }
-    .first {
-        width: 250px;
+    .v-card > p {
+        line-height: 2;
     }
     </style>
 </head>
 <body>
-    <div class="v-card">
-        <h2>Code box</h2>
 
-        <pre>
-        <code>&lt;?php
-use Inphinit\Routing\Route;
-use Inphinit\Experimental\Routing\Group;
 
-Route::set('ANY', '/', function () {
-    echo 'oi';
-});</code>
-        </pre>
-        
-        <hr>
+<!-- code inlines -->
+<div class="v-row">
+    <div class="v-col-lg-4">
+        <div class="v-card">
+            <h2>Code inline</h2>
 
-        <pre>
-        <code>&lt;!DOCTYPE html>
+            <p>
+                Foo bar <code>min-height: 500px</code> using lorem foo bar baz <code>@media()</code> get a result for small screens foo bar
+                baz <code>Victory.classList.toggle()</code> for apply class dinamic
+            </p>
+        </div>
+    </div>
+    <div class="v-col-lg-4">
+        <div class="v-card v-bg-primary">
+            <h2>Code inline</h2>
+
+            <p>
+                Foo bar <code>min-height: 500px</code> using lorem foo bar baz <code>@media()</code> get a result for small screens foo bar
+                baz <code>Victory.classList.toggle()</code> for apply class dinamic
+            </p>
+        </div>
+    </div>
+    <div class="v-col-lg-4">
+        <div class="v-card v-bg-dark">
+            <h2>Code inline</h2>
+
+            <p>
+                Foo bar <code>min-height: 500px</code> using lorem foo bar baz <code>@media()</code> get a result for small screens foo bar
+                baz <code>Victory.classList.toggle()</code> for apply class dinamic
+            </p>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+
+<!-- code box -->
+<div class="v-row">
+    <div class="v-col-lg-4">
+        <div class="v-card">
+            <h2>Predefined <code>pre > code</code></h2>
+
+            <pre><code>&lt;!DOCTYPE html>
 &lt;html>
 &lt;head>
     &lt;Example&lt;/title>
     &lt;meta charset="utf-8">
     &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
-    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></code>
-        </pre>
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></code></pre>
+        </div>
     </div>
+    <div class="v-col-lg-4">
+        <div class="v-card v-bg-primary">
+            <h2>Predefined <code>pre > code</code></h2>
 
-    <div class="v-card">
-        <h2>Code with <code>.v-code-pre</code></h2>
-
-        <code class="v-code-pre">&lt;!DOCTYPE html>
+            <pre><code>&lt;!DOCTYPE html>
 &lt;html>
 &lt;head>
     &lt;Example&lt;/title>
     &lt;meta charset="utf-8">
     &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></code></pre>
+        </div>
+    </div>
+    <div class="v-col-lg-4">
+        <div class="v-card v-bg-dark">
+            <h2>Predefined <code>pre > code</code></h2>
+
+            <pre><code>&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+    &lt;Example&lt;/title>
+    &lt;meta charset="utf-8">
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></code></pre>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<!-- code pre -->
+<div class="v-row">
+    <div class="v-col-lg-4">
+        <div class="v-card">
+            <h2>Code with <code>.v-code-pre</code> class</h2>
+
+            <code class="v-code-pre">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+    &lt;Example&lt;/title>
+    &lt;meta charset="utf-8">
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
     &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></code>
+        </div>
+    </div>
+    <div class="v-col-lg-4">
+        <div class="v-card v-bg-primary">
+            <h2>Code with <code>.v-code-pre</code> class</h2>
 
+            <code class="v-code-pre">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+    &lt;Example&lt;/title>
+    &lt;meta charset="utf-8">
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></code>
+        </div>
+    </div>
+    <div class="v-col-lg-4">
+        <div class="v-card v-bg-dark">
+            <h2>Code with <code>.v-code-pre</code> class</h2>
+
+            <code class="v-code-pre">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+    &lt;Example&lt;/title>
+    &lt;meta charset="utf-8">
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></code>
+        </div>
+    </div>
+</div>
+
+
+<hr>
+
+
+<!-- code lines -->
+<div class="v-row">
+    <div class="v-col-lg-4">
+        <div class="v-card">
+            <h2>Code with count lines (<code>.v-code-lines</code>)</h2>
+
+            <code class="v-code-lines">
+                <p>&lt;!DOCTYPE html></p>
+                <p>&lt;html></p>
+                <p>&lt;head></p>
+                <p>    &lt;Example&lt;/title></p>
+                <p>    &lt;meta charset="utf-8"></p>
+                <p>    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"></p>
+                <p>    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"></p>
+                <p>    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"></p>
+                <p>    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></p>
+            </code>
+
+            <code class="v-code-lines">
+                <p>&lt;?php</p>
+                <p>use Inphinit\Routing\Route;</p>
+                <p>use Inphinit\Experimental\Routing\Group;</p>
+                <p></p>
+                <p>Route::set('ANY', '/', function () {</p>
+                <p>    echo 'oi';</p>
+                <p>});</p>
+            </code>
+        </div>
     </div>
 
-    <div class="v-card">
-        <h2>Code inline</h2>
+    <div class="v-col-lg-4">
+        <div class="v-card v-bg-primary">
+            <h2>Code with count lines (<code>.v-code-lines</code>)</h2>
 
-        <p>
-            Foo bar <code>min-height: 500px</code> using lorem foo bar baz <code>@media()</code> get a result for small screens foo bar
-            baz <code>Victory.classList.toggle()</code> for apply class dinamic
-        </p>
+            <code class="v-code-lines">
+                <p>&lt;!DOCTYPE html></p>
+                <p>&lt;html></p>
+                <p>&lt;head></p>
+                <p>    &lt;Example&lt;/title></p>
+                <p>    &lt;meta charset="utf-8"></p>
+                <p>    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"></p>
+                <p>    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"></p>
+                <p>    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"></p>
+                <p>    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></p>
+            </code>
+
+            <code class="v-code-lines">
+                <p>&lt;?php</p>
+                <p>use Inphinit\Routing\Route;</p>
+                <p>use Inphinit\Experimental\Routing\Group;</p>
+                <p></p>
+                <p>Route::set('ANY', '/', function () {</p>
+                <p>    echo 'oi';</p>
+                <p>});</p>
+            </code>
+        </div>
     </div>
 
-    <div class="v-card">
-        <h2>Code with count lines (<code>.v-code-lines</code>)</h2>
+    <div class="v-col-lg-4">
+        <div class="v-card v-bg-dark">
+            <h2>Code with count lines (<code>.v-code-lines</code>)</h2>
 
-        <code class="v-code-lines">
-            <p>&lt;!DOCTYPE html></p>
-            <p>&lt;html></p>
-            <p>&lt;head></p>
-            <p>    &lt;Example&lt;/title></p>
-            <p>    &lt;meta charset="utf-8"></p>
-            <p>    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"></p>
-            <p>    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"></p>
-            <p>    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0"></p>
-            <p>    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></p>
-        </code>
+            <code class="v-code-lines">
+                <p>&lt;!DOCTYPE html></p>
+                <p>&lt;html></p>
+                <p>&lt;head></p>
+                <p>    &lt;Example&lt;/title></p>
+                <p>    &lt;meta charset="utf-8"></p>
+                <p>    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"></p>
+                <p>    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"></p>
+                <p>    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"></p>
+                <p>    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></p>
+            </code>
 
-        <code class="v-code-lines">
-            <p>&lt;?php</p>
-            <p>use Inphinit\Routing\Route;</p>
-            <p>use Inphinit\Experimental\Routing\Group;</p>
-            <p></p>
-            <p>Route::set('ANY', '/', function () {</p>
-            <p>    echo 'oi';</p>
-            <p>});</p>
-        </code>
+            <code class="v-code-lines">
+                <p>&lt;?php</p>
+                <p>use Inphinit\Routing\Route;</p>
+                <p>use Inphinit\Experimental\Routing\Group;</p>
+                <p></p>
+                <p>Route::set('ANY', '/', function () {</p>
+                <p>    echo 'oi';</p>
+                <p>});</p>
+            </code>
+        </div>
     </div>
+</div>
+
 </body>
 </html>

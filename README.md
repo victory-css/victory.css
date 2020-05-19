@@ -5,8 +5,8 @@ Victory.css is a simply and lightweight front-end framework/toolkit (call it wha
 Use CDN:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory.css@0.5.1/dist/victory.min.css">
-<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5.1/dist/victory.min.js></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory.css@0.5.2/dist/victory.min.css">
+<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5.2/dist/victory.min.js></script>
 ```
 
 Or download from:
@@ -67,8 +67,8 @@ Gziped size | 7.5kB | 2.7kB | -
 For production use CDN:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory-basic.css@0.5.1/dist/victory.min.css">
-<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5.1/dist/victory-basic.min.js></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory-basic.css@0.5.2/dist/victory.min.css">
+<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5.2/dist/victory-basic.min.js></script>
 ```
 
 Or download from:

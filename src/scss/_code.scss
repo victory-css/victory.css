@@ -1,26 +1,51 @@
-code, .v-code, .v-code-pre {
+code, .v-code, .v-code-pre, .v-code-lines {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
     padding: .3em;
     font-size: 85%;
-    background-color: #0c0c0c;
     color: #fff;
+    background-color: #0c0c0c;
     background-color: rgba(27, 31, 35, .2);
     border-radius: .3em;
     text-align: left;
 }
 
 @media (min-width: 1px) {
-    code, .v-code, .v-code-pre {
+    code, .v-code, .v-code-pre, .v-code-lines {
         color: inherit;
     }
 }
 
-pre > code, pre > .v-code, .v-code-pre {
+pre > code, pre > .v-code, .v-code-pre, .v-code-lines {
     display: block;
     padding: 1.2em;
     overflow: auto;
 }
 
-.v-code-pre {
+.v-code-lines {
+    counter-reset: v-line;
+}
+
+.v-code-pre, .v-code-lines {
+    margin: 1em;
+}
+
+.v-code-pre, .v-code-lines > p {
     white-space: pre;
+}
+
+/*IE9+*/
+.v-code-lines > p::before {
+    text-align: right;
+    margin: 0 .8em 0 0;
+    border-right: thin solid rgba(255,255,255,.5);
+    display: inline-block;
+    width: 4em;
+    padding: .5em 1em .5em .5em;
+    counter-increment: v-line;
+    content: counter(v-line);
+}
+
+.v-code-lines > p.v-active {
+    background: rgba(255,255,255,.3);
+    border-radius: .3em;
 }

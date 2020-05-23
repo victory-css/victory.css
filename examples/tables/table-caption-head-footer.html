@@ -91,7 +91,7 @@
         code.className = "v-code-pre";
         code.innerText = html.replace(re, "$1").replace(/^\s+|\s+$/, "");
 
-        el.parentElement.insertBefore(code, el.nextSibling);
+        el.parentElement.parentElement.insertBefore(code, el.parentElement.nextSibling);
     }
     </script>
 </body>

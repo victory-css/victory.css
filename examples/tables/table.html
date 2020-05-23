@@ -53,6 +53,8 @@
         </table>
     </div>
 
+    <hr>
+
     <div class="v-card">
         <h2>v-table-striped</h2>
         <table class="v-table v-table-striped">
@@ -83,6 +85,8 @@
         </table>
     </div>
 
+    <hr>
+
     <div class="v-card">
         <h2>v-table-hover</h2>
         <table class="v-table v-table-hover">
@@ -112,6 +116,8 @@
             </tbody>
         </table>
     </div>
+
+    <hr>
 
     <div class="v-card">
         <h2>v-table-hover +  v-table-striped</h2>
@@ -153,7 +159,7 @@
         code.className = "v-code-pre";
         code.innerText = html.replace(re, "$1").replace(/^\s+|\s+$/, "");
 
-        el.parentElement.insertBefore(code, el.nextSibling);
+        el.parentElement.parentElement.insertBefore(code, el.parentElement.nextSibling);
     }
     </script>
 </body>

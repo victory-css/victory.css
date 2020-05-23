@@ -95,7 +95,7 @@
     </div>
 
     <script type="text/javascript">
-    var els = document.querySelectorAll(".v-table");
+    var els = document.querySelectorAll(".v-overflow-auto");
 
     for (var i = els.length - 1; i >= 0; i--) {
         var el = els[i], code = document.createElement("code"), html = el.outerHTML,
@@ -104,7 +104,7 @@
         code.className = "v-code-pre";
         code.innerText = html.replace(re, "$1").replace(/^\s+|\s+$/, "");
 
-        el.parentElement.insertBefore(code, el.nextSibling);
+        el.parentElement.parentElement.insertBefore(code, el.parentElement.nextSibling);
     }
     </script>
 </body>

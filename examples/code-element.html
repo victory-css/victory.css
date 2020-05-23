@@ -22,17 +22,21 @@
     .v-card > p {
         line-height: 2;
     }
+
+    h1, h2 {
+        text-align: center;
+    }
     </style>
 </head>
 <body>
+<h1>&lt;code> element</h1>
 
+<h2>Code inline</h2>
 
 <!-- code inlines -->
 <div class="v-row">
     <div class="v-col-lg-4">
         <div class="v-card">
-            <h2>Code inline</h2>
-
             <p>
                 Foo bar <code>min-height: 500px</code> using lorem foo bar baz <code>@media()</code> get a result for small screens foo bar
                 baz <code>Victory.classList.toggle()</code> for apply class dinamic
@@ -41,8 +45,6 @@
     </div>
     <div class="v-col-lg-4">
         <div class="v-card v-bg-primary">
-            <h2>Code inline</h2>
-
             <p>
                 Foo bar <code>min-height: 500px</code> using lorem foo bar baz <code>@media()</code> get a result for small screens foo bar
                 baz <code>Victory.classList.toggle()</code> for apply class dinamic
@@ -51,8 +53,6 @@
     </div>
     <div class="v-col-lg-4">
         <div class="v-card v-bg-dark">
-            <h2>Code inline</h2>
-
             <p>
                 Foo bar <code>min-height: 500px</code> using lorem foo bar baz <code>@media()</code> get a result for small screens foo bar
                 baz <code>Victory.classList.toggle()</code> for apply class dinamic
@@ -63,17 +63,16 @@
 
 <hr>
 
+<h2>Predefined <code>pre > code</code></h2>
 
 <!-- code box -->
 <div class="v-row">
     <div class="v-col-lg-4">
         <div class="v-card">
-            <h2>Predefined <code>pre > code</code></h2>
-
             <pre><code>&lt;!DOCTYPE html>
 &lt;html>
 &lt;head>
-    &lt;Example&lt;/title>
+    &lt;title>Example&lt;/title>
     &lt;meta charset="utf-8">
     &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,12 +82,10 @@
     </div>
     <div class="v-col-lg-4">
         <div class="v-card v-bg-primary">
-            <h2>Predefined <code>pre > code</code></h2>
-
             <pre><code>&lt;!DOCTYPE html>
 &lt;html>
 &lt;head>
-    &lt;Example&lt;/title>
+    &lt;title>Example&lt;/title>
     &lt;meta charset="utf-8">
     &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -98,12 +95,10 @@
     </div>
     <div class="v-col-lg-4">
         <div class="v-card v-bg-dark">
-            <h2>Predefined <code>pre > code</code></h2>
-
             <pre><code>&lt;!DOCTYPE html>
 &lt;html>
 &lt;head>
-    &lt;Example&lt;/title>
+    &lt;title>Example&lt;/title>
     &lt;meta charset="utf-8">
     &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -114,17 +109,17 @@
 </div>
 
 <hr>
+
+<h2>Code with <code>.v-code-pre</code> class</h2>
 
 <!-- code pre -->
 <div class="v-row">
     <div class="v-col-lg-4">
         <div class="v-card">
-            <h2>Code with <code>.v-code-pre</code> class</h2>
-
             <code class="v-code-pre">&lt;!DOCTYPE html>
 &lt;html>
 &lt;head>
-    &lt;Example&lt;/title>
+    &lt;title>Example&lt;/title>
     &lt;meta charset="utf-8">
     &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -134,12 +129,10 @@
     </div>
     <div class="v-col-lg-4">
         <div class="v-card v-bg-primary">
-            <h2>Code with <code>.v-code-pre</code> class</h2>
-
             <code class="v-code-pre">&lt;!DOCTYPE html>
 &lt;html>
 &lt;head>
-    &lt;Example&lt;/title>
+    &lt;title>Example&lt;/title>
     &lt;meta charset="utf-8">
     &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -149,12 +142,10 @@
     </div>
     <div class="v-col-lg-4">
         <div class="v-card v-bg-dark">
-            <h2>Code with <code>.v-code-pre</code> class</h2>
-
             <code class="v-code-pre">&lt;!DOCTYPE html>
 &lt;html>
 &lt;head>
-    &lt;Example&lt;/title>
+    &lt;title>Example&lt;/title>
     &lt;meta charset="utf-8">
     &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -164,21 +155,20 @@
     </div>
 </div>
 
-
 <hr>
+
+<h2>Code with count lines (<code>.v-code-lines</code>)</h2>
 
 
 <!-- code lines -->
 <div class="v-row">
     <div class="v-col-lg-4">
         <div class="v-card">
-            <h2>Code with count lines (<code>.v-code-lines</code>)</h2>
-
             <code class="v-code-lines">
                 <p>&lt;!DOCTYPE html></p>
                 <p>&lt;html></p>
                 <p>&lt;head></p>
-                <p>    &lt;Example&lt;/title></p>
+                <p>    &lt;title>Example&lt;/title></p>
                 <p>    &lt;meta charset="utf-8"></p>
                 <p>    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"></p>
                 <p>    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"></p>
@@ -200,13 +190,11 @@
 
     <div class="v-col-lg-4">
         <div class="v-card v-bg-primary">
-            <h2>Code with count lines (<code>.v-code-lines</code>)</h2>
-
             <code class="v-code-lines">
                 <p>&lt;!DOCTYPE html></p>
                 <p>&lt;html></p>
                 <p>&lt;head></p>
-                <p>    &lt;Example&lt;/title></p>
+                <p>    &lt;title>Example&lt;/title></p>
                 <p>    &lt;meta charset="utf-8"></p>
                 <p>    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"></p>
                 <p>    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"></p>
@@ -228,13 +216,11 @@
 
     <div class="v-col-lg-4">
         <div class="v-card v-bg-dark">
-            <h2>Code with count lines (<code>.v-code-lines</code>)</h2>
-
             <code class="v-code-lines">
                 <p>&lt;!DOCTYPE html></p>
                 <p>&lt;html></p>
                 <p>&lt;head></p>
-                <p>    &lt;Example&lt;/title></p>
+                <p>    &lt;title>Example&lt;/title></p>
                 <p>    &lt;meta charset="utf-8"></p>
                 <p>    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"></p>
                 <p>    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"></p>

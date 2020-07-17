@@ -35,7 +35,7 @@
 
 <!-- code inlines -->
 <div class="v-row">
-    <div class="v-col-lg-4">
+    <div class="v-col-lg-4 example">
         <div class="v-card">
             <p>
                 Foo bar <code>min-height: 500px</code> using lorem foo bar baz <code>@media()</code> get a result for small screens foo bar
@@ -43,7 +43,7 @@
             </p>
         </div>
     </div>
-    <div class="v-col-lg-4">
+    <div class="v-col-lg-4 example">
         <div class="v-card v-bg-primary">
             <p>
                 Foo bar <code>min-height: 500px</code> using lorem foo bar baz <code>@media()</code> get a result for small screens foo bar
@@ -51,7 +51,7 @@
             </p>
         </div>
     </div>
-    <div class="v-col-lg-4">
+    <div class="v-col-lg-4 example">
         <div class="v-card v-bg-dark">
             <p>
                 Foo bar <code>min-height: 500px</code> using lorem foo bar baz <code>@media()</code> get a result for small screens foo bar
@@ -67,7 +67,7 @@
 
 <!-- code box -->
 <div class="v-row">
-    <div class="v-col-lg-4">
+    <div class="v-col-lg-4 example">
         <div class="v-card">
             <pre><code>&lt;!DOCTYPE html>
 &lt;html>
@@ -80,7 +80,7 @@
     &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></code></pre>
         </div>
     </div>
-    <div class="v-col-lg-4">
+    <div class="v-col-lg-4 example">
         <div class="v-card v-bg-primary">
             <pre><code>&lt;!DOCTYPE html>
 &lt;html>
@@ -93,7 +93,7 @@
     &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></code></pre>
         </div>
     </div>
-    <div class="v-col-lg-4">
+    <div class="v-col-lg-4 example">
         <div class="v-card v-bg-dark">
             <pre><code>&lt;!DOCTYPE html>
 &lt;html>
@@ -114,7 +114,7 @@
 
 <!-- code pre -->
 <div class="v-row">
-    <div class="v-col-lg-4">
+    <div class="v-col-lg-4 example">
         <div class="v-card">
             <code class="v-code-pre">&lt;!DOCTYPE html>
 &lt;html>
@@ -127,7 +127,7 @@
     &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></code>
         </div>
     </div>
-    <div class="v-col-lg-4">
+    <div class="v-col-lg-4 example">
         <div class="v-card v-bg-primary">
             <code class="v-code-pre">&lt;!DOCTYPE html>
 &lt;html>
@@ -140,7 +140,7 @@
     &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></code>
         </div>
     </div>
-    <div class="v-col-lg-4">
+    <div class="v-col-lg-4 example">
         <div class="v-card v-bg-dark">
             <code class="v-code-pre">&lt;!DOCTYPE html>
 &lt;html>
@@ -162,7 +162,7 @@
 
 <!-- code lines -->
 <div class="v-row">
-    <div class="v-col-lg-4">
+    <div class="v-col-lg-4 example">
         <div class="v-card">
             <code class="v-code-lines">
                 <p>&lt;!DOCTYPE html></p>
@@ -188,48 +188,39 @@
         </div>
     </div>
 
-    <div class="v-col-lg-4">
+    <div class="v-col-lg-4 example">
         <div class="v-card v-bg-primary">
-            <code class="v-code-lines">
-                <p>&lt;!DOCTYPE html></p>
-                <p>&lt;html></p>
-                <p>&lt;head></p>
-                <p>    &lt;title>Example&lt;/title></p>
-                <p>    &lt;meta charset="utf-8"></p>
-                <p>    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"></p>
-                <p>    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"></p>
-                <p>    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"></p>
-                <p>    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></p>
+            <code class="v-code-lines" style="counter-increment: v-line 3">
+                <p>&lt;title>Example&lt;/title></p>
+                <p>&lt;meta charset="utf-8"></p>
+                <p>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"></p>
+                <p>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"></p>
+                <p>&lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"></p>
+                <p>&lt;link rel="stylesheet" type="text/css" href="victory.min.css"></p>
             </code>
 
-            <code class="v-code-lines">
-                <p>&lt;?php</p>
-                <p>use Inphinit\Routing\Route;</p>
-                <p>use Inphinit\Experimental\Routing\Group;</p>
-                <p></p>
+            <code class="v-code-lines" style="counter-increment: v-line 5">
                 <p>Route::set('ANY', '/', function () {</p>
-                <p>    echo 'oi';</p>
+                <p class="v-active">    echo 'oi';</p>
                 <p>});</p>
             </code>
         </div>
     </div>
 
-    <div class="v-col-lg-4">
+    <div class="v-col-lg-4 example">
         <div class="v-card v-bg-dark">
-            <code class="v-code-lines">
-                <p>&lt;!DOCTYPE html></p>
+            <code class="v-code-lines" style="counter-increment: v-line 2">
                 <p>&lt;html></p>
                 <p>&lt;head></p>
                 <p>    &lt;title>Example&lt;/title></p>
                 <p>    &lt;meta charset="utf-8"></p>
-                <p>    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"></p>
+                <p class="v-active">    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"></p>
                 <p>    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"></p>
                 <p>    &lt;meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"></p>
                 <p>    &lt;link rel="stylesheet" type="text/css" href="victory.min.css"></p>
             </code>
 
-            <code class="v-code-lines">
-                <p>&lt;?php</p>
+            <code class="v-code-lines" style="counter-increment: v-line 2">
                 <p>use Inphinit\Routing\Route;</p>
                 <p>use Inphinit\Experimental\Routing\Group;</p>
                 <p></p>
@@ -241,5 +232,20 @@
     </div>
 </div>
 
+<script type="text/javascript">
+var els = document.querySelectorAll(".v-card > code");
+
+for (var i = els.length - 1; i >= 0; i--) {
+    var el = els[i], code = document.createElement("code"), html = el.outerHTML,
+        re = new RegExp('(\\n)[ ]{' + (/[ ]{12,}[<][^\n]+$/.test(html) ? 12 : 8) + '}', 'g');
+
+    var j = 0;
+
+    code.className = "v-code-pre";
+    code.innerText = html.replace(re, "$1").replace(/^\s+|\s+$/, "");
+
+    el.parentElement.insertBefore(code, el.nextSibling);
+}
+</script>
 </body>
 </html>

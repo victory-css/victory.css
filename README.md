@@ -5,18 +5,18 @@ Victory.css is a simply and lightweight front-end framework/toolkit (call it wha
 Use CDN:
 
 ```html
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory.min.css">
 <script src="https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory.min.js></script>
 ```
 
 Or download from:
 
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.2/dist/victory.min.css
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.2/dist/victory.min.js
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.3/dist/victory.min.css
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.3/dist/victory.min.js
 
-## Using
-
-For use in your project copy `victory.min.css` and `victory.min.js` and put like this:
+then use in your project put like this:
 
 ```html
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,9 +27,10 @@ For use in your project copy `victory.min.css` and `victory.min.js` and put like
 
 ## Browser Support
 
-![Chrome][1] | ![Firefox][2] | ![Safari][3] | ![Opera][4] | ![Edge][5] | ![EdgeHTML][6] | ![IE9+][7] | ![IE8][8]
+Chrome | Firefox | Safari | Opera | Edge | EdgeHTML | IE9+ | IE8
 --- | --- | --- | --- | --- | --- | --- | ---
-✔ | ✔ | ✔ 8+ | ✔ | ✔ | ✔ | ✔ 9+ | 8 (partial)
+![Chrome][1] | ![Firefox][2] | ![Safari][3] | ![Opera][4] | ![Edge][5] | ![EdgeHTML][6] | ![IE9+][7] | ![IE8][8]
+✔ | ✔ | ✔ 8+ | ✔ | ✔ | ✔ | ✔ | (partial)
 
 > **Note:** Victory.css has some fallbacks for old browsers without media-queries support, such as *Internet Explorer 8*, preventing your site from breaking
 
@@ -67,18 +68,21 @@ Gziped size | 7.5kB | 2.7kB | -
 For production use CDN:
 
 ```html
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory-basic.css@0.5/dist/victory.min.css">
 <script src="https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory-basic.min.js"></script>
 ```
 
 Or download from:
 
-- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.2/dist/victory.min.css
-- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.2/dist/victory.min.js
+- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.3/dist/victory.min.css
+- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.3/dist/victory.min.js
 
 then use in your project put like this:
 
 ```html
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="victory-basic.min.css">
 <script src="victory-basic.min.js"></script>

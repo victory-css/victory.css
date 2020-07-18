@@ -37,7 +37,7 @@ pre > code, pre > .v-code, .v-code-pre, .v-code-lines {
 .v-code-lines > p::before {
     text-align: right;
     margin: 0 .8em 0 0;
-    border-right: thin solid rgba(255,255,255,.5);
+    border-right: thin solid rgba(255,255,255,.4);
     display: inline-block;
     width: 4em;
     padding: .5em 1em .5em .5em;
@@ -45,7 +45,11 @@ pre > code, pre > .v-code, .v-code-pre, .v-code-lines {
     content: counter(v-line);
 }
 
-.v-code-lines > p.v-active {
+.v-code-lines > p {
+    transition: background .2s ease-out;
+}
+
+.v-code-lines > p.v-active, .v-code-lines > p:hover {
     background: rgba(255,255,255,.3);
     border-radius: .3em;
 }

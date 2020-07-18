@@ -171,6 +171,12 @@ table tbody tr:nth-child(odd) {
 table td, table th {
     border: thin solid #ddd;
     padding: 6px 13px;
+    text-align: center;
+}
+
+table td {
+    padding-top: .2em;
+    padding-bottom: .2em;
 }
 
 blockquote {
@@ -178,6 +184,14 @@ blockquote {
     padding: 0 15px;
     color: #777;
     border-left: 4px solid #ddd;
+}
+
+hr {
+    height: .25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: #e1e4e8;
+    border: 0;
 }
 </style>
 

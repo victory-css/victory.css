@@ -9,7 +9,7 @@
     outline: none;
     border: thin solid #9a9ca2;
     background-color: #fff;
-    border-radius: 2px;
+    border-radius: $field-border-radius;
     color: #0c0c0c;
     font-size: 11pt;
     vertical-align: middle;
@@ -70,11 +70,11 @@ select.v-field {
 
     > :first-child {
         border-left-width: thin !important;
-        border-radius: 2px 0 0 2px !important;
+        border-radius: $field-border-radius 0 0 $field-border-radius !important;
     }
     
     > :last-child {
-        border-radius: 0 2px 2px 0 !important;
+        border-radius: 0 $field-border-radius $field-border-radius 0 !important;
     }
 
     > .v-active, > :active, > :focus {

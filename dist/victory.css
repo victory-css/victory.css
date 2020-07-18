@@ -1,5 +1,5 @@
 /*
- * victory.css 0.5.2
+ * victory.css 0.5.3
  * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
@@ -77,9 +77,8 @@ iframe {
           box-sizing: border-box; }
 
 *, ::after, ::before {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box; }
+  /* autoprefixer: off */
+  box-sizing: border-box; }
 
 /* html5 tags for IE8 (don't provide support, they are fallbacks only to avoid the layout breaking) */
 audio, dialog, datalist, template {
@@ -105,10 +104,8 @@ svg {
           user-select: none; }
 
 ::after, ::before, .v-no-select {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none; }
+  /* autoprefixer: off */
+  user-select: none; }
 
 .v-sr-only {
   position: absolute;
@@ -568,7 +565,8 @@ svg {
   display: inline-block;
   border-radius: 4px;
   text-align: center;
-  font-size: 0; }
+  font-size: 0;
+  white-space: nowrap; }
 
 .v-btn-group > .v-btn {
   color: inherit;
@@ -732,7 +730,7 @@ svg {
   outline: none;
   border: thin solid #9a9ca2;
   background-color: #fff;
-  border-radius: 2px;
+  border-radius: 3px;
   color: #0c0c0c;
   font-size: 11pt;
   vertical-align: middle;
@@ -790,9 +788,9 @@ select.v-field {
     z-index: 1; }
   .v-field-group > :first-child {
     border-left-width: thin !important;
-    border-radius: 2px 0 0 2px !important; }
+    border-radius: 3px 0 0 3px !important; }
   .v-field-group > :last-child {
-    border-radius: 0 2px 2px 0 !important; }
+    border-radius: 0 3px 3px 0 !important; }
   .v-field-group > .v-active, .v-field-group > :active, .v-field-group > :focus {
     z-index: 2; }
   .v-field-group > .v-btn {
@@ -914,14 +912,18 @@ pre > code, pre > .v-code, .v-code-pre, .v-code-lines {
 .v-code-lines > p::before {
   text-align: right;
   margin: 0 .8em 0 0;
-  border-right: thin solid rgba(255, 255, 255, 0.5);
+  border-right: thin solid rgba(255, 255, 255, 0.4);
   display: inline-block;
   width: 4em;
   padding: .5em 1em .5em .5em;
   counter-increment: v-line;
   content: counter(v-line); }
 
-.v-code-lines > p.v-active {
+.v-code-lines > p {
+  -webkit-transition: background .2s ease-out;
+  transition: background .2s ease-out; }
+
+.v-code-lines > p.v-active, .v-code-lines > p:hover {
   background: rgba(255, 255, 255, 0.3);
   border-radius: .3em; }
 
@@ -1150,6 +1152,9 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
   background-color: rgba(255, 255, 255, 0.5);
   border-top: thin solid #e5e5e5;
   border-bottom: thin solid #e5e5e5; }
+
+.v-table-striped > tbody > tr:last-child {
+  border-bottom: none; }
 
 .v-table-hover > tbody > tr:hover {
   background-color: #97c2ec; }
@@ -1697,28 +1702,7 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
   background-color: #6c757d;
   min-width: 240px;
   position: relative;
-  overflow: hidden;
-  /*
-    .v-slide-guide {
-        position: absolute;
-        left: 0;
-        bottom: 10px;
-        width: 100%;
-        z-index: 999;
-        text-align: center;
-
-        &>.v-slide-item {
-            display: inline-block;
-            border: 2px solid #fff;
-            min-width: 10px;
-            min-height: 10px;
-            margin: 0 5px;
-            border-radius: 100%;
-            box-shadow: 0 0 2px rgba(255, 255, 255, .5),
-                        0 0 2px rgba(255, 255, 255, .5) inset;
-        }
-    }
-    */ }
+  overflow: hidden; }
   .v-slide > .v-slide-inner {
     position: relative;
     z-index: 998;
@@ -1729,10 +1713,8 @@ kbd[class^="v-out-"], kbd[class*=" v-out-"] {
     height: 100%;
     font-size: 0;
     white-space: nowrap;
-    -webkit-transition: -webkit-transform .2s ease-out;
-    transition: -webkit-transform .2s ease-out;
-    transition: transform .2s ease-out;
-    transition: transform .2s ease-out, -webkit-transform .2s ease-out; }
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out; }
   .v-slide > .v-slide-inner.v-slide-next {
     -webkit-transform: translateX(-100%);
         -ms-transform: translateX(-100%);

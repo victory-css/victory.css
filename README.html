@@ -80,6 +80,12 @@ table tbody tr:nth-child(odd) {
 table td, table th {
     border: thin solid #ddd;
     padding: 6px 13px;
+    text-align: center;
+}
+
+table td {
+    padding-top: .2em;
+    padding-bottom: .2em;
 }
 
 blockquote {
@@ -88,24 +94,33 @@ blockquote {
     color: #777;
     border-left: 4px solid #ddd;
 }
+
+hr {
+    height: .25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: #e1e4e8;
+    border: 0;
+}
 </style>
 
 <main>
     <article><p>Victory.css is a simply and lightweight front-end framework/toolkit (call it what you want) for developing fast.</p>
 <h2>Download</h2>
 <p>Use CDN:</p>
-<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory.min.css&quot;&gt;
+<pre><code class="language-html">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory.min.css&quot;&gt;
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory.min.js&gt;&lt;/script&gt;
 </code></pre>
 <p>Or download from:</p>
 <ul>
-<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/0.5.2/dist/victory.min.css">https://raw.githubusercontent.com/brcontainer/victory.css/0.5.2/dist/victory.min.css</a></li>
-<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/0.5.2/dist/victory.min.js">https://raw.githubusercontent.com/brcontainer/victory.css/0.5.2/dist/victory.min.js</a></li>
+<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/0.5.3/dist/victory.min.css">https://raw.githubusercontent.com/brcontainer/victory.css/0.5.3/dist/victory.min.css</a></li>
+<li><a href="https://raw.githubusercontent.com/brcontainer/victory.css/0.5.3/dist/victory.min.js">https://raw.githubusercontent.com/brcontainer/victory.css/0.5.3/dist/victory.min.js</a></li>
 </ul>
-<h2>Using</h2>
-<p>For use in your project copy <code>victory.min.css</code> and <code>victory.min.js</code> and put like this:</p>
+<p>then use in your project put like this:</p>
 <pre><code class="language-html">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;victory.min.css&quot;&gt;
 &lt;script src=&quot;victory.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
@@ -113,17 +128,27 @@ blockquote {
 <table>
 <thead>
 <tr>
-<th><img src="https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome"></th>
-<th><img src="https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox"></th>
-<th><img src="https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari"></th>
-<th><img src="https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera"></th>
-<th><img src="https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="Edge"></th>
-<th><img src="https://raw.github.com/alrra/browser-logos/master/src/archive/edge_12-18/edge_12-18_48x48.png" alt="EdgeHTML"></th>
-<th><img src="https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png" alt="IE9+"></th>
-<th><img src="https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_7-8/internet-explorer_7-8_48x48.png" alt="IE8"></th>
+<th>Chrome</th>
+<th>Firefox</th>
+<th>Safari</th>
+<th>Opera</th>
+<th>Edge</th>
+<th>EdgeHTML</th>
+<th>IE9+</th>
+<th>IE8</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><img src="https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome"></td>
+<td><img src="https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox"></td>
+<td><img src="https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari"></td>
+<td><img src="https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera"></td>
+<td><img src="https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="Edge"></td>
+<td><img src="https://raw.github.com/alrra/browser-logos/master/src/archive/edge_12-18/edge_12-18_48x48.png" alt="EdgeHTML"></td>
+<td><img src="https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png" alt="IE9+"></td>
+<td><img src="https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_7-8/internet-explorer_7-8_48x48.png" alt="IE8"></td>
+</tr>
 <tr>
 <td>✔</td>
 <td>✔</td>
@@ -131,8 +156,8 @@ blockquote {
 <td>✔</td>
 <td>✔</td>
 <td>✔</td>
-<td>✔ 9+</td>
-<td>8 (partial)</td>
+<td>✔</td>
+<td>(partial)</td>
 </tr>
 </tbody>
 </table>
@@ -298,16 +323,19 @@ blockquote {
 </tbody>
 </table>
 <p>For production use CDN:</p>
-<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/npm/victory-basic.css@0.5/dist/victory.min.css&quot;&gt;
+<pre><code class="language-html">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/npm/victory-basic.css@0.5/dist/victory.min.css&quot;&gt;
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory-basic.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <p>Or download from:</p>
 <ul>
-<li><a href="https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.2/dist/victory.min.css">https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.2/dist/victory.min.css</a></li>
-<li><a href="https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.2/dist/victory.min.js">https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.2/dist/victory.min.js</a></li>
+<li><a href="https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.3/dist/victory.min.css">https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.3/dist/victory.min.css</a></li>
+<li><a href="https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.3/dist/victory.min.js">https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.3/dist/victory.min.js</a></li>
 </ul>
 <p>then use in your project put like this:</p>
-<pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0&quot;&gt;
+<pre><code class="language-html">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;victory-basic.min.css&quot;&gt;
 &lt;script src=&quot;victory-basic.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>

@@ -37,6 +37,10 @@
     border-bottom: thin solid #e5e5e5;
 }
 
+.v-table-striped > tbody > tr:last-child {
+    border-bottom: none;
+}
+
 .v-table-hover > tbody > tr:hover {
     background-color: #97c2ec;
 }

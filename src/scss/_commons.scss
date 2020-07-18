@@ -1,11 +1,11 @@
-@mixin user-select($colon) {
-    #{$colon}after, #{$colon}before, .v-no-select {
-        user-select: none;
-    }
+:after, :before, .v-no-select {
+    user-select: none;
 }
 
-@include user-select(':');
-@include user-select('::');
+::after, ::before, .v-no-select {
+    /* autoprefixer: off */
+    user-select: none;
+}
 
 .v-sr-only {
     position: absolute;

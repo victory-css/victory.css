@@ -37,6 +37,7 @@
     border-radius: $default-border-radius;
     text-align: center;
     font-size: 0;
+    white-space: nowrap;
 }
 
 .v-btn-group > .v-btn {
@@ -53,11 +54,11 @@
 }
 
 .v-btn-group > .v-btn:first-child {
-    border-radius: 4px 0 0 4px;
+    border-radius: $default-border-radius 0 0 $default-border-radius;
 }
 
 .v-btn-group > .v-btn:last-child {
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 $default-border-radius $default-border-radius 0;
     border-right: 0;
 }
 

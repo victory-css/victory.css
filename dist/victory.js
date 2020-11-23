@@ -1,9 +1,9 @@
 /*
- * victory.css 0.5.3
+ * victory.css 0.5.4
  * Copyright (c) 2020 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
- * https://github.com/brcontainer/victory.css
+ * https://victory-css.github.io/
  */
 
 (function (w, d, u) {

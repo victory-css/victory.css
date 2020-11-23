@@ -1,8 +1,8 @@
 {
     "name": "victory.css",
-    "version": "0.5.3",
+    "version": "0.5.4",
     "description": "A lightweight and very simple front-end framework",
-    "main": "index.js",
+    "main": "gulpfile.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "gulp"
@@ -21,7 +21,7 @@
     "bugs": {
         "url": "https://github.com/brcontainer/victory.css/issues"
     },
-    "homepage": "https://github.com/brcontainer/victory.css",
+    "homepage": "https://victory-css.github.io/",
     "dependencies": {
         "autoprefixer": "^9.7.0",
         "gulp-clean-css": "^4.3.0",

@@ -196,6 +196,7 @@ $to-fix-in-render: append($to-fix-in-render, '.v-nav-fix');
     background-color: transparent !important;
 }
 
+.v-navbar .v-nav-item:focus,
 .v-navbar a.v-nav-item:hover,
 .v-navbar a.v-nav-item:hover,
 .v-navbar button.v-nav-item:hover,

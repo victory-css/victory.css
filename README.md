@@ -13,8 +13,8 @@ Use CDN:
 
 Or download from:
 
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.3/dist/victory.min.css
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.3/dist/victory.min.js
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.4/dist/victory.min.css
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.4/dist/victory.min.js
 
 then use in your project put like this:
 
@@ -36,7 +36,7 @@ Chrome | Firefox | Safari | Opera | Edge | EdgeHTML | IE9+ | IE8
 
 ## Basic vs Standard
 
-Basic contains only basic resources, `victory.min.js` is same from standard version, about differences see:
+Basic contains only basic resources, `victory-basic.min.js` contains only polyfills, about differences see:
 
 Resource | Standard | Basic | About
 --- | --- | --- | ---
@@ -70,14 +70,14 @@ For production use CDN:
 ```html
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory-basic.css@0.5/dist/victory.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory-basic.min.css">
 <script src="https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory-basic.min.js"></script>
 ```
 
 Or download from:
 
-- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.3/dist/victory.min.css
-- https://raw.githubusercontent.com/brcontainer/victory-basic.css/0.5.3/dist/victory.min.js
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.4/dist/victory-basic.min.css
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.4/dist/victory-basic.min.js
 
 then use in your project put like this:
 

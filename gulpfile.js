@@ -232,6 +232,7 @@ gulp.task('mergejs', () => {
     let src = [
         __dirname + '/src/js/victory.js',
         __dirname + '/src/js/_polyfill.js',
+        __dirname + '/src/js/_toggle.js',
         __dirname + '/src/js/_navbar.js',
         __dirname + '/src/js/_slide.js'
     ];

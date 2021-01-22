@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wrong grid structure - Victory.css</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="../dist/victory.css">
+    <script src="../dist/victory.js"></script>
+    <style type="text/css">
+    body {
+        background-color: #f7f7f7;
+        padding: 10px;
+    }
+
+    .v-card {
+        padding: 5px;
+        min-height: 100px;
+    }
+
+    code {
+        margin: 5px;
+    }
+
+    .v-toggle {
+        overflow: hidden;
+        display: none;
+        transition: all .1s ease-out;
+    }
+
+    .v-toggle.v-toggle-changing {
+        display: block; 
+        height: auto;
+    }
+
+    .v-toggle.v-toggle-show {
+        display: block; 
+    }
+
+    .v-toggle.v-toggle-show.v-toggle-changing {
+        display: block; 
+        height: 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="example">
+        <p>
+            <a class="v-btn v-bg-primary" data-v-toggle="#toggleExample1" href="#">
+                Link
+            </a>
+            <button class="v-btn v-bg-primary" data-v-toggle="#toggleExample1" type="button">
+                Button
+            </button>
+        </p>
+        <div class="v-toggle" id="toggleExample1">
+            <div class="v-card">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <p>
+            <button class="v-btn v-bg-primary" data-v-toggle="#toggleExample2" data-v-toggle-delay="2000" type="button">
+                Button
+            </button>
+        </p>
+        <div class="v-toggle" id="toggleExample2">
+            <div class="v-card">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    var els = document.querySelectorAll(".example");
+
+    for (var i = els.length - 1; i >= 0; i--) {
+        var el = els[i], code = document.createElement("code"), html = el.outerHTML,
+            re = new RegExp('(\\n)[ ]{' + (/[ ]{8,}[<][^\n]+$/.test(html) ? 8 : 4) + '}', 'g');
+
+        var j = 0;
+
+        code.className = "v-code-pre";
+        code.innerText = html.replace(re, "$1").replace(/^\s+|\s+$/, "");
+
+        el.parentElement.insertBefore(code, el.nextSibling);
+    }
+    </script>
+</body>
+</html>

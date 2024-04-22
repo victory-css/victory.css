@@ -50,7 +50,7 @@
     .v-divider-icon.v-divider-#{$type}#{$colon}before {
         border-top-style: unquote($type);
         border-top-width: #{$size}px;
-        top: -#{$size / 2}px;
+        top: -#{calc($size / 2)}px;
     }
 }
 

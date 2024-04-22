@@ -1,10 +1,12 @@
-$fix-render-output: '';
+$fix-render-output: ();
 
 @each $rule in $to-fix-in-render {
-    $fix-render-output: $fix-render-output + 'html.v-fix-render ' + $rule + ', ';
+    $fix-render-output: append($fix-render-output, 'html.v-fix-render ' + $rule, $separator: comma);
 }
 
-&#{$fix-render-output} {
-    zoom: 99.99%;
-    transform: scale(1.0001,1.0001);
+@if length($fix-render-output) != 0 {
+    #{$fix-render-output} {
+        zoom: 99.99%;
+        transform: scale(1.0001,1.0001);
+    }
 }

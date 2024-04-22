@@ -109,3 +109,10 @@ svg {
     overflow: hidden;
 }
 
+object {
+    display: inline-block;
+    width: 300px;
+    height: 150px;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}

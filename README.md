@@ -7,14 +7,14 @@ Use CDN:
 ```html
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory.min.css">
-<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory.css@0.6/dist/victory.min.css">
+<script src="https://cdn.jsdelivr.net/npm/victory.css@0.6/dist/victory.min.js"></script>
 ```
 
 Or download from:
 
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.4/dist/victory.min.css
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.4/dist/victory.min.js
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.6.1/dist/victory.min.css
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.6.1/dist/victory.min.js
 
 then use in your project put like this:
 
@@ -65,29 +65,6 @@ Resource | Standard | Basic | About
 Minified size  | 42kB | 16kB | -
 Gziped size | 7.5kB | 2.7kB | -
 
-For production use CDN:
-
-```html
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory-basic.min.css">
-<script src="https://cdn.jsdelivr.net/npm/victory.css@0.5/dist/victory-basic.min.js"></script>
-```
-
-Or download from:
-
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.4/dist/victory-basic.min.css
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.5.4/dist/victory-basic.min.js
-
-then use in your project put like this:
-
-```html
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" type="text/css" href="victory-basic.min.css">
-<script src="victory-basic.min.js"></script>
-```
-
 ---
 
 ## Development
@@ -103,7 +80,7 @@ npm install
 After changes files in `./src` folder execute this command for deploy:
 
 ```
-gulp
+npm run build
 ```
 
 Or see another commands
@@ -112,25 +89,25 @@ Or see another commands
 
 Command | Description
 ---|---
-`gulp readme` | Generate `README.html` from `README.md`
-`gulp examples` | Generate `examples/index.html` for link all examples
-`gulp mergecss` | For create only `victory.css` without create prefixes and without min version
-`gulp prefix` | For put prefix properties in `victory.css`
-`gulp mincss` | For create min version from `victory.css`
-`gulp mergejs` | For create only `victory.js` without min version
-`gulp minjs` | For create min version from `victory.js`
-`gulp standard` | Deploy without create slim and minimal versions, auto-execute follow commands `mergecss`, `prefix`, `mincss`, `mergejs`, `minjs`
-`gulp` | Full deploy, auto-execute follow commands `mergecss`, `prefix`, `mincss`, `mergejs`, `minjs`, `slim:mergecss`, `slim:mincss`, `slim:mergejs`, `slim:minjs`, `minimal:mergecss`, `minimal:mincss` in sequence
+`npm run readme` | Generate `README.html` from `README.md`
+`npm run examples` | Generate `examples/index.html` for link all examples
+`npm run mergecss` | For create only `victory.css` without create prefixes and without min version
+`npm run prefix` | For put prefix properties in `victory.css`
+`npm run mincss` | For create min version from `victory.css`
+`npm run mergejs` | For create only `victory.js` without min version
+`npm run minjs` | For create min version from `victory.js`
+`npm run standard` | Deploy without create slim and minimal versions, auto-execute follow commands `mergecss`, `prefix`, `mincss`, `mergejs`, `minjs`
+`npm run build` | Full deploy, auto-execute follow commands `mergecss`, `prefix`, `mincss`, `mergejs`, `minjs`, `basic:mergecss`, `basic:mincss`, `basic:mergejs`, `basic:minjs`, `minimal:mergecss`, `minimal:mincss` in sequence
 
 ## Basic commands
 
 Command | Description
 ---|---
-`gulp basic:mergecss` | For create only `victory-basic.css` without min version
-`gulp basic:mincss` | For create min version from `victory-basic.css`
-`gulp basic:mergejs` | For create only `victory-basic.js` without min version
-`gulp basic:minjs` | For create min version from `victory-basic.js`
-`gulp basic` | Minimal deploy, auto-execute follow commands `basic:mergecss`, `basic:mincss`, `basic:mergejs` and `basic:minjs` in sequence
+`npm run basic:mergecss` | For create only `victory-basic.css` without min version
+`npm run basic:mincss` | For create min version from `victory-basic.css`
+`npm run basic:mergejs` | For create only `victory-basic.js` without min version
+`npm run basic:minjs` | For create min version from `victory-basic.js`
+`npm run basic` | Minimal deploy, auto-execute follow commands `basic:mergecss`, `basic:mincss`, `basic:mergejs` and `basic:minjs` in sequence
 
 
 [1]: https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png

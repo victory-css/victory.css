@@ -1,5 +1,5 @@
 /*
- * victory.css 0.6.1
+ * victory.css 0.6.2
  * Copyright (c) 2024 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 

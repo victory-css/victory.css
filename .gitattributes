@@ -1,2 +1,12 @@
-* text=auto
-* text eol=lf
+* text=auto eol=lf
+
+*.css    text diff=css
+*.htm    text diff=html
+*.html   text diff=html
+*.md     text diff=markdown
+
+package-lock.json text eol=lf -diff
+pnpm-lock.yaml    text eol=lf -diff
+yarn.lock         text -diff
+
+.github      export-ignore

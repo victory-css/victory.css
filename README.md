@@ -13,8 +13,8 @@ Use CDN:
 
 Or download from:
 
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.6.1/dist/victory.min.css
-- https://raw.githubusercontent.com/brcontainer/victory.css/0.6.1/dist/victory.min.js
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.6.3/dist/victory.min.css
+- https://raw.githubusercontent.com/brcontainer/victory.css/0.6.3/dist/victory.min.js
 
 then use in your project put like this:
 
@@ -71,7 +71,7 @@ Gziped size | 7.5kB | 2.7kB | -
 
 To contribute or modify download using git (require `npm`):
 
-```
+```bash
 git clone https://github.com/inphinit/Victory.css.git [project_name]
 cd [project_name]
 npm install
@@ -79,7 +79,7 @@ npm install
 
 After changes files in `./src` folder execute this command for deploy:
 
-```
+```bash
 npm run build
 ```
 

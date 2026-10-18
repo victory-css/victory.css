@@ -1,12 +1,20 @@
-*        text=auto
+* text=auto eol=lf
 
+*.bat    text eol=crlf
+*.cmd    text eol=crlf
+*.coffee text
 *.css    text diff=css
 *.htm    text diff=html
 *.html   text diff=html
+*.js     text diff=javascript
 *.md     text diff=markdown
+*.mjs    text diff=javascript
+*.ps1    text eol=crlf
+*.ts     text diff=typescript
 
 package-lock.json text eol=lf -diff
 pnpm-lock.yaml    text eol=lf -diff
 yarn.lock         text -diff
 
 .github      export-ignore
+CHANGELOG.md export-ignore

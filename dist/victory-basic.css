@@ -1,6 +1,6 @@
 /*
  * victory.css 0.6.2
- * Copyright (c) 2024 Guilherme Nascimento (brcontainer@yahoo.com.br)
+ * Copyright (c) 2026 Guilherme Nascimento (brcontainer@yahoo.com.br)
  * Released under the MIT license
  * 
  * https://victory-css.github.io/
